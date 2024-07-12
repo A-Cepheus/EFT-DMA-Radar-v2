@@ -23,6 +23,11 @@
     {
         public const uint GameObjectManager = 0x17FFD28; // to GameObjectManager
         public const uint CameraObjectManager = 0x0179F500; // to Camera
+        public const uint TimeScale = 0x17FFAE0; // to TimeScale
+    }
+    public struct TimeScale
+    {
+        public const uint Value = 0xFC;
     }
     public struct GameObject
     {
@@ -185,6 +190,12 @@
         public const uint Mask = 0x138; //[138] Mask : System.Int32
         public const uint AimingSpeed = 0x1DC; //[1DC] _aimingSpeed : Single
         public const uint AimSwayStrength = 0x2A4; //[2A4] _aimSwayStrength : Single
+        public const uint FirearmContoller = 0xA8;
+        public const uint FovCompensatoryDistance = 0x1F0;
+    }
+    public struct FirearmController
+    {
+        public const uint WeaponLn = 0x174;
     }
     public struct BreathEffector
     {

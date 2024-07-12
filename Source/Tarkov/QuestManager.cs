@@ -83,9 +83,45 @@ namespace eft_dma_radar
                                     foreach (var zone in zones)
                                     {
 
-                                        if (zone.map.name == "Streets of Tarkov")
+                                        if (zone.map.name == "街区")
                                         {
                                             zone.map.name = "Streets";
+                                        }
+                                        if (zone.map.name == "森林")
+                                        {
+                                            zone.map.name = "Woods";
+                                        }
+                                        if (zone.map.name == "工厂")
+                                        {
+                                            zone.map.name = "Factory";
+                                        }
+                                        else if (zone.map.name == "海关")
+                                        {
+                                            zone.map.name = "Customs";
+                                        }
+                                        else if (zone.map.name == "中心区")
+                                        {
+                                            zone.map.name = "GroundZero";
+                                        }
+                                        else if(zone.map.name == "立交桥")
+                                        {
+                                            zone.map.name = "Interchange";
+                                        }
+                                        else if(zone.map.name == "实验室")
+                                        {
+                                            zone.map.name = "Labs";
+                                        }
+                                        else if (zone.map.name == "灯塔")
+                                        {
+                                            zone.map.name = "Lighthouse";
+                                        }
+                                        else if (zone.map.name == "储备站")
+                                        {
+                                            zone.map.name = "Reserve";
+                                        }
+                                        else if (zone.map.name == "海岸线")
+                                        {
+                                            zone.map.name = "Shoreline";
                                         }
 
                                         questZones.Add(new QuestZone

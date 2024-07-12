@@ -73,9 +73,9 @@ namespace eft_dma_radar
             {
                 if (!scatterMap.Results[i][0].TryGetResult<int>(out var stat))
                     continue;
-            
+
                 this.Exfils[i].UpdateStatus(stat);
-            }  
+            }
         }
 
         public void GetExfils()

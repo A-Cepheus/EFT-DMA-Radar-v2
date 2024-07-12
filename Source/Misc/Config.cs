@@ -63,6 +63,12 @@ namespace eft_dma_radar
         [JsonPropertyName("lootPing")]
         public Dictionary<string, int> LootPing { get; set; }
 
+        [JsonPropertyName("lootThroughWall")]
+        public bool LootThroughWall { get; set; }
+
+        [JsonPropertyName("lootThroughDistance")]
+        public float LootThroughDistance { get; set; }
+
         [JsonPropertyName("magDrillSpeed")]
         public int MagDrillSpeed { get; set; }
 
@@ -153,6 +159,9 @@ namespace eft_dma_radar
         [JsonPropertyName("timeOfDay")]
         public float TimeOfDay { get; set; }
 
+        [JsonPropertyName("timeScale")]
+        public bool TimeScale { get; set; }
+
         [JsonPropertyName("uiScale")]
         public int UIScale { get; set; }
 
@@ -215,16 +224,16 @@ namespace eft_dma_radar
         [JsonIgnore]
         public Dictionary<string, int> DefaultAutoRefreshSettings = new Dictionary<string, int>()
         {
-            ["Customs"] = 30,
-            ["Factory"] = 30,
-            ["Ground Zero"] = 30,
-            ["Interchange"] = 30,
-            ["Lighthouse"] = 30,
-            ["Reserve"] = 30,
-            ["Shoreline"] = 30,
-            ["Streets of Tarkov"] = 30,
-            ["The Lab"] = 30,
-            ["Woods"] = 30
+            ["Customs"] = 5,
+            ["Factory"] = 5,
+            ["Ground Zero"] = 5,
+            ["Interchange"] = 5,
+            ["Lighthouse"] = 5,
+            ["Reserve"] = 5,
+            ["Shoreline"] = 5,
+            ["Streets of Tarkov"] = 5,
+            ["The Lab"] = 5,
+            ["Woods"] = 5
         };
 
         [JsonIgnore]
@@ -337,6 +346,8 @@ namespace eft_dma_radar
             LoggingEnabled = false;
             LootItemViewer = false;
             LootPing = DefaultLootPingSettings;
+            LootThroughWall = false;
+            LootThroughDistance = 2f;
             MagDrillSpeed = 1;
             MainThermalSetting = new ThermalSettings(1f, 0.0011f, -0.1f, 0);
             MasterSwitch = false;
@@ -368,6 +379,7 @@ namespace eft_dma_radar
             ThermalVision = false;
             ThrowPowerStrength = 1;
             TimeOfDay = 12f;
+            TimeScale = false;
             UIScale = 100;
             ZoomSensitivity = 25;
             VSync = true;

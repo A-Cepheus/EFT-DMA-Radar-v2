@@ -169,7 +169,7 @@ namespace eft_dma_radar
                 return;
             }
 
-            this.refreshingItems = true;
+            
 
             if (forceRefresh)
             {
@@ -185,6 +185,7 @@ namespace eft_dma_radar
                     return;
             }
 
+            this.refreshingItems = true;
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             Program.Log("[LootManager] Refreshing Loot...");

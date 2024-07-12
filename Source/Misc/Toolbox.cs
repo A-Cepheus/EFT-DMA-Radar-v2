@@ -1,4 +1,5 @@
-﻿using System.DirectoryServices;
+﻿using eft_dma_radar.Source.Tarkov;
+using System.DirectoryServices;
 
 namespace eft_dma_radar
 {
@@ -187,6 +188,12 @@ namespace eft_dma_radar
                     // Instant ADS
                     this._playerManager.SetInstantADS(this._config.InstantADS, ref entries);
 
+                    // Loot Through Wall
+                    this._playerManager.SetLootThroughWall(this._config.LootThroughWall, ref entries);
+
+                    // TimeScale
+                    TimeScaleManager.EnableTimeScale(this._config.TimeScale);
+
                     #region Skill Buffs
                     if (this._config.MaxSkills["Endurance"] != this.Skills["Endurance"])
                     {
@@ -294,13 +301,13 @@ namespace eft_dma_radar
                     // Infinite Stamina
                     if (this._config.InfiniteStamina)
                     {
-                        this._playerManager.SetMovementState(true, ref entries);
+                        //this._playerManager.SetMovementState(true, ref entries);
                         this._playerManager.SetMaxStamina(ref entries);
 
                     }
                     else if (!this._config.InfiniteStamina)
                     {
-                        this._playerManager.SetMovementState(false, ref entries);
+                        //this._playerManager.SetMovementState(false, ref entries);
                     }
                 }
 

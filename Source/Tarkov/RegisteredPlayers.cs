@@ -48,10 +48,6 @@ namespace eft_dma_radar
 
                         return count;
                     }
-                    catch (DMAShutdown)
-                    {
-                        throw;
-                    }
                     catch (Exception ex) when (attempt < maxAttempts - 1)
                     {
                         Program.Log($"ERROR - PlayerCount attempt {attempt + 1} failed: {ex}");
@@ -228,10 +224,6 @@ namespace eft_dma_radar
                     }
                 }
             }
-            catch (DMAShutdown)
-            {
-                throw;
-            }
             catch (RaidEnded)
             {
                 throw;
@@ -335,8 +327,8 @@ namespace eft_dma_radar
 
                     if (player.LastUpdate) // player may be dead/exfil'd
                     {
-                        if (player.Type  == PlayerType.LocalPlayer)
-                                throw new RaidEnded("Raid has ended!");
+                        if (player.Type == PlayerType.LocalPlayer)
+                            throw new RaidEnded("Raid has ended!");
 
                         if (player.Position == DEFAULT_POSITION)
                         {

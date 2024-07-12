@@ -368,12 +368,28 @@ namespace eft_dma_radar
 
         private void InitiateFont()
         {
-            var fontToUse = SKTypeface.FromFamilyName(cboFont.Text);
-            SKPaints.TextMouseoverGroup.Typeface = fontToUse;
-            SKPaints.TextBase.Typeface = fontToUse;
-            SKPaints.LootText.Typeface = fontToUse;
-            SKPaints.TextBaseOutline.Typeface = fontToUse;
-            SKPaints.TextRadarStatus.Typeface = fontToUse;
+            if (cboFont.Text == "宋体")
+            {
+                // 获取宋体在字体集合中的下标
+                var index = SKFontManager.Default.FontFamilies.ToList().IndexOf("宋体");
+                // 创建宋体字形
+                var fontToUse = SKFontManager.Default.GetFontStyles(index).CreateTypeface(0);
+                SKPaints.TextMouseoverGroup.Typeface = fontToUse;
+                SKPaints.TextBase.Typeface = fontToUse;
+                SKPaints.LootText.Typeface = fontToUse;
+                SKPaints.TextBaseOutline.Typeface = fontToUse;
+                SKPaints.TextRadarStatus.Typeface = fontToUse;
+            }
+            else
+            {
+                var fontToUse = SKTypeface.FromFamilyName(cboFont.Text);
+                SKPaints.TextMouseoverGroup.Typeface = fontToUse;
+                SKPaints.TextBase.Typeface = fontToUse;
+                SKPaints.LootText.Typeface = fontToUse;
+                SKPaints.TextBaseOutline.Typeface = fontToUse;
+                SKPaints.TextRadarStatus.Typeface = fontToUse;
+            }
+
         }
 
         private void InitiateFontSize()
@@ -2466,15 +2482,29 @@ namespace eft_dma_radar
 
             sldrTimeOfDay.Visible = enabled;
         }
+        private void swLootThroughWall_CheckedChanged(object sender, EventArgs e)
+        {
+            var enabled = swLootThroughWall.Checked;
+            _config.LootThroughWall = enabled;
 
+            sldrLootThroughDistance.Visible = enabled;
+        }
+        private void sldrLootThroughDistance_onValueChanged(object sender, int newValue)
+        {
+            _config.LootThroughDistance = (float)sldrLootThroughDistance.Value;
+        }
         private void sldrTimeOfDay_onValueChanged(object sender, int newValue)
         {
             _config.TimeOfDay = (float)sldrTimeOfDay.Value;
         }
-
+        private void swTimeScale_CheckedChanged(object sender, EventArgs e)
+        {
+            _config.TimeScale = swTimeScale.Checked;
+        }
         private void swNoRecoilSway_CheckedChanged(object sender, EventArgs e)
         {
-            _config.NoRecoilSway = swNoRecoilSway.Checked;
+            var enabled = swNoRecoilSway.Checked;
+            _config.NoRecoilSway = enabled;
         }
 
         private void swInstantADS_CheckedChanged(object sender, EventArgs e)
@@ -2537,7 +2567,7 @@ namespace eft_dma_radar
             if (_config.MaxSkills["Strength"] && Memory.LocalPlayer is not null)
             {
                 var jumpHeightSkill = Memory.PlayerManager.Skills["Strength"]["BuffJumpHeightInc"];
-                jumpHeightSkill.MaxValue = 0.2f + ((float)newValue / 100);
+                jumpHeightSkill.MaxValue = 0.1f + ((float)newValue / 10);
 
                 Memory.PlayerManager?.SetMaxSkill(jumpHeightSkill);
             }
@@ -3001,6 +3031,7 @@ namespace eft_dma_radar
             cboFactionType.Items.Add(PlayerType.Rogue);
             cboFactionType.Items.Add(PlayerType.Cultist);
             cboFactionType.Items.Add(PlayerType.FollowerOfMorana);
+            cboFactionType.Items.Add(PlayerType.PMC);
         }
 
         private void UpdateFactionEntryData()

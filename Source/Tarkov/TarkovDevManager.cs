@@ -67,7 +67,7 @@ namespace eft_dma_radar
                 var body = new
                 {
                     query = @"query {
-                                    items {
+                                    items(lang:zh) {
                                         id
                                         name
                                         shortName
@@ -94,7 +94,7 @@ namespace eft_dma_radar
                                         normalizedName
                                         }
                                     }
-                                    tasks {
+                                    tasks(lang:zh) {
                                         id
                                         name
                                         objectives {
@@ -239,18 +239,18 @@ namespace eft_dma_radar
                                             }
                                         }
                                     }
-                                    questItems {
+                                    questItems(lang:zh) {
                                         id
                                         shortName
                                         name
                                         normalizedName
                                     }
-                                    lootContainers {
+                                    lootContainers(lang:zh) {
                                         id
                                         normalizedName
                                         name
                                     }
-                                    maps{
+                                    maps {
                                         name
                                         extracts{
                                             name

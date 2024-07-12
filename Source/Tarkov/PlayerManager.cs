@@ -22,6 +22,8 @@ namespace eft_dma_radar
         private ulong skillsManager { get; set; }
         private ulong stamina { get; set; }
 
+        private float weaponLnCached { get; set; }
+
         private Config _config { get => Program.Config; }
         public Dictionary<string, float> OriginalValues { get; }
         public Dictionary<string, Dictionary<string, Skill>> Skills;
@@ -453,6 +455,24 @@ namespace eft_dma_radar
             catch (Exception ex)
             {
                 Program.Log($"[PlayerManager] - SetMaxStamina ({ex.Message})\n{ex.StackTrace}");
+            }
+        }
+
+        public void SetLootThroughWall(bool on, ref List<IScatterWriteEntry> entries)
+        {
+            if(on)
+            {
+                weaponLnCached = Memory.ReadValue<float>(this.proceduralWeaponAnimation + Offsets.ProceduralWeaponAnimation.FirearmContoller + Offsets.FirearmController.WeaponLn);
+                if (weaponLnCached != 0.001f)
+                {
+                    entries.Add(new ScatterWriteDataEntry<float>(this.proceduralWeaponAnimation + Offsets.ProceduralWeaponAnimation.FirearmContoller + Offsets.FirearmController.WeaponLn, 0.001f));
+                    entries.Add(new ScatterWriteDataEntry<float>(this.proceduralWeaponAnimation + Offsets.ProceduralWeaponAnimation.FovCompensatoryDistance, _config.LootThroughDistance));
+                }
+            }
+            else
+            {
+                entries.Add(new ScatterWriteDataEntry<float>(this.proceduralWeaponAnimation + Offsets.ProceduralWeaponAnimation.FirearmContoller + Offsets.FirearmController.WeaponLn, weaponLnCached));
+                entries.Add(new ScatterWriteDataEntry<float>(this.proceduralWeaponAnimation + Offsets.ProceduralWeaponAnimation.FovCompensatoryDistance, 0f));
             }
         }
 

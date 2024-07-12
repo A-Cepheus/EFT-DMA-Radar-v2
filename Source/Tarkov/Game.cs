@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using eft_dma_radar.Source.Tarkov;
+using System.Collections.ObjectModel;
 
 namespace eft_dma_radar
 {
@@ -154,10 +155,6 @@ namespace eft_dma_radar
                 this._rgtPlayers.UpdateAllPlayers();
                 this.UpdateMisc();
             }
-            catch (DMAShutdown)
-            {
-                HandleDMAShutdown();
-            }
             catch (RaidEnded e)
             {
                 HandleRaidEnded(e);
@@ -199,15 +196,6 @@ namespace eft_dma_radar
                 if (this._inHideout)
                     this._mapName = string.Empty;
             }
-        }
-
-        /// <summary>
-        /// Handles the scenario when DMA shutdown occurs.
-        /// </summary>
-        private void HandleDMAShutdown()
-        {
-            //this._inGame = false;
-            Memory.Restart();
         }
 
         /// <summary>
@@ -307,7 +295,6 @@ namespace eft_dma_radar
                 Program.Log($"Found Game Object Manager at 0x{addr.ToString("X")}");
                 return true;
             }
-            catch (DMAShutdown) { throw; }
             catch (Exception ex)
             {
                 throw new GameNotRunningException($"ERROR getting Game Object Manager, game may not be running: {ex}");
@@ -385,10 +372,6 @@ namespace eft_dma_radar
                     }
                 }
             }
-            catch (DMAShutdown)
-            {
-                throw; // Propagate the DMAShutdown exception upwards
-            }
             catch (Exception ex)
             {
                 Program.Log($"ERROR getting Local Game World: {ex}. Retrying...");
@@ -410,6 +393,8 @@ namespace eft_dma_radar
             }
             else
             {
+                TimeScaleManager.GetTimeScale(this._unityBase);
+
                 if (this._config.ProcessLoot && (this._lootManager is null || this._refreshLoot))
                 {
                     this._loadingLoot = true;
