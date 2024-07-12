@@ -1143,7 +1143,7 @@
             btnAddFaction.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddFaction.Name = "btnAddFaction";
             btnAddFaction.NoAccentTextColor = Color.Empty;
-            btnAddFaction.Size = new Size(78, 36);
+            btnAddFaction.Size = new Size(81, 36);
             btnAddFaction.TabIndex = 39;
             btnAddFaction.Text = "Add";
             toolTip.SetToolTip(btnAddFaction, "Creates a new loot filter profile");
@@ -1164,7 +1164,7 @@
             btnRemoveFaction.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemoveFaction.Name = "btnRemoveFaction";
             btnRemoveFaction.NoAccentTextColor = Color.Empty;
-            btnRemoveFaction.Size = new Size(108, 36);
+            btnRemoveFaction.Size = new Size(111, 36);
             btnRemoveFaction.TabIndex = 40;
             btnRemoveFaction.Text = "Remove";
             toolTip.SetToolTip(btnRemoveFaction, "Removes the selected loot filter profile");
@@ -1185,7 +1185,7 @@
             btnAddFactionEntry.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddFactionEntry.Name = "btnAddFactionEntry";
             btnAddFactionEntry.NoAccentTextColor = Color.Empty;
-            btnAddFactionEntry.Size = new Size(95, 36);
+            btnAddFactionEntry.Size = new Size(97, 36);
             btnAddFactionEntry.TabIndex = 46;
             btnAddFactionEntry.Text = "Entry";
             toolTip.SetToolTip(btnAddFactionEntry, "Creates a new loot filter profile");
@@ -1206,7 +1206,7 @@
             btnRemoveFactionEntry.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemoveFactionEntry.Name = "btnRemoveFactionEntry";
             btnRemoveFactionEntry.NoAccentTextColor = Color.Empty;
-            btnRemoveFactionEntry.Size = new Size(108, 36);
+            btnRemoveFactionEntry.Size = new Size(111, 36);
             btnRemoveFactionEntry.TabIndex = 48;
             btnRemoveFactionEntry.Text = "Remove";
             toolTip.SetToolTip(btnRemoveFactionEntry, "Removes the selected loot filter profile");
@@ -1218,6 +1218,8 @@
             // txtTeammateID
             // 
             txtTeammateID.AnimateReadOnly = false;
+            txtTeammateID.AutoCompleteMode = AutoCompleteMode.None;
+            txtTeammateID.AutoCompleteSource = AutoCompleteSource.None;
             txtTeammateID.BackgroundImageLayout = ImageLayout.None;
             txtTeammateID.CharacterCasing = CharacterCasing.Normal;
             txtTeammateID.Depth = 0;
@@ -1249,6 +1251,8 @@
             // txtFactionEntryName
             // 
             txtFactionEntryName.AnimateReadOnly = false;
+            txtFactionEntryName.AutoCompleteMode = AutoCompleteMode.None;
+            txtFactionEntryName.AutoCompleteSource = AutoCompleteSource.None;
             txtFactionEntryName.BackgroundImageLayout = ImageLayout.None;
             txtFactionEntryName.CharacterCasing = CharacterCasing.Normal;
             txtFactionEntryName.Depth = 0;
@@ -1281,6 +1285,8 @@
             // txtFactionName
             // 
             txtFactionName.AnimateReadOnly = false;
+            txtFactionName.AutoCompleteMode = AutoCompleteMode.None;
+            txtFactionName.AutoCompleteSource = AutoCompleteSource.None;
             txtFactionName.BackgroundImageLayout = ImageLayout.None;
             txtFactionName.CharacterCasing = CharacterCasing.Normal;
             txtFactionName.Depth = 0;
@@ -1385,6 +1391,8 @@
             // txtMapSetupScale
             // 
             txtMapSetupScale.AnimateReadOnly = false;
+            txtMapSetupScale.AutoCompleteMode = AutoCompleteMode.None;
+            txtMapSetupScale.AutoCompleteSource = AutoCompleteSource.None;
             txtMapSetupScale.BackgroundImageLayout = ImageLayout.None;
             txtMapSetupScale.CharacterCasing = CharacterCasing.Normal;
             txtMapSetupScale.Depth = 0;
@@ -1417,6 +1425,8 @@
             // txtMapSetupY
             // 
             txtMapSetupY.AnimateReadOnly = false;
+            txtMapSetupY.AutoCompleteMode = AutoCompleteMode.None;
+            txtMapSetupY.AutoCompleteSource = AutoCompleteSource.None;
             txtMapSetupY.BackgroundImageLayout = ImageLayout.None;
             txtMapSetupY.CharacterCasing = CharacterCasing.Normal;
             txtMapSetupY.Depth = 0;
@@ -1449,6 +1459,8 @@
             // txtMapSetupX
             // 
             txtMapSetupX.AnimateReadOnly = false;
+            txtMapSetupX.AutoCompleteMode = AutoCompleteMode.None;
+            txtMapSetupX.AutoCompleteSource = AutoCompleteSource.None;
             txtMapSetupX.BackgroundImageLayout = ImageLayout.None;
             txtMapSetupX.CharacterCasing = CharacterCasing.Normal;
             txtMapSetupX.Depth = 0;
@@ -1512,7 +1524,7 @@
             btnRemoveWatchlistEntry.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemoveWatchlistEntry.Name = "btnRemoveWatchlistEntry";
             btnRemoveWatchlistEntry.NoAccentTextColor = Color.Empty;
-            btnRemoveWatchlistEntry.Size = new Size(108, 36);
+            btnRemoveWatchlistEntry.Size = new Size(111, 36);
             btnRemoveWatchlistEntry.TabIndex = 48;
             btnRemoveWatchlistEntry.Text = "Remove";
             toolTip.SetToolTip(btnRemoveWatchlistEntry, "Removes the selected entry from the active watchlist profile");
@@ -1524,6 +1536,8 @@
             // txtWatchlistAccountID
             // 
             txtWatchlistAccountID.AnimateReadOnly = false;
+            txtWatchlistAccountID.AutoCompleteMode = AutoCompleteMode.None;
+            txtWatchlistAccountID.AutoCompleteSource = AutoCompleteSource.None;
             txtWatchlistAccountID.BackgroundImageLayout = ImageLayout.None;
             txtWatchlistAccountID.CharacterCasing = CharacterCasing.Normal;
             txtWatchlistAccountID.Depth = 0;
@@ -1556,6 +1570,8 @@
             // txtWatchlistProfileName
             // 
             txtWatchlistProfileName.AnimateReadOnly = false;
+            txtWatchlistProfileName.AutoCompleteMode = AutoCompleteMode.None;
+            txtWatchlistProfileName.AutoCompleteSource = AutoCompleteSource.None;
             txtWatchlistProfileName.BackgroundImageLayout = ImageLayout.None;
             txtWatchlistProfileName.CharacterCasing = CharacterCasing.Normal;
             txtWatchlistProfileName.Depth = 0;
@@ -1597,7 +1613,7 @@
             btnAddWatchlistEntry.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddWatchlistEntry.Name = "btnAddWatchlistEntry";
             btnAddWatchlistEntry.NoAccentTextColor = Color.Empty;
-            btnAddWatchlistEntry.Size = new Size(95, 36);
+            btnAddWatchlistEntry.Size = new Size(97, 36);
             btnAddWatchlistEntry.TabIndex = 46;
             btnAddWatchlistEntry.Text = "Entry";
             toolTip.SetToolTip(btnAddWatchlistEntry, "Adds a new entry to the active watchlist profile");
@@ -1618,7 +1634,7 @@
             btnAddWatchlistProfile.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddWatchlistProfile.Name = "btnAddWatchlistProfile";
             btnAddWatchlistProfile.NoAccentTextColor = Color.Empty;
-            btnAddWatchlistProfile.Size = new Size(78, 36);
+            btnAddWatchlistProfile.Size = new Size(81, 36);
             btnAddWatchlistProfile.TabIndex = 39;
             btnAddWatchlistProfile.Text = "Add";
             toolTip.SetToolTip(btnAddWatchlistProfile, "Creates a new watchlist profile");
@@ -1639,7 +1655,7 @@
             btnRemoveWatchlistProfile.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemoveWatchlistProfile.Name = "btnRemoveWatchlistProfile";
             btnRemoveWatchlistProfile.NoAccentTextColor = Color.Empty;
-            btnRemoveWatchlistProfile.Size = new Size(108, 36);
+            btnRemoveWatchlistProfile.Size = new Size(111, 36);
             btnRemoveWatchlistProfile.TabIndex = 40;
             btnRemoveWatchlistProfile.Text = "Remove";
             toolTip.SetToolTip(btnRemoveWatchlistProfile, "Removes the selected watchlist profile");
@@ -1651,6 +1667,8 @@
             // txtWatchlistTag
             // 
             txtWatchlistTag.AnimateReadOnly = false;
+            txtWatchlistTag.AutoCompleteMode = AutoCompleteMode.None;
+            txtWatchlistTag.AutoCompleteSource = AutoCompleteSource.None;
             txtWatchlistTag.BackgroundImageLayout = ImageLayout.None;
             txtWatchlistTag.CharacterCasing = CharacterCasing.Normal;
             txtWatchlistTag.Depth = 0;
@@ -1683,6 +1701,8 @@
             // txtWatchlistPlatformUsername
             // 
             txtWatchlistPlatformUsername.AnimateReadOnly = false;
+            txtWatchlistPlatformUsername.AutoCompleteMode = AutoCompleteMode.None;
+            txtWatchlistPlatformUsername.AutoCompleteSource = AutoCompleteSource.None;
             txtWatchlistPlatformUsername.BackgroundImageLayout = ImageLayout.None;
             txtWatchlistPlatformUsername.CharacterCasing = CharacterCasing.Normal;
             txtWatchlistPlatformUsername.Depth = 0;
@@ -1722,7 +1742,7 @@
             rdbYoutube.MouseState = MaterialSkin.MouseState.HOVER;
             rdbYoutube.Name = "rdbYoutube";
             rdbYoutube.Ripple = true;
-            rdbYoutube.Size = new Size(99, 37);
+            rdbYoutube.Size = new Size(100, 37);
             rdbYoutube.TabIndex = 52;
             rdbYoutube.TabStop = true;
             rdbYoutube.Text = "YouTube";
@@ -1758,7 +1778,7 @@
             swWatchlistIsStreamer.MouseState = MaterialSkin.MouseState.HOVER;
             swWatchlistIsStreamer.Name = "swWatchlistIsStreamer";
             swWatchlistIsStreamer.Ripple = true;
-            swWatchlistIsStreamer.Size = new Size(122, 37);
+            swWatchlistIsStreamer.Size = new Size(126, 37);
             swWatchlistIsStreamer.TabIndex = 50;
             swWatchlistIsStreamer.Text = "Streamer";
             toolTip.SetToolTip(swWatchlistIsStreamer, "Are they a streamer?");
@@ -1777,7 +1797,7 @@
             btnResetPlayerlist.MouseState = MaterialSkin.MouseState.HOVER;
             btnResetPlayerlist.Name = "btnResetPlayerlist";
             btnResetPlayerlist.NoAccentTextColor = Color.Empty;
-            btnResetPlayerlist.Size = new Size(65, 36);
+            btnResetPlayerlist.Size = new Size(66, 36);
             btnResetPlayerlist.TabIndex = 41;
             btnResetPlayerlist.Text = "Reset";
             toolTip.SetToolTip(btnResetPlayerlist, "Removes the selected watchlist profile");
@@ -1814,6 +1834,8 @@
             // txtLootFilterItemToSearch
             // 
             txtLootFilterItemToSearch.AnimateReadOnly = false;
+            txtLootFilterItemToSearch.AutoCompleteMode = AutoCompleteMode.None;
+            txtLootFilterItemToSearch.AutoCompleteSource = AutoCompleteSource.None;
             txtLootFilterItemToSearch.BackgroundImageLayout = ImageLayout.None;
             txtLootFilterItemToSearch.CharacterCasing = CharacterCasing.Normal;
             txtLootFilterItemToSearch.Depth = 0;
@@ -1855,7 +1877,7 @@
             btnAddLootFilterItem.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddLootFilterItem.Name = "btnAddLootFilterItem";
             btnAddLootFilterItem.NoAccentTextColor = Color.Empty;
-            btnAddLootFilterItem.Size = new Size(78, 36);
+            btnAddLootFilterItem.Size = new Size(81, 36);
             btnAddLootFilterItem.TabIndex = 46;
             btnAddLootFilterItem.Text = "Add";
             toolTip.SetToolTip(btnAddLootFilterItem, "Creates a new loot filter profile");
@@ -1876,7 +1898,7 @@
             btnRemoveLootFilterItem.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemoveLootFilterItem.Name = "btnRemoveLootFilterItem";
             btnRemoveLootFilterItem.NoAccentTextColor = Color.Empty;
-            btnRemoveLootFilterItem.Size = new Size(108, 36);
+            btnRemoveLootFilterItem.Size = new Size(111, 36);
             btnRemoveLootFilterItem.TabIndex = 47;
             btnRemoveLootFilterItem.Text = "Remove";
             toolTip.SetToolTip(btnRemoveLootFilterItem, "Removes the selected loot filter profile");
@@ -1888,6 +1910,8 @@
             // txtLootFilterName
             // 
             txtLootFilterName.AnimateReadOnly = false;
+            txtLootFilterName.AutoCompleteMode = AutoCompleteMode.None;
+            txtLootFilterName.AutoCompleteSource = AutoCompleteSource.None;
             txtLootFilterName.BackgroundImageLayout = ImageLayout.None;
             txtLootFilterName.CharacterCasing = CharacterCasing.Normal;
             txtLootFilterName.Depth = 0;
@@ -1946,7 +1970,7 @@
             btnAddFilter.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddFilter.Name = "btnAddFilter";
             btnAddFilter.NoAccentTextColor = Color.Empty;
-            btnAddFilter.Size = new Size(78, 36);
+            btnAddFilter.Size = new Size(81, 36);
             btnAddFilter.TabIndex = 39;
             btnAddFilter.Text = "Add";
             toolTip.SetToolTip(btnAddFilter, "Creates a new loot filter profile");
@@ -1967,7 +1991,7 @@
             btnRemoveFilter.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemoveFilter.Name = "btnRemoveFilter";
             btnRemoveFilter.NoAccentTextColor = Color.Empty;
-            btnRemoveFilter.Size = new Size(108, 36);
+            btnRemoveFilter.Size = new Size(111, 36);
             btnRemoveFilter.TabIndex = 40;
             btnRemoveFilter.Text = "Remove";
             toolTip.SetToolTip(btnRemoveFilter, "Removes the selected loot filter profile");
@@ -2367,7 +2391,7 @@
             cboFont.Hint = "Font";
             cboFont.IntegralHeight = false;
             cboFont.ItemHeight = 29;
-            cboFont.Items.AddRange(new object[] { "Arial", "Calibri", "Candara", "Consolas", "Constantia", "Corbel", "Helvetica", "Lato", "Roboto", "Segoe UI", "Tahoma", "Trebuchet MS", "Verdana", "宋体" });
+            cboFont.Items.AddRange(new object[] { "Arial", "Calibri", "Candara", "Consolas", "Constantia", "Corbel", "Helvetica", "Lato", "Roboto", "Segoe UI", "Tahoma", "Trebuchet MS", "Verdana", "宋体", "黑体", "微软雅黑" });
             cboFont.Location = new Point(15, 194);
             cboFont.MaxDropDownItems = 10;
             cboFont.MouseState = MaterialSkin.MouseState.OUT;
@@ -2542,7 +2566,7 @@
             // 
             swChamsRevert.Depth = 0;
             swChamsRevert.Font = new Font("Segoe UI", 9F);
-            swChamsRevert.Location = new Point(298, 142);
+            swChamsRevert.Location = new Point(303, 142);
             swChamsRevert.Margin = new Padding(0);
             swChamsRevert.MouseLocation = new Point(-1, -1);
             swChamsRevert.MouseState = MaterialSkin.MouseState.HOVER;
@@ -2600,6 +2624,8 @@
             // txtLootItemFilter
             // 
             txtLootItemFilter.AnimateReadOnly = false;
+            txtLootItemFilter.AutoCompleteMode = AutoCompleteMode.None;
+            txtLootItemFilter.AutoCompleteSource = AutoCompleteSource.None;
             txtLootItemFilter.BackgroundImageLayout = ImageLayout.None;
             txtLootItemFilter.CharacterCasing = CharacterCasing.Normal;
             txtLootItemFilter.Depth = 0;
@@ -2942,12 +2968,12 @@
             // 
             lblRadarBossesValue.AutoSize = true;
             lblRadarBossesValue.Depth = 0;
-            lblRadarBossesValue.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarBossesValue.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarBossesValue.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarBossesValue.Location = new Point(80, 67);
             lblRadarBossesValue.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarBossesValue.Name = "lblRadarBossesValue";
-            lblRadarBossesValue.Size = new Size(8, 14);
+            lblRadarBossesValue.Size = new Size(8, 16);
             lblRadarBossesValue.TabIndex = 8;
             lblRadarBossesValue.Text = "0";
             // 
@@ -2955,12 +2981,12 @@
             // 
             lblRadarPlayerScavsValue.AutoSize = true;
             lblRadarPlayerScavsValue.Depth = 0;
-            lblRadarPlayerScavsValue.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarPlayerScavsValue.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarPlayerScavsValue.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarPlayerScavsValue.Location = new Point(80, 19);
             lblRadarPlayerScavsValue.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarPlayerScavsValue.Name = "lblRadarPlayerScavsValue";
-            lblRadarPlayerScavsValue.Size = new Size(8, 14);
+            lblRadarPlayerScavsValue.Size = new Size(8, 16);
             lblRadarPlayerScavsValue.TabIndex = 10;
             lblRadarPlayerScavsValue.Text = "0";
             // 
@@ -2968,12 +2994,12 @@
             // 
             lblRadarBosses.AutoSize = true;
             lblRadarBosses.Depth = 0;
-            lblRadarBosses.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarBosses.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarBosses.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarBosses.Location = new Point(35, 67);
             lblRadarBosses.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarBosses.Name = "lblRadarBosses";
-            lblRadarBosses.Size = new Size(42, 14);
+            lblRadarBosses.Size = new Size(41, 16);
             lblRadarBosses.TabIndex = 1;
             lblRadarBosses.Text = "Bosses:";
             // 
@@ -2981,12 +3007,12 @@
             // 
             lblRadarPlayerScavs.AutoSize = true;
             lblRadarPlayerScavs.Depth = 0;
-            lblRadarPlayerScavs.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarPlayerScavs.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarPlayerScavs.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarPlayerScavs.Location = new Point(4, 19);
             lblRadarPlayerScavs.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarPlayerScavs.Name = "lblRadarPlayerScavs";
-            lblRadarPlayerScavs.Size = new Size(73, 14);
+            lblRadarPlayerScavs.Size = new Size(72, 16);
             lblRadarPlayerScavs.TabIndex = 9;
             lblRadarPlayerScavs.Text = "Player Scavs:";
             // 
@@ -2994,12 +3020,12 @@
             // 
             lblRadarRoguesValue.AutoSize = true;
             lblRadarRoguesValue.Depth = 0;
-            lblRadarRoguesValue.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarRoguesValue.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarRoguesValue.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarRoguesValue.Location = new Point(80, 51);
             lblRadarRoguesValue.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarRoguesValue.Name = "lblRadarRoguesValue";
-            lblRadarRoguesValue.Size = new Size(8, 14);
+            lblRadarRoguesValue.Size = new Size(8, 16);
             lblRadarRoguesValue.TabIndex = 7;
             lblRadarRoguesValue.Text = "0";
             // 
@@ -3007,12 +3033,12 @@
             // 
             lblRadarAIScavsValue.AutoSize = true;
             lblRadarAIScavsValue.Depth = 0;
-            lblRadarAIScavsValue.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarAIScavsValue.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarAIScavsValue.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarAIScavsValue.Location = new Point(80, 35);
             lblRadarAIScavsValue.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarAIScavsValue.Name = "lblRadarAIScavsValue";
-            lblRadarAIScavsValue.Size = new Size(8, 14);
+            lblRadarAIScavsValue.Size = new Size(8, 16);
             lblRadarAIScavsValue.TabIndex = 6;
             lblRadarAIScavsValue.Text = "0";
             // 
@@ -3020,12 +3046,12 @@
             // 
             lblRadarPMCsValue.AutoSize = true;
             lblRadarPMCsValue.Depth = 0;
-            lblRadarPMCsValue.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarPMCsValue.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarPMCsValue.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarPMCsValue.Location = new Point(80, 3);
             lblRadarPMCsValue.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarPMCsValue.Name = "lblRadarPMCsValue";
-            lblRadarPMCsValue.Size = new Size(8, 14);
+            lblRadarPMCsValue.Size = new Size(8, 16);
             lblRadarPMCsValue.TabIndex = 5;
             lblRadarPMCsValue.Text = "0";
             // 
@@ -3033,12 +3059,12 @@
             // 
             lblRadarRogues.AutoSize = true;
             lblRadarRogues.Depth = 0;
-            lblRadarRogues.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarRogues.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarRogues.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarRogues.Location = new Point(33, 51);
             lblRadarRogues.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarRogues.Name = "lblRadarRogues";
-            lblRadarRogues.Size = new Size(44, 14);
+            lblRadarRogues.Size = new Size(45, 16);
             lblRadarRogues.TabIndex = 3;
             lblRadarRogues.Text = "Rogues:";
             // 
@@ -3046,12 +3072,12 @@
             // 
             lblRadarAIScavs.AutoSize = true;
             lblRadarAIScavs.Depth = 0;
-            lblRadarAIScavs.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarAIScavs.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarAIScavs.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarAIScavs.Location = new Point(27, 35);
             lblRadarAIScavs.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarAIScavs.Name = "lblRadarAIScavs";
-            lblRadarAIScavs.Size = new Size(50, 14);
+            lblRadarAIScavs.Size = new Size(49, 16);
             lblRadarAIScavs.TabIndex = 2;
             lblRadarAIScavs.Text = "AI Scavs:";
             // 
@@ -3059,12 +3085,12 @@
             // 
             lblRadarPMCs.AutoSize = true;
             lblRadarPMCs.Depth = 0;
-            lblRadarPMCs.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarPMCs.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarPMCs.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarPMCs.Location = new Point(41, 3);
             lblRadarPMCs.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarPMCs.Name = "lblRadarPMCs";
-            lblRadarPMCs.Size = new Size(36, 14);
+            lblRadarPMCs.Size = new Size(34, 16);
             lblRadarPMCs.TabIndex = 0;
             lblRadarPMCs.Text = "PMCs:";
             // 
@@ -3097,12 +3123,12 @@
             // 
             lblRadarCorpsesValue.AutoSize = true;
             lblRadarCorpsesValue.Depth = 0;
-            lblRadarCorpsesValue.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarCorpsesValue.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarCorpsesValue.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarCorpsesValue.Location = new Point(72, 67);
             lblRadarCorpsesValue.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarCorpsesValue.Name = "lblRadarCorpsesValue";
-            lblRadarCorpsesValue.Size = new Size(8, 14);
+            lblRadarCorpsesValue.Size = new Size(8, 16);
             lblRadarCorpsesValue.TabIndex = 8;
             lblRadarCorpsesValue.Text = "0";
             // 
@@ -3110,12 +3136,12 @@
             // 
             lblRadarCorpses.AutoSize = true;
             lblRadarCorpses.Depth = 0;
-            lblRadarCorpses.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarCorpses.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarCorpses.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarCorpses.Location = new Point(18, 67);
             lblRadarCorpses.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarCorpses.Name = "lblRadarCorpses";
-            lblRadarCorpses.Size = new Size(48, 14);
+            lblRadarCorpses.Size = new Size(47, 16);
             lblRadarCorpses.TabIndex = 1;
             lblRadarCorpses.Text = "Corpses:";
             // 
@@ -3123,12 +3149,12 @@
             // 
             lblRadarMemSValue.AutoSize = true;
             lblRadarMemSValue.Depth = 0;
-            lblRadarMemSValue.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarMemSValue.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarMemSValue.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarMemSValue.Location = new Point(72, 19);
             lblRadarMemSValue.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarMemSValue.Name = "lblRadarMemSValue";
-            lblRadarMemSValue.Size = new Size(8, 14);
+            lblRadarMemSValue.Size = new Size(8, 16);
             lblRadarMemSValue.TabIndex = 10;
             lblRadarMemSValue.Text = "0";
             // 
@@ -3136,12 +3162,12 @@
             // 
             lblRadarMemS.AutoSize = true;
             lblRadarMemS.Depth = 0;
-            lblRadarMemS.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarMemS.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarMemS.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarMemS.Location = new Point(24, 19);
             lblRadarMemS.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarMemS.Name = "lblRadarMemS";
-            lblRadarMemS.Size = new Size(42, 14);
+            lblRadarMemS.Size = new Size(41, 16);
             lblRadarMemS.TabIndex = 9;
             lblRadarMemS.Text = "Mem/s:";
             // 
@@ -3149,12 +3175,12 @@
             // 
             lblRadarContainersValue.AutoSize = true;
             lblRadarContainersValue.Depth = 0;
-            lblRadarContainersValue.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarContainersValue.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarContainersValue.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarContainersValue.Location = new Point(72, 51);
             lblRadarContainersValue.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarContainersValue.Name = "lblRadarContainersValue";
-            lblRadarContainersValue.Size = new Size(8, 14);
+            lblRadarContainersValue.Size = new Size(8, 16);
             lblRadarContainersValue.TabIndex = 7;
             lblRadarContainersValue.Text = "0";
             // 
@@ -3162,12 +3188,12 @@
             // 
             lblRadarLooseLootValue.AutoSize = true;
             lblRadarLooseLootValue.Depth = 0;
-            lblRadarLooseLootValue.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarLooseLootValue.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarLooseLootValue.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarLooseLootValue.Location = new Point(72, 35);
             lblRadarLooseLootValue.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarLooseLootValue.Name = "lblRadarLooseLootValue";
-            lblRadarLooseLootValue.Size = new Size(8, 14);
+            lblRadarLooseLootValue.Size = new Size(8, 16);
             lblRadarLooseLootValue.TabIndex = 6;
             lblRadarLooseLootValue.Text = "0";
             // 
@@ -3175,12 +3201,12 @@
             // 
             lblRadarFPSValue.AutoSize = true;
             lblRadarFPSValue.Depth = 0;
-            lblRadarFPSValue.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarFPSValue.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarFPSValue.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarFPSValue.Location = new Point(72, 3);
             lblRadarFPSValue.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarFPSValue.Name = "lblRadarFPSValue";
-            lblRadarFPSValue.Size = new Size(8, 14);
+            lblRadarFPSValue.Size = new Size(8, 16);
             lblRadarFPSValue.TabIndex = 5;
             lblRadarFPSValue.Text = "0";
             // 
@@ -3188,12 +3214,12 @@
             // 
             lblRadarContainers.AutoSize = true;
             lblRadarContainers.Depth = 0;
-            lblRadarContainers.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarContainers.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarContainers.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarContainers.Location = new Point(3, 51);
             lblRadarContainers.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarContainers.Name = "lblRadarContainers";
-            lblRadarContainers.Size = new Size(63, 14);
+            lblRadarContainers.Size = new Size(63, 16);
             lblRadarContainers.TabIndex = 3;
             lblRadarContainers.Text = "Containers:";
             // 
@@ -3201,12 +3227,12 @@
             // 
             lblRadarLooseLoot.AutoSize = true;
             lblRadarLooseLoot.Depth = 0;
-            lblRadarLooseLoot.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarLooseLoot.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarLooseLoot.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarLooseLoot.Location = new Point(3, 35);
             lblRadarLooseLoot.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarLooseLoot.Name = "lblRadarLooseLoot";
-            lblRadarLooseLoot.Size = new Size(63, 14);
+            lblRadarLooseLoot.Size = new Size(65, 16);
             lblRadarLooseLoot.TabIndex = 2;
             lblRadarLooseLoot.Text = "Loose Loot:";
             // 
@@ -3214,12 +3240,12 @@
             // 
             lblRadarFPS.AutoSize = true;
             lblRadarFPS.Depth = 0;
-            lblRadarFPS.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblRadarFPS.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblRadarFPS.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             lblRadarFPS.Location = new Point(5, 3);
             lblRadarFPS.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarFPS.Name = "lblRadarFPS";
-            lblRadarFPS.Size = new Size(61, 14);
+            lblRadarFPS.Size = new Size(61, 16);
             lblRadarFPS.TabIndex = 0;
             lblRadarFPS.Text = "Radar FPS:";
             // 
@@ -3262,13 +3288,13 @@
             // 
             lblRadarMapSetup.AutoSize = true;
             lblRadarMapSetup.Depth = 0;
-            lblRadarMapSetup.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblRadarMapSetup.Font = new Font("HarmonyOS Sans SC Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblRadarMapSetup.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
             lblRadarMapSetup.HighEmphasis = true;
             lblRadarMapSetup.Location = new Point(17, 16);
             lblRadarMapSetup.MouseState = MaterialSkin.MouseState.HOVER;
             lblRadarMapSetup.Name = "lblRadarMapSetup";
-            lblRadarMapSetup.Size = new Size(69, 17);
+            lblRadarMapSetup.Size = new Size(72, 19);
             lblRadarMapSetup.TabIndex = 31;
             lblRadarMapSetup.Text = "Map Setup";
             lblRadarMapSetup.UseAccent = true;
@@ -3307,7 +3333,7 @@
             tabSelector.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
             tabSelector.Depth = 0;
             tabSelector.Dock = DockStyle.Top;
-            tabSelector.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            tabSelector.Font = new Font("HarmonyOS Sans SC", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             tabSelector.Location = new Point(0, 0);
             tabSelector.Margin = new Padding(0);
             tabSelector.MouseState = MaterialSkin.MouseState.HOVER;
@@ -3397,13 +3423,13 @@
             // 
             lblSettingsGeneralUI.AutoSize = true;
             lblSettingsGeneralUI.Depth = 0;
-            lblSettingsGeneralUI.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsGeneralUI.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsGeneralUI.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsGeneralUI.HighEmphasis = true;
             lblSettingsGeneralUI.Location = new Point(17, 14);
             lblSettingsGeneralUI.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsGeneralUI.Name = "lblSettingsGeneralUI";
-            lblSettingsGeneralUI.Size = new Size(128, 24);
+            lblSettingsGeneralUI.Size = new Size(133, 26);
             lblSettingsGeneralUI.TabIndex = 33;
             lblSettingsGeneralUI.Text = "User Interface";
             lblSettingsGeneralUI.UseAccent = true;
@@ -3432,13 +3458,13 @@
             // 
             lblSettingsGeneralRadar.AutoSize = true;
             lblSettingsGeneralRadar.Depth = 0;
-            lblSettingsGeneralRadar.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsGeneralRadar.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsGeneralRadar.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsGeneralRadar.HighEmphasis = true;
             lblSettingsGeneralRadar.Location = new Point(17, 17);
             lblSettingsGeneralRadar.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsGeneralRadar.Name = "lblSettingsGeneralRadar";
-            lblSettingsGeneralRadar.Size = new Size(53, 24);
+            lblSettingsGeneralRadar.Size = new Size(56, 26);
             lblSettingsGeneralRadar.TabIndex = 30;
             lblSettingsGeneralRadar.Text = "Radar";
             lblSettingsGeneralRadar.UseAccent = true;
@@ -3487,13 +3513,13 @@
             // 
             lblSettingsMemoryWritingChams.AutoSize = true;
             lblSettingsMemoryWritingChams.Depth = 0;
-            lblSettingsMemoryWritingChams.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsMemoryWritingChams.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsMemoryWritingChams.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsMemoryWritingChams.HighEmphasis = true;
             lblSettingsMemoryWritingChams.Location = new Point(17, 14);
             lblSettingsMemoryWritingChams.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsMemoryWritingChams.Name = "lblSettingsMemoryWritingChams";
-            lblSettingsMemoryWritingChams.Size = new Size(81, 24);
+            lblSettingsMemoryWritingChams.Size = new Size(81, 26);
             lblSettingsMemoryWritingChams.TabIndex = 33;
             lblSettingsMemoryWritingChams.Text = "热能透视";
             lblSettingsMemoryWritingChams.UseAccent = true;
@@ -3536,13 +3562,13 @@
             // 
             lblSettingsMemoryWritingSkills.AutoSize = true;
             lblSettingsMemoryWritingSkills.Depth = 0;
-            lblSettingsMemoryWritingSkills.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsMemoryWritingSkills.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsMemoryWritingSkills.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsMemoryWritingSkills.HighEmphasis = true;
             lblSettingsMemoryWritingSkills.Location = new Point(17, 14);
             lblSettingsMemoryWritingSkills.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsMemoryWritingSkills.Name = "lblSettingsMemoryWritingSkills";
-            lblSettingsMemoryWritingSkills.Size = new Size(161, 24);
+            lblSettingsMemoryWritingSkills.Size = new Size(161, 26);
             lblSettingsMemoryWritingSkills.TabIndex = 33;
             lblSettingsMemoryWritingSkills.Text = "满级技能效果管理";
             lblSettingsMemoryWritingSkills.UseAccent = true;
@@ -3571,13 +3597,13 @@
             // 
             lblSettingsMemoryWritingThermal.AutoSize = true;
             lblSettingsMemoryWritingThermal.Depth = 0;
-            lblSettingsMemoryWritingThermal.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsMemoryWritingThermal.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsMemoryWritingThermal.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsMemoryWritingThermal.HighEmphasis = true;
             lblSettingsMemoryWritingThermal.Location = new Point(17, 14);
             lblSettingsMemoryWritingThermal.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsMemoryWritingThermal.Name = "lblSettingsMemoryWritingThermal";
-            lblSettingsMemoryWritingThermal.Size = new Size(101, 24);
+            lblSettingsMemoryWritingThermal.Size = new Size(101, 26);
             lblSettingsMemoryWritingThermal.TabIndex = 33;
             lblSettingsMemoryWritingThermal.Text = "热成像设定";
             lblSettingsMemoryWritingThermal.UseAccent = true;
@@ -3607,13 +3633,13 @@
             // 
             lblSettingsMemoryWritingGlobal.AutoSize = true;
             lblSettingsMemoryWritingGlobal.Depth = 0;
-            lblSettingsMemoryWritingGlobal.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsMemoryWritingGlobal.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsMemoryWritingGlobal.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsMemoryWritingGlobal.HighEmphasis = true;
             lblSettingsMemoryWritingGlobal.Location = new Point(17, 14);
             lblSettingsMemoryWritingGlobal.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsMemoryWritingGlobal.Name = "lblSettingsMemoryWritingGlobal";
-            lblSettingsMemoryWritingGlobal.Size = new Size(41, 24);
+            lblSettingsMemoryWritingGlobal.Size = new Size(41, 26);
             lblSettingsMemoryWritingGlobal.TabIndex = 33;
             lblSettingsMemoryWritingGlobal.Text = "全局";
             lblSettingsMemoryWritingGlobal.UseAccent = true;
@@ -3642,13 +3668,13 @@
             // 
             lblSettingsMemoryWritingGear.AutoSize = true;
             lblSettingsMemoryWritingGear.Depth = 0;
-            lblSettingsMemoryWritingGear.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsMemoryWritingGear.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsMemoryWritingGear.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsMemoryWritingGear.HighEmphasis = true;
             lblSettingsMemoryWritingGear.Location = new Point(17, 14);
             lblSettingsMemoryWritingGear.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsMemoryWritingGear.Name = "lblSettingsMemoryWritingGear";
-            lblSettingsMemoryWritingGear.Size = new Size(81, 24);
+            lblSettingsMemoryWritingGear.Size = new Size(81, 26);
             lblSettingsMemoryWritingGear.TabIndex = 33;
             lblSettingsMemoryWritingGear.Text = "装备功能";
             lblSettingsMemoryWritingGear.UseAccent = true;
@@ -3687,13 +3713,13 @@
             // 
             lblSettingsLootPing.AutoSize = true;
             lblSettingsLootPing.Depth = 0;
-            lblSettingsLootPing.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsLootPing.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsLootPing.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsLootPing.HighEmphasis = true;
             lblSettingsLootPing.Location = new Point(17, 14);
             lblSettingsLootPing.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsLootPing.Name = "lblSettingsLootPing";
-            lblSettingsLootPing.Size = new Size(86, 24);
+            lblSettingsLootPing.Size = new Size(90, 26);
             lblSettingsLootPing.TabIndex = 33;
             lblSettingsLootPing.Text = "Loot Ping";
             lblSettingsLootPing.UseAccent = true;
@@ -3720,13 +3746,13 @@
             // 
             lblSettingsLootMinRubleValues.AutoSize = true;
             lblSettingsLootMinRubleValues.Depth = 0;
-            lblSettingsLootMinRubleValues.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsLootMinRubleValues.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsLootMinRubleValues.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsLootMinRubleValues.HighEmphasis = true;
             lblSettingsLootMinRubleValues.Location = new Point(17, 14);
             lblSettingsLootMinRubleValues.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsLootMinRubleValues.Name = "lblSettingsLootMinRubleValues";
-            lblSettingsLootMinRubleValues.Size = new Size(196, 24);
+            lblSettingsLootMinRubleValues.Size = new Size(202, 26);
             lblSettingsLootMinRubleValues.TabIndex = 33;
             lblSettingsLootMinRubleValues.Text = "Minimum Ruble Value";
             lblSettingsLootMinRubleValues.UseAccent = true;
@@ -3758,13 +3784,13 @@
             // 
             lblSettingsLootGeneral.AutoSize = true;
             lblSettingsLootGeneral.Depth = 0;
-            lblSettingsLootGeneral.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsLootGeneral.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsLootGeneral.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsLootGeneral.HighEmphasis = true;
             lblSettingsLootGeneral.Location = new Point(17, 17);
             lblSettingsLootGeneral.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsLootGeneral.Name = "lblSettingsLootGeneral";
-            lblSettingsLootGeneral.Size = new Size(71, 24);
+            lblSettingsLootGeneral.Size = new Size(73, 26);
             lblSettingsLootGeneral.TabIndex = 30;
             lblSettingsLootGeneral.Text = "General";
             lblSettingsLootGeneral.UseAccent = true;
@@ -3831,13 +3857,13 @@
             // 
             lblSettingsAIFactionsEntryManagement.AutoSize = true;
             lblSettingsAIFactionsEntryManagement.Depth = 0;
-            lblSettingsAIFactionsEntryManagement.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsAIFactionsEntryManagement.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsAIFactionsEntryManagement.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsAIFactionsEntryManagement.HighEmphasis = true;
             lblSettingsAIFactionsEntryManagement.Location = new Point(17, 17);
             lblSettingsAIFactionsEntryManagement.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsAIFactionsEntryManagement.Name = "lblSettingsAIFactionsEntryManagement";
-            lblSettingsAIFactionsEntryManagement.Size = new Size(81, 24);
+            lblSettingsAIFactionsEntryManagement.Size = new Size(81, 26);
             lblSettingsAIFactionsEntryManagement.TabIndex = 30;
             lblSettingsAIFactionsEntryManagement.Text = "实体管理";
             lblSettingsAIFactionsEntryManagement.UseAccent = true;
@@ -3891,13 +3917,13 @@
             // 
             lblSettingsAIFactionsFactions.AutoSize = true;
             lblSettingsAIFactionsFactions.Depth = 0;
-            lblSettingsAIFactionsFactions.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsAIFactionsFactions.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsAIFactionsFactions.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsAIFactionsFactions.HighEmphasis = true;
             lblSettingsAIFactionsFactions.Location = new Point(17, 14);
             lblSettingsAIFactionsFactions.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsAIFactionsFactions.Name = "lblSettingsAIFactionsFactions";
-            lblSettingsAIFactionsFactions.Size = new Size(77, 24);
+            lblSettingsAIFactionsFactions.Size = new Size(79, 26);
             lblSettingsAIFactionsFactions.TabIndex = 33;
             lblSettingsAIFactionsFactions.Text = "Factions";
             lblSettingsAIFactionsFactions.UseAccent = true;
@@ -3961,12 +3987,12 @@
             // 
             lblSettingsColorOtherAccent.AutoSize = true;
             lblSettingsColorOtherAccent.Depth = 0;
-            lblSettingsColorOtherAccent.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorOtherAccent.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorOtherAccent.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorOtherAccent.Location = new Point(56, 255);
             lblSettingsColorOtherAccent.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorOtherAccent.Name = "lblSettingsColorOtherAccent";
-            lblSettingsColorOtherAccent.Size = new Size(47, 17);
+            lblSettingsColorOtherAccent.Size = new Size(49, 19);
             lblSettingsColorOtherAccent.TabIndex = 57;
             lblSettingsColorOtherAccent.Text = "Accent:";
             // 
@@ -3985,12 +4011,12 @@
             // 
             ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.AutoSize = true;
             ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.Depth = 0;
-            ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.Location = new Point(15, 221);
             ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.MouseState = MaterialSkin.MouseState.HOVER;
             ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.Name = "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
-            ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.Size = new Size(88, 17);
+            ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.Size = new Size(90, 19);
             ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.TabIndex = 55;
             ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.Text = "Primary Light:";
             // 
@@ -4009,12 +4035,12 @@
             // 
             lblSettingsColorOtherPrimaryDark.AutoSize = true;
             lblSettingsColorOtherPrimaryDark.Depth = 0;
-            lblSettingsColorOtherPrimaryDark.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorOtherPrimaryDark.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorOtherPrimaryDark.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorOtherPrimaryDark.Location = new Point(18, 187);
             lblSettingsColorOtherPrimaryDark.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorOtherPrimaryDark.Name = "lblSettingsColorOtherPrimaryDark";
-            lblSettingsColorOtherPrimaryDark.Size = new Size(85, 17);
+            lblSettingsColorOtherPrimaryDark.Size = new Size(87, 19);
             lblSettingsColorOtherPrimaryDark.TabIndex = 53;
             lblSettingsColorOtherPrimaryDark.Text = "Primary Dark:";
             // 
@@ -4033,12 +4059,12 @@
             // 
             lblSettingsColorOtherPrimary.AutoSize = true;
             lblSettingsColorOtherPrimary.Depth = 0;
-            lblSettingsColorOtherPrimary.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorOtherPrimary.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorOtherPrimary.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorOtherPrimary.Location = new Point(50, 153);
             lblSettingsColorOtherPrimary.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorOtherPrimary.Name = "lblSettingsColorOtherPrimary";
-            lblSettingsColorOtherPrimary.Size = new Size(53, 17);
+            lblSettingsColorOtherPrimary.Size = new Size(53, 19);
             lblSettingsColorOtherPrimary.TabIndex = 51;
             lblSettingsColorOtherPrimary.Text = "Primary:";
             // 
@@ -4057,12 +4083,12 @@
             // 
             lblSettingsColorOtherChams.AutoSize = true;
             lblSettingsColorOtherChams.Depth = 0;
-            lblSettingsColorOtherChams.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorOtherChams.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorOtherChams.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorOtherChams.Location = new Point(55, 119);
             lblSettingsColorOtherChams.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorOtherChams.Name = "lblSettingsColorOtherChams";
-            lblSettingsColorOtherChams.Size = new Size(48, 17);
+            lblSettingsColorOtherChams.Size = new Size(48, 19);
             lblSettingsColorOtherChams.TabIndex = 49;
             lblSettingsColorOtherChams.Text = "Chams:";
             // 
@@ -4081,12 +4107,12 @@
             // 
             lblSettingsColorOtherDeathMarker.AutoSize = true;
             lblSettingsColorOtherDeathMarker.Depth = 0;
-            lblSettingsColorOtherDeathMarker.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorOtherDeathMarker.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorOtherDeathMarker.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorOtherDeathMarker.Location = new Point(15, 85);
             lblSettingsColorOtherDeathMarker.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorOtherDeathMarker.Name = "lblSettingsColorOtherDeathMarker";
-            lblSettingsColorOtherDeathMarker.Size = new Size(88, 17);
+            lblSettingsColorOtherDeathMarker.Size = new Size(93, 19);
             lblSettingsColorOtherDeathMarker.TabIndex = 47;
             lblSettingsColorOtherDeathMarker.Text = "Death Marker:";
             // 
@@ -4105,12 +4131,12 @@
             // 
             lblSettingsColorOtherTextOutline.AutoSize = true;
             lblSettingsColorOtherTextOutline.Depth = 0;
-            lblSettingsColorOtherTextOutline.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorOtherTextOutline.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorOtherTextOutline.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorOtherTextOutline.Location = new Point(25, 51);
             lblSettingsColorOtherTextOutline.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorOtherTextOutline.Name = "lblSettingsColorOtherTextOutline";
-            lblSettingsColorOtherTextOutline.Size = new Size(78, 17);
+            lblSettingsColorOtherTextOutline.Size = new Size(83, 19);
             lblSettingsColorOtherTextOutline.TabIndex = 44;
             lblSettingsColorOtherTextOutline.Text = "Text Outline:";
             // 
@@ -4118,13 +4144,13 @@
             // 
             lblSettingsColorsOther.AutoSize = true;
             lblSettingsColorsOther.Depth = 0;
-            lblSettingsColorsOther.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsColorsOther.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsColorsOther.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsColorsOther.HighEmphasis = true;
             lblSettingsColorsOther.Location = new Point(17, 14);
             lblSettingsColorsOther.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsOther.Name = "lblSettingsColorsOther";
-            lblSettingsColorsOther.Size = new Size(51, 24);
+            lblSettingsColorsOther.Size = new Size(55, 26);
             lblSettingsColorsOther.TabIndex = 33;
             lblSettingsColorsOther.Text = "Other";
             lblSettingsColorsOther.UseAccent = true;
@@ -4168,12 +4194,12 @@
             // 
             lblSettingsColorsLootPing.AutoSize = true;
             lblSettingsColorsLootPing.Depth = 0;
-            lblSettingsColorsLootPing.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsLootPing.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsLootPing.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsLootPing.Location = new Point(82, 187);
             lblSettingsColorsLootPing.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsLootPing.Name = "lblSettingsColorsLootPing";
-            lblSettingsColorsLootPing.Size = new Size(32, 17);
+            lblSettingsColorsLootPing.Size = new Size(33, 19);
             lblSettingsColorsLootPing.TabIndex = 53;
             lblSettingsColorsLootPing.Text = "Ping:";
             // 
@@ -4192,12 +4218,12 @@
             // 
             lblSettingsColorsQuestZones.AutoSize = true;
             lblSettingsColorsQuestZones.Depth = 0;
-            lblSettingsColorsQuestZones.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsQuestZones.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsQuestZones.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsQuestZones.Location = new Point(32, 153);
             lblSettingsColorsQuestZones.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsQuestZones.Name = "lblSettingsColorsQuestZones";
-            lblSettingsColorsQuestZones.Size = new Size(82, 17);
+            lblSettingsColorsQuestZones.Size = new Size(85, 19);
             lblSettingsColorsQuestZones.TabIndex = 51;
             lblSettingsColorsQuestZones.Text = "Quest Zones:";
             // 
@@ -4216,12 +4242,12 @@
             // 
             lblSettingsColorsQuestItems.AutoSize = true;
             lblSettingsColorsQuestItems.Depth = 0;
-            lblSettingsColorsQuestItems.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsQuestItems.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsQuestItems.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsQuestItems.Location = new Point(35, 119);
             lblSettingsColorsQuestItems.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsQuestItems.Name = "lblSettingsColorsQuestItems";
-            lblSettingsColorsQuestItems.Size = new Size(79, 17);
+            lblSettingsColorsQuestItems.Size = new Size(82, 19);
             lblSettingsColorsQuestItems.TabIndex = 49;
             lblSettingsColorsQuestItems.Text = "Quest Items:";
             // 
@@ -4240,12 +4266,12 @@
             // 
             lblSettingsColorsLootImportant.AutoSize = true;
             lblSettingsColorsLootImportant.Depth = 0;
-            lblSettingsColorsLootImportant.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsLootImportant.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsLootImportant.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsLootImportant.Location = new Point(15, 85);
             lblSettingsColorsLootImportant.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsLootImportant.Name = "lblSettingsColorsLootImportant";
-            lblSettingsColorsLootImportant.Size = new Size(99, 17);
+            lblSettingsColorsLootImportant.Size = new Size(102, 19);
             lblSettingsColorsLootImportant.TabIndex = 47;
             lblSettingsColorsLootImportant.Text = "Important Loot:";
             // 
@@ -4264,12 +4290,12 @@
             // 
             lblSettingsColorsLootRegular.AutoSize = true;
             lblSettingsColorsLootRegular.Depth = 0;
-            lblSettingsColorsLootRegular.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsLootRegular.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsLootRegular.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsLootRegular.Location = new Point(30, 51);
             lblSettingsColorsLootRegular.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsLootRegular.Name = "lblSettingsColorsLootRegular";
-            lblSettingsColorsLootRegular.Size = new Size(84, 17);
+            lblSettingsColorsLootRegular.Size = new Size(88, 19);
             lblSettingsColorsLootRegular.TabIndex = 44;
             lblSettingsColorsLootRegular.Text = "Regular Loot:";
             // 
@@ -4277,13 +4303,13 @@
             // 
             lblSettingsColorsLootQuests.AutoSize = true;
             lblSettingsColorsLootQuests.Depth = 0;
-            lblSettingsColorsLootQuests.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsColorsLootQuests.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsColorsLootQuests.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsColorsLootQuests.HighEmphasis = true;
             lblSettingsColorsLootQuests.Location = new Point(17, 14);
             lblSettingsColorsLootQuests.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsLootQuests.Name = "lblSettingsColorsLootQuests";
-            lblSettingsColorsLootQuests.Size = new Size(112, 24);
+            lblSettingsColorsLootQuests.Size = new Size(116, 26);
             lblSettingsColorsLootQuests.TabIndex = 33;
             lblSettingsColorsLootQuests.Text = "Loot/Quests";
             lblSettingsColorsLootQuests.UseAccent = true;
@@ -4329,12 +4355,12 @@
             // 
             lblSettingsColorsExfilClosedIcon.AutoSize = true;
             lblSettingsColorsExfilClosedIcon.Depth = 0;
-            lblSettingsColorsExfilClosedIcon.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsExfilClosedIcon.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsExfilClosedIcon.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsExfilClosedIcon.Location = new Point(24, 221);
             lblSettingsColorsExfilClosedIcon.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsExfilClosedIcon.Name = "lblSettingsColorsExfilClosedIcon";
-            lblSettingsColorsExfilClosedIcon.Size = new Size(76, 17);
+            lblSettingsColorsExfilClosedIcon.Size = new Size(79, 19);
             lblSettingsColorsExfilClosedIcon.TabIndex = 55;
             lblSettingsColorsExfilClosedIcon.Text = "Closed Icon:";
             // 
@@ -4353,12 +4379,12 @@
             // 
             lblSettingsColorsExfilClosedText.AutoSize = true;
             lblSettingsColorsExfilClosedText.Depth = 0;
-            lblSettingsColorsExfilClosedText.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsExfilClosedText.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsExfilClosedText.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsExfilClosedText.Location = new Point(24, 187);
             lblSettingsColorsExfilClosedText.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsExfilClosedText.Name = "lblSettingsColorsExfilClosedText";
-            lblSettingsColorsExfilClosedText.Size = new Size(76, 17);
+            lblSettingsColorsExfilClosedText.Size = new Size(80, 19);
             lblSettingsColorsExfilClosedText.TabIndex = 53;
             lblSettingsColorsExfilClosedText.Text = "Closed Text:";
             // 
@@ -4377,12 +4403,12 @@
             // 
             lblSettingsColorsExfilPendingIcon.AutoSize = true;
             lblSettingsColorsExfilPendingIcon.Depth = 0;
-            lblSettingsColorsExfilPendingIcon.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsExfilPendingIcon.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsExfilPendingIcon.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsExfilPendingIcon.Location = new Point(15, 153);
             lblSettingsColorsExfilPendingIcon.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsExfilPendingIcon.Name = "lblSettingsColorsExfilPendingIcon";
-            lblSettingsColorsExfilPendingIcon.Size = new Size(85, 17);
+            lblSettingsColorsExfilPendingIcon.Size = new Size(89, 19);
             lblSettingsColorsExfilPendingIcon.TabIndex = 51;
             lblSettingsColorsExfilPendingIcon.Text = "Pending Icon:";
             // 
@@ -4401,12 +4427,12 @@
             // 
             lblSettingsColorsExfilPendingText.AutoSize = true;
             lblSettingsColorsExfilPendingText.Depth = 0;
-            lblSettingsColorsExfilPendingText.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsExfilPendingText.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsExfilPendingText.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsExfilPendingText.Location = new Point(15, 119);
             lblSettingsColorsExfilPendingText.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsExfilPendingText.Name = "lblSettingsColorsExfilPendingText";
-            lblSettingsColorsExfilPendingText.Size = new Size(85, 17);
+            lblSettingsColorsExfilPendingText.Size = new Size(90, 19);
             lblSettingsColorsExfilPendingText.TabIndex = 49;
             lblSettingsColorsExfilPendingText.Text = "Pending Text:";
             // 
@@ -4425,12 +4451,12 @@
             // 
             lblSettingsColorsExfilActiveIcon.AutoSize = true;
             lblSettingsColorsExfilActiveIcon.Depth = 0;
-            lblSettingsColorsExfilActiveIcon.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsExfilActiveIcon.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsExfilActiveIcon.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsExfilActiveIcon.Location = new Point(28, 85);
             lblSettingsColorsExfilActiveIcon.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsExfilActiveIcon.Name = "lblSettingsColorsExfilActiveIcon";
-            lblSettingsColorsExfilActiveIcon.Size = new Size(72, 17);
+            lblSettingsColorsExfilActiveIcon.Size = new Size(75, 19);
             lblSettingsColorsExfilActiveIcon.TabIndex = 47;
             lblSettingsColorsExfilActiveIcon.Text = "Active Icon:";
             // 
@@ -4449,12 +4475,12 @@
             // 
             lblSettingsColorsExfilActiveText.AutoSize = true;
             lblSettingsColorsExfilActiveText.Depth = 0;
-            lblSettingsColorsExfilActiveText.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsExfilActiveText.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsExfilActiveText.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsExfilActiveText.Location = new Point(28, 51);
             lblSettingsColorsExfilActiveText.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsExfilActiveText.Name = "lblSettingsColorsExfilActiveText";
-            lblSettingsColorsExfilActiveText.Size = new Size(72, 17);
+            lblSettingsColorsExfilActiveText.Size = new Size(76, 19);
             lblSettingsColorsExfilActiveText.TabIndex = 44;
             lblSettingsColorsExfilActiveText.Text = "Active Text:";
             // 
@@ -4462,13 +4488,13 @@
             // 
             lblSettingsColorsExfiltration.AutoSize = true;
             lblSettingsColorsExfiltration.Depth = 0;
-            lblSettingsColorsExfiltration.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsColorsExfiltration.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsColorsExfiltration.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsColorsExfiltration.HighEmphasis = true;
             lblSettingsColorsExfiltration.Location = new Point(17, 14);
             lblSettingsColorsExfiltration.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsExfiltration.Name = "lblSettingsColorsExfiltration";
-            lblSettingsColorsExfiltration.Size = new Size(98, 24);
+            lblSettingsColorsExfiltration.Size = new Size(104, 26);
             lblSettingsColorsExfiltration.TabIndex = 33;
             lblSettingsColorsExfiltration.Text = "Exfiltration";
             lblSettingsColorsExfiltration.UseAccent = true;
@@ -4516,12 +4542,12 @@
             // 
             lblSettingsColorsPlayersSpecial.AutoSize = true;
             lblSettingsColorsPlayersSpecial.Depth = 0;
-            lblSettingsColorsPlayersSpecial.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsPlayersSpecial.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsPlayersSpecial.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsPlayersSpecial.Location = new Point(46, 255);
             lblSettingsColorsPlayersSpecial.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsPlayersSpecial.Name = "lblSettingsColorsPlayersSpecial";
-            lblSettingsColorsPlayersSpecial.Size = new Size(48, 17);
+            lblSettingsColorsPlayersSpecial.Size = new Size(51, 19);
             lblSettingsColorsPlayersSpecial.TabIndex = 57;
             lblSettingsColorsPlayersSpecial.Text = "Special:";
             // 
@@ -4540,12 +4566,12 @@
             // 
             lblSettingsColorsPlayersTeamHover.AutoSize = true;
             lblSettingsColorsPlayersTeamHover.Depth = 0;
-            lblSettingsColorsPlayersTeamHover.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsPlayersTeamHover.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsPlayersTeamHover.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsPlayersTeamHover.Location = new Point(15, 221);
             lblSettingsColorsPlayersTeamHover.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsPlayersTeamHover.Name = "lblSettingsColorsPlayersTeamHover";
-            lblSettingsColorsPlayersTeamHover.Size = new Size(79, 17);
+            lblSettingsColorsPlayersTeamHover.Size = new Size(83, 19);
             lblSettingsColorsPlayersTeamHover.TabIndex = 55;
             lblSettingsColorsPlayersTeamHover.Text = "Team Hover:";
             // 
@@ -4564,12 +4590,12 @@
             // 
             lblSettingsColorsPlayersTeammate.AutoSize = true;
             lblSettingsColorsPlayersTeammate.Depth = 0;
-            lblSettingsColorsPlayersTeammate.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsPlayersTeammate.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsPlayersTeammate.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsPlayersTeammate.Location = new Point(23, 187);
             lblSettingsColorsPlayersTeammate.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsPlayersTeammate.Name = "lblSettingsColorsPlayersTeammate";
-            lblSettingsColorsPlayersTeammate.Size = new Size(71, 17);
+            lblSettingsColorsPlayersTeammate.Size = new Size(74, 19);
             lblSettingsColorsPlayersTeammate.TabIndex = 53;
             lblSettingsColorsPlayersTeammate.Text = "Teammate:";
             // 
@@ -4588,12 +4614,12 @@
             // 
             lblSettingsColorsPlayersLocalPlayer.AutoSize = true;
             lblSettingsColorsPlayersLocalPlayer.Depth = 0;
-            lblSettingsColorsPlayersLocalPlayer.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsPlayersLocalPlayer.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsPlayersLocalPlayer.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsPlayersLocalPlayer.Location = new Point(20, 153);
             lblSettingsColorsPlayersLocalPlayer.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsPlayersLocalPlayer.Name = "lblSettingsColorsPlayersLocalPlayer";
-            lblSettingsColorsPlayersLocalPlayer.Size = new Size(74, 17);
+            lblSettingsColorsPlayersLocalPlayer.Size = new Size(74, 19);
             lblSettingsColorsPlayersLocalPlayer.TabIndex = 51;
             lblSettingsColorsPlayersLocalPlayer.Text = "LocalPlayer";
             // 
@@ -4612,12 +4638,12 @@
             // 
             lblSettingsColorsPlayersScav.AutoSize = true;
             lblSettingsColorsPlayersScav.Depth = 0;
-            lblSettingsColorsPlayersScav.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsPlayersScav.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsPlayersScav.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsPlayersScav.Location = new Point(60, 119);
             lblSettingsColorsPlayersScav.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsPlayersScav.Name = "lblSettingsColorsPlayersScav";
-            lblSettingsColorsPlayersScav.Size = new Size(34, 17);
+            lblSettingsColorsPlayersScav.Size = new Size(35, 19);
             lblSettingsColorsPlayersScav.TabIndex = 49;
             lblSettingsColorsPlayersScav.Text = "Scav:";
             // 
@@ -4636,12 +4662,12 @@
             // 
             lblSettingsColorsPlayersBEAR.AutoSize = true;
             lblSettingsColorsPlayersBEAR.Depth = 0;
-            lblSettingsColorsPlayersBEAR.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsPlayersBEAR.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsPlayersBEAR.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsPlayersBEAR.Location = new Point(55, 85);
             lblSettingsColorsPlayersBEAR.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsPlayersBEAR.Name = "lblSettingsColorsPlayersBEAR";
-            lblSettingsColorsPlayersBEAR.Size = new Size(39, 17);
+            lblSettingsColorsPlayersBEAR.Size = new Size(40, 19);
             lblSettingsColorsPlayersBEAR.TabIndex = 47;
             lblSettingsColorsPlayersBEAR.Text = "BEAR:";
             // 
@@ -4660,12 +4686,12 @@
             // 
             lblSettingsColorsPlayersUSEC.AutoSize = true;
             lblSettingsColorsPlayersUSEC.Depth = 0;
-            lblSettingsColorsPlayersUSEC.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsPlayersUSEC.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsPlayersUSEC.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsPlayersUSEC.Location = new Point(56, 51);
             lblSettingsColorsPlayersUSEC.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsPlayersUSEC.Name = "lblSettingsColorsPlayersUSEC";
-            lblSettingsColorsPlayersUSEC.Size = new Size(38, 17);
+            lblSettingsColorsPlayersUSEC.Size = new Size(40, 19);
             lblSettingsColorsPlayersUSEC.TabIndex = 44;
             lblSettingsColorsPlayersUSEC.Text = "USEC:";
             // 
@@ -4673,13 +4699,13 @@
             // 
             lblSettingsColorsPlayers.AutoSize = true;
             lblSettingsColorsPlayers.Depth = 0;
-            lblSettingsColorsPlayers.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsColorsPlayers.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsColorsPlayers.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsColorsPlayers.HighEmphasis = true;
             lblSettingsColorsPlayers.Location = new Point(17, 14);
             lblSettingsColorsPlayers.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsPlayers.Name = "lblSettingsColorsPlayers";
-            lblSettingsColorsPlayers.Size = new Size(68, 24);
+            lblSettingsColorsPlayers.Size = new Size(68, 26);
             lblSettingsColorsPlayers.TabIndex = 33;
             lblSettingsColorsPlayers.Text = "Players";
             lblSettingsColorsPlayers.UseAccent = true;
@@ -4731,12 +4757,12 @@
             // 
             lblSettingsColorsAIOther.AutoSize = true;
             lblSettingsColorsAIOther.Depth = 0;
-            lblSettingsColorsAIOther.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsAIOther.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsAIOther.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsAIOther.Location = new Point(85, 323);
             lblSettingsColorsAIOther.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsAIOther.Name = "lblSettingsColorsAIOther";
-            lblSettingsColorsAIOther.Size = new Size(39, 17);
+            lblSettingsColorsAIOther.Size = new Size(42, 19);
             lblSettingsColorsAIOther.TabIndex = 61;
             lblSettingsColorsAIOther.Text = "Other:";
             // 
@@ -4755,12 +4781,12 @@
             // 
             lblSettingsColorsAIScav.AutoSize = true;
             lblSettingsColorsAIScav.Depth = 0;
-            lblSettingsColorsAIScav.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsAIScav.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsAIScav.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsAIScav.Location = new Point(90, 289);
             lblSettingsColorsAIScav.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsAIScav.Name = "lblSettingsColorsAIScav";
-            lblSettingsColorsAIScav.Size = new Size(34, 17);
+            lblSettingsColorsAIScav.Size = new Size(35, 19);
             lblSettingsColorsAIScav.TabIndex = 59;
             lblSettingsColorsAIScav.Text = "Scav:";
             // 
@@ -4779,12 +4805,12 @@
             // 
             lblSettingsColorsAIMoranaFollower.AutoSize = true;
             lblSettingsColorsAIMoranaFollower.Depth = 0;
-            lblSettingsColorsAIMoranaFollower.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsAIMoranaFollower.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsAIMoranaFollower.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsAIMoranaFollower.Location = new Point(15, 255);
             lblSettingsColorsAIMoranaFollower.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsAIMoranaFollower.Name = "lblSettingsColorsAIMoranaFollower";
-            lblSettingsColorsAIMoranaFollower.Size = new Size(109, 17);
+            lblSettingsColorsAIMoranaFollower.Size = new Size(112, 19);
             lblSettingsColorsAIMoranaFollower.TabIndex = 57;
             lblSettingsColorsAIMoranaFollower.Text = "Morana Follower:";
             // 
@@ -4803,12 +4829,12 @@
             // 
             lblSettingsColorsAICultists.AutoSize = true;
             lblSettingsColorsAICultists.Depth = 0;
-            lblSettingsColorsAICultists.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsAICultists.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsAICultists.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsAICultists.Location = new Point(73, 221);
             lblSettingsColorsAICultists.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsAICultists.Name = "lblSettingsColorsAICultists";
-            lblSettingsColorsAICultists.Size = new Size(51, 17);
+            lblSettingsColorsAICultists.Size = new Size(50, 19);
             lblSettingsColorsAICultists.TabIndex = 55;
             lblSettingsColorsAICultists.Text = "Cultists:";
             // 
@@ -4827,12 +4853,12 @@
             // 
             lblSettingsColorsAIRogues.AutoSize = true;
             lblSettingsColorsAIRogues.Depth = 0;
-            lblSettingsColorsAIRogues.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsAIRogues.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsAIRogues.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsAIRogues.Location = new Point(73, 187);
             lblSettingsColorsAIRogues.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsAIRogues.Name = "lblSettingsColorsAIRogues";
-            lblSettingsColorsAIRogues.Size = new Size(51, 17);
+            lblSettingsColorsAIRogues.Size = new Size(53, 19);
             lblSettingsColorsAIRogues.TabIndex = 53;
             lblSettingsColorsAIRogues.Text = "Rogues:";
             // 
@@ -4851,12 +4877,12 @@
             // 
             lblSettingsColorsAIRaiders.AutoSize = true;
             lblSettingsColorsAIRaiders.Depth = 0;
-            lblSettingsColorsAIRaiders.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsAIRaiders.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsAIRaiders.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsAIRaiders.Location = new Point(73, 153);
             lblSettingsColorsAIRaiders.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsAIRaiders.Name = "lblSettingsColorsAIRaiders";
-            lblSettingsColorsAIRaiders.Size = new Size(51, 17);
+            lblSettingsColorsAIRaiders.Size = new Size(53, 19);
             lblSettingsColorsAIRaiders.TabIndex = 51;
             lblSettingsColorsAIRaiders.Text = "Raiders:";
             // 
@@ -4875,12 +4901,12 @@
             // 
             lblSettingsColorsAIBossFollower.AutoSize = true;
             lblSettingsColorsAIBossFollower.Depth = 0;
-            lblSettingsColorsAIBossFollower.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsAIBossFollower.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsAIBossFollower.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsAIBossFollower.Location = new Point(33, 119);
             lblSettingsColorsAIBossFollower.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsAIBossFollower.Name = "lblSettingsColorsAIBossFollower";
-            lblSettingsColorsAIBossFollower.Size = new Size(91, 17);
+            lblSettingsColorsAIBossFollower.Size = new Size(92, 19);
             lblSettingsColorsAIBossFollower.TabIndex = 49;
             lblSettingsColorsAIBossFollower.Text = "Boss Follower:";
             // 
@@ -4899,12 +4925,12 @@
             // 
             lblSettingsColorsAIBossGuard.AutoSize = true;
             lblSettingsColorsAIBossGuard.Depth = 0;
-            lblSettingsColorsAIBossGuard.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsAIBossGuard.Font = new Font("HarmonyOS Sans SC", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsAIBossGuard.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             lblSettingsColorsAIBossGuard.Location = new Point(47, 85);
             lblSettingsColorsAIBossGuard.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsAIBossGuard.Name = "lblSettingsColorsAIBossGuard";
-            lblSettingsColorsAIBossGuard.Size = new Size(77, 17);
+            lblSettingsColorsAIBossGuard.Size = new Size(78, 19);
             lblSettingsColorsAIBossGuard.TabIndex = 47;
             lblSettingsColorsAIBossGuard.Text = "Boss Guard:";
             // 
@@ -4923,11 +4949,11 @@
             // 
             lblSettingsColorsAIBoss.AutoSize = true;
             lblSettingsColorsAIBoss.Depth = 0;
-            lblSettingsColorsAIBoss.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsAIBoss.Font = new Font("HarmonyOS Sans SC", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsColorsAIBoss.Location = new Point(89, 51);
             lblSettingsColorsAIBoss.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsAIBoss.Name = "lblSettingsColorsAIBoss";
-            lblSettingsColorsAIBoss.Size = new Size(40, 19);
+            lblSettingsColorsAIBoss.Size = new Size(38, 21);
             lblSettingsColorsAIBoss.TabIndex = 44;
             lblSettingsColorsAIBoss.Text = "Boss:";
             // 
@@ -4935,13 +4961,13 @@
             // 
             lblSettingsColorsAI.AutoSize = true;
             lblSettingsColorsAI.Depth = 0;
-            lblSettingsColorsAI.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsColorsAI.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsColorsAI.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsColorsAI.HighEmphasis = true;
             lblSettingsColorsAI.Location = new Point(17, 14);
             lblSettingsColorsAI.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsAI.Name = "lblSettingsColorsAI";
-            lblSettingsColorsAI.Size = new Size(20, 24);
+            lblSettingsColorsAI.Size = new Size(21, 26);
             lblSettingsColorsAI.TabIndex = 33;
             lblSettingsColorsAI.Text = "AI";
             lblSettingsColorsAI.UseAccent = true;
@@ -4980,13 +5006,13 @@
             lblPlayerLoadoutsAI.AutoSize = true;
             lblPlayerLoadoutsAI.Depth = 0;
             lblPlayerLoadoutsAI.Dock = DockStyle.Top;
-            lblPlayerLoadoutsAI.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblPlayerLoadoutsAI.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblPlayerLoadoutsAI.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblPlayerLoadoutsAI.HighEmphasis = true;
             lblPlayerLoadoutsAI.Location = new Point(14, 16);
             lblPlayerLoadoutsAI.MouseState = MaterialSkin.MouseState.HOVER;
             lblPlayerLoadoutsAI.Name = "lblPlayerLoadoutsAI";
-            lblPlayerLoadoutsAI.Size = new Size(360, 24);
+            lblPlayerLoadoutsAI.Size = new Size(365, 26);
             lblPlayerLoadoutsAI.TabIndex = 31;
             lblPlayerLoadoutsAI.Text = "Bosses / Rogues / Guards / AI Scavs etc";
             lblPlayerLoadoutsAI.UseAccent = true;
@@ -5024,13 +5050,13 @@
             lblPlayerLoadoutsPlayers.AutoSize = true;
             lblPlayerLoadoutsPlayers.Depth = 0;
             lblPlayerLoadoutsPlayers.Dock = DockStyle.Top;
-            lblPlayerLoadoutsPlayers.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblPlayerLoadoutsPlayers.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblPlayerLoadoutsPlayers.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblPlayerLoadoutsPlayers.HighEmphasis = true;
             lblPlayerLoadoutsPlayers.Location = new Point(14, 16);
             lblPlayerLoadoutsPlayers.MouseState = MaterialSkin.MouseState.HOVER;
             lblPlayerLoadoutsPlayers.Name = "lblPlayerLoadoutsPlayers";
-            lblPlayerLoadoutsPlayers.Size = new Size(68, 24);
+            lblPlayerLoadoutsPlayers.Size = new Size(68, 26);
             lblPlayerLoadoutsPlayers.TabIndex = 31;
             lblPlayerLoadoutsPlayers.Text = "Players";
             lblPlayerLoadoutsPlayers.UseAccent = true;
@@ -5104,13 +5130,13 @@
             // 
             lblWatchlistPlayerlist.AutoSize = true;
             lblWatchlistPlayerlist.Depth = 0;
-            lblWatchlistPlayerlist.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblWatchlistPlayerlist.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblWatchlistPlayerlist.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblWatchlistPlayerlist.HighEmphasis = true;
             lblWatchlistPlayerlist.Location = new Point(17, 17);
             lblWatchlistPlayerlist.MouseState = MaterialSkin.MouseState.HOVER;
             lblWatchlistPlayerlist.Name = "lblWatchlistPlayerlist";
-            lblWatchlistPlayerlist.Size = new Size(96, 24);
+            lblWatchlistPlayerlist.Size = new Size(97, 26);
             lblWatchlistPlayerlist.TabIndex = 30;
             lblWatchlistPlayerlist.Text = "Player List";
             lblWatchlistPlayerlist.UseAccent = true;
@@ -5163,13 +5189,13 @@
             // 
             lblWatchlistProfiles.AutoSize = true;
             lblWatchlistProfiles.Depth = 0;
-            lblWatchlistProfiles.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblWatchlistProfiles.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblWatchlistProfiles.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblWatchlistProfiles.HighEmphasis = true;
             lblWatchlistProfiles.Location = new Point(17, 17);
             lblWatchlistProfiles.MouseState = MaterialSkin.MouseState.HOVER;
             lblWatchlistProfiles.Name = "lblWatchlistProfiles";
-            lblWatchlistProfiles.Size = new Size(70, 24);
+            lblWatchlistProfiles.Size = new Size(70, 26);
             lblWatchlistProfiles.TabIndex = 33;
             lblWatchlistProfiles.Text = "Profiles";
             lblWatchlistProfiles.UseAccent = true;
@@ -5199,13 +5225,13 @@
             // 
             lblWatchlistPlayerManagement.AutoSize = true;
             lblWatchlistPlayerManagement.Depth = 0;
-            lblWatchlistPlayerManagement.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblWatchlistPlayerManagement.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblWatchlistPlayerManagement.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblWatchlistPlayerManagement.HighEmphasis = true;
             lblWatchlistPlayerManagement.Location = new Point(17, 17);
             lblWatchlistPlayerManagement.MouseState = MaterialSkin.MouseState.HOVER;
             lblWatchlistPlayerManagement.Name = "lblWatchlistPlayerManagement";
-            lblWatchlistPlayerManagement.Size = new Size(182, 24);
+            lblWatchlistPlayerManagement.Size = new Size(186, 26);
             lblWatchlistPlayerManagement.TabIndex = 30;
             lblWatchlistPlayerManagement.Text = "Player Management";
             lblWatchlistPlayerManagement.UseAccent = true;
@@ -5315,13 +5341,13 @@
             // 
             lblSettingsLootFilters.AutoSize = true;
             lblSettingsLootFilters.Depth = 0;
-            lblSettingsLootFilters.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsLootFilters.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblSettingsLootFilters.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblSettingsLootFilters.HighEmphasis = true;
             lblSettingsLootFilters.Location = new Point(17, 17);
             lblSettingsLootFilters.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsLootFilters.Name = "lblSettingsLootFilters";
-            lblSettingsLootFilters.Size = new Size(102, 24);
+            lblSettingsLootFilters.Size = new Size(106, 26);
             lblSettingsLootFilters.TabIndex = 33;
             lblSettingsLootFilters.Text = "Loot Filters";
             lblSettingsLootFilters.UseAccent = true;
@@ -5361,11 +5387,11 @@
             // 
             lblSettingsLootFilterColor.AutoSize = true;
             lblSettingsLootFilterColor.Depth = 0;
-            lblSettingsLootFilterColor.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsLootFilterColor.Font = new Font("HarmonyOS Sans SC", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             lblSettingsLootFilterColor.Location = new Point(336, 108);
             lblSettingsLootFilterColor.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsLootFilterColor.Name = "lblSettingsLootFilterColor";
-            lblSettingsLootFilterColor.Size = new Size(42, 19);
+            lblSettingsLootFilterColor.Size = new Size(43, 21);
             lblSettingsLootFilterColor.TabIndex = 44;
             lblSettingsLootFilterColor.Text = "Color:";
             // 
@@ -5412,13 +5438,13 @@
             // 
             lblLootFilterItemManagement.AutoSize = true;
             lblLootFilterItemManagement.Depth = 0;
-            lblLootFilterItemManagement.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblLootFilterItemManagement.Font = new Font("HarmonyOS Sans SC Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             lblLootFilterItemManagement.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             lblLootFilterItemManagement.HighEmphasis = true;
             lblLootFilterItemManagement.Location = new Point(17, 17);
             lblLootFilterItemManagement.MouseState = MaterialSkin.MouseState.HOVER;
             lblLootFilterItemManagement.Name = "lblLootFilterItemManagement";
-            lblLootFilterItemManagement.Size = new Size(166, 24);
+            lblLootFilterItemManagement.Size = new Size(170, 26);
             lblLootFilterItemManagement.TabIndex = 33;
             lblLootFilterItemManagement.Text = "Item Management";
             lblLootFilterItemManagement.UseAccent = true;

@@ -380,6 +380,30 @@ namespace eft_dma_radar
                 SKPaints.TextBaseOutline.Typeface = fontToUse;
                 SKPaints.TextRadarStatus.Typeface = fontToUse;
             }
+            else if (cboFont.Text == "黑体")
+            {
+                // 获取宋体在字体集合中的下标
+                var index = SKFontManager.Default.FontFamilies.ToList().IndexOf("黑体");
+                // 创建宋体字形
+                var fontToUse = SKFontManager.Default.GetFontStyles(index).CreateTypeface(0);
+                SKPaints.TextMouseoverGroup.Typeface = fontToUse;
+                SKPaints.TextBase.Typeface = fontToUse;
+                SKPaints.LootText.Typeface = fontToUse;
+                SKPaints.TextBaseOutline.Typeface = fontToUse;
+                SKPaints.TextRadarStatus.Typeface = fontToUse;
+            }
+            else if (cboFont.Text == "微软雅黑")
+            {
+                // 获取宋体在字体集合中的下标
+                var index = SKFontManager.Default.FontFamilies.ToList().IndexOf("微软雅黑");
+                // 创建宋体字形
+                var fontToUse = SKFontManager.Default.GetFontStyles(index).CreateTypeface(0);
+                SKPaints.TextMouseoverGroup.Typeface = fontToUse;
+                SKPaints.TextBase.Typeface = fontToUse;
+                SKPaints.LootText.Typeface = fontToUse;
+                SKPaints.TextBaseOutline.Typeface = fontToUse;
+                SKPaints.TextRadarStatus.Typeface = fontToUse;
+            }
             else
             {
                 var fontToUse = SKTypeface.FromFamilyName(cboFont.Text);
@@ -2076,7 +2100,10 @@ namespace eft_dma_radar
             }
 
             if (mergedLootItems.Count < 1)
+            {
+                _isRefreshingLootItems = false;
                 return;
+            }
 
             var listViewItems = mergedLootItems.Select(item => new ListViewItem
             {
