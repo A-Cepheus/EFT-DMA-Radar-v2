@@ -525,6 +525,9 @@ namespace eft_dma_radar
             sldrTimeOfDay.Visible = _config.FreezeTimeOfDay;
             sldrTimeOfDay.Value = (int)_config.TimeOfDay;
             swInfiniteStamina.Checked = _config.InfiniteStamina;
+            swTimeScale.Checked = _config.TimeScale;
+            swLootThroughWall.Checked = _config.LootThroughWall;
+            sldrLootThroughDistance.Value = (int)_config.LootThroughDistance;
 
             // Gear Features
             mcSettingsMemoryWritingGear.Enabled = _config.MasterSwitch;
