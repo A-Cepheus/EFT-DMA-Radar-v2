@@ -615,12 +615,13 @@ namespace eft_dma_radar
                 var isAI = registrationDate == 0;
 
                 this.IsLocalPlayer = !isAI;
-                this.IsPMC = !isAI;
 
                 if (isAI)
                     this.Name = Helpers.TransliterateCyrillic(this.Name);
 
                 this.Type = this.GetOfflinePlayerType(isAI, this.Name);
+
+                this.IsPMC = (this.Type == PlayerType.BEAR || this.Type == PlayerType.USEC || this.Type == PlayerType.PMC || !isAI);
 
                 this.isOfflinePlayer = true;
 

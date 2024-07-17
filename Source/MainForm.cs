@@ -404,6 +404,18 @@ namespace eft_dma_radar
                 SKPaints.TextBaseOutline.Typeface = fontToUse;
                 SKPaints.TextRadarStatus.Typeface = fontToUse;
             }
+            else if (cboFont.Text == "FangSong")
+            {
+                // 获取宋体在字体集合中的下标
+                var index = SKFontManager.Default.FontFamilies.ToList().IndexOf("FangSong");
+                // 创建宋体字形
+                var fontToUse = SKFontManager.Default.GetFontStyles(index).CreateTypeface(0);
+                SKPaints.TextMouseoverGroup.Typeface = fontToUse;
+                SKPaints.TextBase.Typeface = fontToUse;
+                SKPaints.LootText.Typeface = fontToUse;
+                SKPaints.TextBaseOutline.Typeface = fontToUse;
+                SKPaints.TextRadarStatus.Typeface = fontToUse;
+            }
             else
             {
                 var fontToUse = SKTypeface.FromFamilyName(cboFont.Text);
@@ -3061,7 +3073,8 @@ namespace eft_dma_radar
             cboFactionType.Items.Add(PlayerType.Rogue);
             cboFactionType.Items.Add(PlayerType.Cultist);
             cboFactionType.Items.Add(PlayerType.FollowerOfMorana);
-            cboFactionType.Items.Add(PlayerType.PMC);
+            cboFactionType.Items.Add(PlayerType.USEC);
+            cboFactionType.Items.Add(PlayerType.BEAR);
         }
 
         private void UpdateFactionEntryData()

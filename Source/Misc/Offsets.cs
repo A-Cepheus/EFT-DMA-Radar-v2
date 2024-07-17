@@ -274,7 +274,7 @@
         public const uint LootList = 0xD0; // to UnityList
         public const uint RegisteredPlayers = 0xF8; // to RegisteredPlayers
         public const uint Grenades = 0x1A8; // to Grenades
-        public const uint RaidStarted = 0x228; //[228] boolean_0x228 : Boolean
+        public const uint RaidStarted = 0x230; //[228] boolean_0x228 : Boolean
     }
     public struct EFTHardSettings
     {

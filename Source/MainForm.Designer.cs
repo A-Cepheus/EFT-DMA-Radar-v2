@@ -2333,7 +2333,7 @@
             swRadarVsync.MouseState = MaterialSkin.MouseState.HOVER;
             swRadarVsync.Name = "swRadarVsync";
             swRadarVsync.Ripple = true;
-            swRadarVsync.Size = new Size(118, 32);
+            swRadarVsync.Size = new Size(152, 32);
             swRadarVsync.TabIndex = 32;
             swRadarVsync.Text = "垂直同步";
             toolTip.SetToolTip(swRadarVsync, "Shows radar stats on radar tab");
@@ -2391,7 +2391,7 @@
             cboFont.Hint = "Font";
             cboFont.IntegralHeight = false;
             cboFont.ItemHeight = 29;
-            cboFont.Items.AddRange(new object[] { "Arial", "Calibri", "Candara", "Consolas", "Constantia", "Corbel", "Helvetica", "Lato", "Roboto", "Segoe UI", "Tahoma", "Trebuchet MS", "Verdana", "宋体", "黑体", "微软雅黑" });
+            cboFont.Items.AddRange(new object[] { "Arial", "Calibri", "Candara", "Consolas", "Constantia", "Corbel", "Helvetica", "Lato", "Roboto", "Segoe UI", "Tahoma", "Trebuchet MS", "Verdana", "宋体", "仿宋", "黑体", "微软雅黑", "FangSong" });
             cboFont.Location = new Point(15, 194);
             cboFont.MaxDropDownItems = 10;
             cboFont.MouseState = MaterialSkin.MouseState.OUT;
