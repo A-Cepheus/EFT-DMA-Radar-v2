@@ -59,6 +59,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="Dumps\" />
 	  <Folder Include="Icons\" />
 	</ItemGroup>
 
