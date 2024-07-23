@@ -12,9 +12,6 @@ namespace eft_dma_radar
         [JsonPropertyName("aimviewFOV")]
         public float AimViewFOV { get; set; }
 
-        [JsonPropertyName("unknownQuestItems")]
-        public bool UnknownQuestItems { get; set; }
-
         [JsonPropertyName("autoLootRefresh")]
         public bool AutoLootRefresh { get; set; }
 
@@ -32,6 +29,12 @@ namespace eft_dma_radar
 
         [JsonPropertyName("extendedReach")]
         public bool ExtendedReach { get; set; }
+
+        [JsonPropertyName("extendedReachDistance")]
+        public float ExtendedReachDistance { get; set; }
+
+        [JsonPropertyName("extendedReachDistancePvE")]
+        public float ExtendedReachDistancePvE { get; set; }
 
         [JsonPropertyName("font")]
         public int Font { get; set; }
@@ -63,11 +66,14 @@ namespace eft_dma_radar
         [JsonPropertyName("lootPing")]
         public Dictionary<string, int> LootPing { get; set; }
 
-        [JsonPropertyName("lootThroughWall")]
-        public bool LootThroughWall { get; set; }
+        [JsonPropertyName("lootThroughWallsDistance")]
+        public float LootThroughWallsDistance { get; set; }
 
-        [JsonPropertyName("lootThroughDistance")]
-        public float LootThroughDistance { get; set; }
+        [JsonPropertyName("lootThroughWallsDistancePvE")]
+        public float LootThroughWallsDistancePvE { get; set; }
+
+        [JsonPropertyName("lootThroughWalls")]
+        public bool LootThroughWalls { get; set; }
 
         [JsonPropertyName("magDrillSpeed")]
         public int MagDrillSpeed { get; set; }
@@ -96,6 +102,9 @@ namespace eft_dma_radar
         [JsonPropertyName("minSubItemValue")]
         public int MinSubItemValue { get; set; }
 
+        [JsonPropertyName("noWeaponMalfunctions")]
+        public bool NoWeaponMalfunctions { get; set; }
+
         [JsonPropertyName("nightVision")]
         public bool NightVision { get; set; }
 
@@ -122,6 +131,9 @@ namespace eft_dma_radar
 
         [JsonPropertyName("processLoot")]
         public bool ProcessLoot { get; set; }
+
+        [JsonPropertyName("pveMode")]
+        public bool PvEMode { get; set; }
 
         [JsonPropertyName("questHelper")]
         public bool QuestHelper { get; set; }
@@ -162,8 +174,14 @@ namespace eft_dma_radar
         [JsonPropertyName("timeScale")]
         public bool TimeScale { get; set; }
 
+        [JsonPropertyName("timeScaleFactor")]
+        public float TimeScaleFactor { get; set; }
+
         [JsonPropertyName("uiScale")]
         public int UIScale { get; set; }
+
+        [JsonPropertyName("unknownQuestItems")]
+        public bool UnknownQuestItems { get; set; }
 
         [JsonPropertyName("zoomSensitivity")]
         public int ZoomSensitivity { get; set; }
@@ -329,13 +347,14 @@ namespace eft_dma_radar
         {
             AimviewEnabled = false;
             AimViewFOV = 30;
-            UnknownQuestItems = false;
             AutoLootRefresh = false;
             AutoRefreshSettings = DefaultAutoRefreshSettings;
             Chams = DefaultChamsSettings;
             DefaultZoom = 100;
             EnemyCount = false;
             ExtendedReach = false;
+            ExtendedReachDistance = 2f;
+            ExtendedReachDistancePvE = 2f;
             Font = 0;
             FontSize = 13;
             FreezeTimeOfDay = false;
@@ -346,8 +365,9 @@ namespace eft_dma_radar
             LoggingEnabled = false;
             LootItemViewer = false;
             LootPing = DefaultLootPingSettings;
-            LootThroughWall = false;
-            LootThroughDistance = 2f;
+            LootThroughWalls = false;
+            LootThroughWallsDistance = 2f;
+            LootThroughWallsDistancePvE = 2f;
             MagDrillSpeed = 1;
             MainThermalSetting = new ThermalSettings(1f, 0.0011f, -0.1f, 0);
             MasterSwitch = false;
@@ -357,6 +377,7 @@ namespace eft_dma_radar
             MinImportantLootValue = 300000;
             MinLootValue = 90000;
             MinSubItemValue = 15000;
+            NoWeaponMalfunctions = false;
             NightVision = false;
             NoRecoilSway = false;
             NoVisor = false;
@@ -367,6 +388,7 @@ namespace eft_dma_radar
             PlayerAimLineLength = 1000;
             PrimaryTeammateId = null;
             ProcessLoot = true;
+            PvEMode = false;
             QuestHelper = true;
             ShowCorpses = false;
             ShowExfilNames = false;
@@ -380,7 +402,9 @@ namespace eft_dma_radar
             ThrowPowerStrength = 1;
             TimeOfDay = 12f;
             TimeScale = false;
+            TimeScaleFactor = 1.8f;
             UIScale = 100;
+            UnknownQuestItems = false;
             ZoomSensitivity = 25;
             VSync = true;
         }

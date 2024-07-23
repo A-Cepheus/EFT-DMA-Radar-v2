@@ -330,9 +330,6 @@ namespace eft_dma_radar
 
                     if (player.LastUpdate) // player may be dead/exfil'd
                     {
-                        if (player.Type == PlayerType.LocalPlayer)
-                            throw new RaidEnded("Raid has ended!");
-
                         if (player.Position == DEFAULT_POSITION)
                         {
                             player.IsActive = false;
@@ -344,7 +341,7 @@ namespace eft_dma_radar
                             player.IsAlive = false;
                             Program.Log($"{player.Name} died");
 
-                            if (Program.Config.Chams["Enabled"])
+                            if (Program.Config.Chams["Enabled"] && player.Type != PlayerType.LocalPlayer)
                             {
                                 if (Program.Config.Chams["Corpses"])
                                     Memory.Chams.SetPlayerBodyChams(player, Memory.Chams.ThermalMaterial);

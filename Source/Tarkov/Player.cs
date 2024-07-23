@@ -8,6 +8,7 @@ using Offsets;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.CompilerServices;
+using System.Data;
 
 namespace eft_dma_radar
 {
@@ -136,6 +137,7 @@ namespace eft_dma_radar
         public int ErrorCount { get; set; } = 0;
         public bool isOfflinePlayer { get; set; } = false;
         public int PlayerSide { get; set; }
+        public int PlayerRole { get; set; }
 
         public List<ulong> BonePointers { get; } = new List<ulong>();
         public List<Vector3> BonePositions { get; } = new List<Vector3>();
@@ -459,11 +461,11 @@ namespace eft_dma_radar
         /// <summary>
         /// Returns PlayerType based on isAI & playuerSide
         /// </summary>
-        private PlayerType GetOnlinePlayerType(bool isAI, int playerSide, string name)
+        private PlayerType GetOnlinePlayerType(bool isAI)
         {
             if (!isAI)
             {
-                return playerSide switch
+                return this.PlayerSide switch
                 {
                     1 => PlayerType.USEC,
                     2 => PlayerType.BEAR,
@@ -478,14 +480,18 @@ namespace eft_dma_radar
                 }
                 else
                 {
-                    Program.AIFactionManager.IsInFaction(this.Name, out var playerType);
+                    var inFaction = Program.AIFactionManager.IsInFaction(this.Name, out var playerType);
+
+                    if (!inFaction && Memory.IsPvEMode)
+                        if (this.Gear.ContainsKey("Dogtag"))
+                            playerType = (this.Gear["Dogtag"].Short == "BEAR" ? PlayerType.BEAR : PlayerType.USEC);
 
                     return playerType;
                 }
             }
         }
 
-        private PlayerType GetOfflinePlayerType(bool isAI, string name, WildSpawnType role)
+        private PlayerType GetOfflinePlayerType(bool isAI)
         {
             if (!isAI)
             {
@@ -497,9 +503,9 @@ namespace eft_dma_radar
                 {
                     return PlayerType.Boss;
                 }
-                else if (role == WildSpawnType.pmcBEAR)
+                else if (this.PlayerRole == (int)WildSpawnType.pmcBEAR)
                     return PlayerType.BEAR;
-                else if (role == WildSpawnType.pmcUSEC)
+                else if (this.PlayerRole == (int)WildSpawnType.pmcUSEC)
                     return PlayerType.USEC;
                 else
                 {
@@ -529,11 +535,11 @@ namespace eft_dma_radar
             var inventory = round2.AddEntry<ulong>(0, 7, inventoryController, null, Offsets.InventoryController.Inventory);
             var registrationDate = round2.AddEntry<int>(0, 8, info, null, Offsets.PlayerInfo.RegistrationDate);
             var groupID = round2.AddEntry<ulong>(0, 9, info, null, Offsets.PlayerInfo.GroupId);
-            var setting = round2.AddEntry<ulong>(0, 10, info, null, Offsets.PlayerInfo.Settings);
+            var botSettings = round2.AddEntry<ulong>(0, 10, info, null, Offsets.PlayerInfo.Settings);
 
             var transIntPtr3 = round3.AddEntry<ulong>(0, 11, transIntPtr2, null, Offsets.Player.To_TransformInternal[2]);
             var equipment = round3.AddEntry<ulong>(0, 12, inventory, null, Offsets.Inventory.Equipment);
-            var role = round3.AddEntry<WildSpawnType>(0, 13, setting, null, Offsets.PlayerSettings.Role);
+            var role = round3.AddEntry<int>(0, 13, botSettings, null, Offsets.PlayerSettings.Role);
 
             var transIntPtr4 = round4.AddEntry<ulong>(0, 14, transIntPtr3, null, Offsets.Player.To_TransformInternal[3]);
             var inventorySlots = round4.AddEntry<ulong>(0, 15, equipment, null, Offsets.Equipment.Slots);
@@ -543,6 +549,47 @@ namespace eft_dma_radar
             var transformInternal = round6.AddEntry<ulong>(0, 17, transIntPtr5, null, Offsets.Player.To_TransformInternal[5]);
 
             scatterReadMap.Execute();
+        }
+
+        private void ProcessOfflinePlayerScatterReadResults(ScatterReadMap scatterReadMap)
+        {
+            if (!scatterReadMap.Results[0][1].TryGetResult<ulong>(out var info))
+                return;
+            if (!scatterReadMap.Results[0][4].TryGetResult<ulong>(out var movementContext))
+                return;
+            if (!scatterReadMap.Results[0][2].TryGetResult<ulong>(out var inventoryController))
+                return;
+            if (!scatterReadMap.Results[0][3].TryGetResult<ulong>(out var playerBody))
+                return;
+            if (!scatterReadMap.Results[0][6].TryGetResult<ulong>(out var name))
+                return;
+            if (!scatterReadMap.Results[0][15].TryGetResult<ulong>(out var inventorySlots))
+                return;
+            if (!scatterReadMap.Results[0][17].TryGetResult<ulong>(out var transformInternal))
+                return;
+            if (!scatterReadMap.Results[0][9].TryGetResult<ulong>(out var groupID))
+                return;
+            if (!scatterReadMap.Results[0][13].TryGetResult<int>(out var role))
+                return;
+
+            this.Info = info;
+            this.PlayerRole = role;
+            this.InitializePlayerProperties(movementContext, inventoryController, inventorySlots, transformInternal, playerBody, name, groupID);
+
+            if (scatterReadMap.Results[0][8].TryGetResult<int>(out var registrationDate))
+            {
+                var isAI = registrationDate == 0;
+
+                if (isAI)
+                    this.Name = Helpers.TransliterateCyrillic(this.Name);
+
+                this.IsLocalPlayer = !isAI;
+                this.isOfflinePlayer = true;
+                this.Type = this.GetOfflinePlayerType(isAI);
+                this.IsPMC = (this.Type == PlayerType.BEAR || this.Type == PlayerType.USEC || !isAI);
+
+                this.FinishAlloc();
+            }
         }
 
         private void SetupOnlineScatterReads(ScatterReadMap scatterReadMap)
@@ -586,59 +633,6 @@ namespace eft_dma_radar
             scatterReadMap.Execute();
         }
 
-        private void ProcessOfflinePlayerScatterReadResults(ScatterReadMap scatterReadMap)
-        {
-            if (!scatterReadMap.Results[0][1].TryGetResult<ulong>(out var info))
-                return;
-            if (!scatterReadMap.Results[0][4].TryGetResult<ulong>(out var movementContext))
-                return;
-            if (!scatterReadMap.Results[0][5].TryGetResult<ulong>(out var transIntPtr2))
-                return;
-            if (!scatterReadMap.Results[0][11].TryGetResult<ulong>(out var transIntPtr3))
-                return;
-            if (!scatterReadMap.Results[0][14].TryGetResult<ulong>(out var transIntPtr4))
-                return;
-            if (!scatterReadMap.Results[0][16].TryGetResult<ulong>(out var transIntPtr5))
-                return;
-            if (!scatterReadMap.Results[0][2].TryGetResult<ulong>(out var inventoryController))
-                return;
-            if (!scatterReadMap.Results[0][3].TryGetResult<ulong>(out var playerBody))
-                return;
-            if (!scatterReadMap.Results[0][6].TryGetResult<ulong>(out var name))
-                return;
-            if (!scatterReadMap.Results[0][15].TryGetResult<ulong>(out var inventorySlots))
-                return;
-            if (!scatterReadMap.Results[0][17].TryGetResult<ulong>(out var transformInternal))
-                return;
-            if (!scatterReadMap.Results[0][9].TryGetResult<ulong>(out var groupID))
-                return;
-            if (!scatterReadMap.Results[0][13].TryGetResult<WildSpawnType>(out var role))
-                return;
-
-            this.Info = info;
-            this.Role = role;
-
-            this.InitializePlayerProperties(movementContext, inventoryController, inventorySlots, transformInternal, playerBody, name, groupID);
-
-            if (scatterReadMap.Results[0][8].TryGetResult<int>(out var registrationDate))
-            {
-                var isAI = registrationDate == 0;
-
-                this.IsLocalPlayer = !isAI;
-
-                if (isAI)
-                    this.Name = Helpers.TransliterateCyrillic(this.Name);
-
-                this.Type = this.GetOfflinePlayerType(isAI, this.Name, role);
-
-                this.IsPMC = (this.Type == PlayerType.BEAR || this.Type == PlayerType.USEC || this.Type == PlayerType.PMC || !isAI);
-
-                this.isOfflinePlayer = true;
-
-                this.FinishAlloc();
-            }
-        }
-
         private void ProcessOnlinePlayerScatterReadResults(ScatterReadMap scatterReadMap)
         {
             if (!scatterReadMap.Results[0][15].TryGetResult<ulong>(out var movementContext))
@@ -672,19 +666,11 @@ namespace eft_dma_radar
             this.HealthController = healthController;
             this.AccountID = Memory.ReadUnityString(accountID);
 
-            if (!isAI)
-            {
-                this.IsPMC = (playerSide == 1 || playerSide == 2);
+            this.Type = this.GetOnlinePlayerType(isAI);
+            this.IsPMC = (this.Type == PlayerType.BEAR || this.Type == PlayerType.USEC);
 
-                if (!this.IsPMC)
-                    this.Name = Helpers.TransliterateCyrillic(this.Name);
-            }
-            else
-            {
+            if (isAI || !this.IsPMC)
                 this.Name = Helpers.TransliterateCyrillic(this.Name);
-            }
-
-            this.Type = this.GetOnlinePlayerType(isAI, playerSide, this.Name);
 
             this.FinishAlloc();
         }
@@ -773,7 +759,7 @@ namespace eft_dma_radar
             else if (isSpecialPlayer && !isOnWatchlist)
             {
                 this.Tag = "";
-                this.Type = this.isOfflinePlayer ? this.GetOfflinePlayerType(false, this.Name, this.Role) : this.GetOnlinePlayerType(false, this.PlayerSide, this.Name);
+                this.Type = this.isOfflinePlayer ? this.GetOfflinePlayerType(false) : this.GetOnlinePlayerType(false);
             }
         }
 

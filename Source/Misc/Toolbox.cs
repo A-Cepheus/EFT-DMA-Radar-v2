@@ -8,13 +8,18 @@ namespace eft_dma_radar
         private Thread autoRefreshThread;
         private CancellationTokenSource autoRefreshCancellationTokenSource;
 
-        private bool extendedReachToggled = false;
+        private const int MAX_ATTEMPTS = 5;
+
+        private bool extendedReach = false;
         private bool freezeTime = false;
-        private float timeOfDay = -1;
-        private bool infiniteStaminaToggled = false;
+        private float timeOfDay = -1f;
+        private bool infiniteStamina = false;
         
-        private bool thermalVisionToggled = false;
-        private bool nightVisionToggled = false;
+        private bool thermalVision = false;
+        private bool nightVision = false;
+
+        private bool timeScale = false;
+        private float timeScaleFactor = -1f;
 
         private Dictionary<string, bool> Skills = new Dictionary<string, bool>
         {
@@ -53,23 +58,34 @@ namespace eft_dma_radar
         private ulong WeatherControllerDebug;
         private ulong GameWorld;
         private ulong HardSettings;
+        private ulong TimeScale;
 
         private bool ToolboxMonoInitialized = false;
+        private bool FoundEFTHardSettings = false;
+        private bool FoundTOD_Sky = false;
         private bool ShouldInitializeToolboxMono => !this.ToolboxMonoInitialized && Memory.InGame && Memory.LocalPlayer is not null;
 
-        public Toolbox()
+        public bool UpdateExtendedReachDistance { get; set; } = false;
+
+        public Toolbox(ulong unityBase)
         {
             if (this._config.MasterSwitch)
             {
                 Task.Run(() =>
                 {
-                    while (this.ShouldInitializeToolboxMono)
+                    var attempts = 0;
+                    while (attempts < MAX_ATTEMPTS)
                     {
+                        if (!this.ShouldInitializeToolboxMono)
+                            break;
+
                         this.InitiateMonoAddresses();
                         Thread.Sleep(5000);
+                        attempts++;
                     }
                 });
 
+                this.InitiateTimeScale(unityBase);
                 this.StartToolbox();
             }
         }
@@ -142,29 +158,61 @@ namespace eft_dma_radar
         {
             if (this.ShouldInitializeToolboxMono)
             {
-                try
+                var attempts = 0;
+
+                while (attempts < MAX_ATTEMPTS && !this.FoundTOD_Sky)
                 {
-                    Program.Log("Trying to initialize Mono addresses...");
-                    this.TOD_Sky_static = MonoSharp.GetStaticFieldDataOfClass("Assembly-CSharp", "TOD_Sky");
-                    this.TOD_Sky_cached_ptr = Memory.ReadValue<ulong>(this.TOD_Sky_static + 0x10);
-                    this.TOD_Sky_inst_ptr = Memory.ReadValue<ulong>(this.TOD_Sky_cached_ptr + 0x20);
-                    this.TOD_Components = Memory.ReadValue<ulong>(this.TOD_Sky_inst_ptr + 0x80);
-                    this.TOD_Time = Memory.ReadValue<ulong>(this.TOD_Components + 0x140);
-                    this.GameDateTime = Memory.ReadValue<ulong>(this.TOD_Time + 0x18);
-                    this.Cycle = Memory.ReadValue<ulong>(this.TOD_Sky_inst_ptr + 0x18);
+                    try
+                    {
+                        this.TOD_Sky_static = MonoSharp.GetStaticFieldDataOfClass("Assembly-CSharp", "TOD_Sky");
+                        this.TOD_Sky_cached_ptr = Memory.ReadValue<ulong>(this.TOD_Sky_static + 0x10);
+                        this.TOD_Sky_inst_ptr = Memory.ReadValue<ulong>(this.TOD_Sky_cached_ptr + 0x20);
+                        this.TOD_Components = Memory.ReadValue<ulong>(this.TOD_Sky_inst_ptr + 0x80);
+                        this.TOD_Time = Memory.ReadValue<ulong>(this.TOD_Components + 0x140);
+                        this.GameDateTime = Memory.ReadValue<ulong>(this.TOD_Time + 0x18);
+                        this.Cycle = Memory.ReadValue<ulong>(this.TOD_Sky_inst_ptr + 0x18);
 
-                    //this.WeatherController = MonoSharp.GetStaticFieldDataOfClass("Assembly-CSharp", "EFT.Weather.WeatherController");
-                    //this.WeatherControllerDebug = Memory.ReadPtr(this.WeatherController + 0x80);
+                        this.FoundTOD_Sky = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        attempts++;
+                        Program.Log("[ToolBox] Failed to get TOD_SKY, retrying in 1 second!");
+                        Thread.Sleep(1000);
 
-                    this.HardSettings = MonoSharp.GetStaticFieldDataOfClass("Assembly-CSharp", "EFTHardSettings");
+                        if (attempts == MAX_ATTEMPTS)
+                        {
+                            Program.Log("[Toolbox] Failed to get TOD_Sky 5 times, skipping!");
+                            break;
+                        }
+                    }
+                }
 
+                attempts = 0;
+
+                while (attempts < MAX_ATTEMPTS && !this.FoundEFTHardSettings)
+                {
+                    try
+                    {
+                        this.HardSettings = MonoSharp.GetStaticFieldDataOfClass("Assembly-CSharp", "EFTHardSettings");
+                        this.FoundEFTHardSettings = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        attempts++;
+                        Program.Log("[ToolBox] Failed to get EFTHardSettings, retrying in 1 second!");
+                        Thread.Sleep(1000);
+
+                        if (attempts == MAX_ATTEMPTS)
+                        {
+                            Program.Log("[Toolbox] Failed to get EFTHardSettings 5 times, skipping!");
+                            break;
+                        }
+                    }
+                }
+
+                if (this.FoundTOD_Sky || this.FoundEFTHardSettings)
                     this.ToolboxMonoInitialized = true;
-                    Program.Log("[ToolBox] Initialized Mono addresses correctly!");
-                }
-                catch (Exception ex)
-                {
-                    Program.Log($"[ToolBox] - InitiateMonoAddresses ({ex.Message})\n{ex.StackTrace}");
-                }
             }
             else
             {
@@ -180,7 +228,7 @@ namespace eft_dma_radar
 
                 if (this._playerManager is not null)
                 {
-                    this._playerManager.isADS = Memory.ReadValue<bool>(this._playerManager.proceduralWeaponAnimation + Offsets.ProceduralWeaponAnimation.IsAiming);
+                    this._playerManager.UpdateVariables();
 
                     // No Recoil / Sway
                     this._playerManager.SetNoRecoilSway(this._config.NoRecoilSway, ref entries);
@@ -188,11 +236,11 @@ namespace eft_dma_radar
                     // Instant ADS
                     this._playerManager.SetInstantADS(this._config.InstantADS, ref entries);
 
-                    // Loot Through Wall
-                    this._playerManager.SetLootThroughWall(this._config.LootThroughWall, ref entries);
+                    // Loot Through Walls
+                    this._playerManager.SetLootThroughWalls(this._config.LootThroughWalls, ref entries);
 
-                    // TimeScale
-                    TimeScaleManager.EnableTimeScale(this._config.TimeScale);
+                    if (this._config.NoWeaponMalfunctions)
+                        this._playerManager.SetNoWeaponMalfunctions(ref entries);
 
                     #region Skill Buffs
                     if (this._config.MaxSkills["Endurance"] != this.Skills["Endurance"])
@@ -315,25 +363,41 @@ namespace eft_dma_radar
                 if (this.ToolboxMonoInitialized)
                 {
                     // Extended Reach
-                    if (this._config.ExtendedReach != this.extendedReachToggled)
+                    if (this.FoundEFTHardSettings)
                     {
-                        this.extendedReachToggled = this._config.ExtendedReach;
-                        this.SetInteractDistance(this.extendedReachToggled, ref entries);
+                        if (this._config.ExtendedReach != this.extendedReach || this.UpdateExtendedReachDistance)
+                        {
+
+                            if (this.UpdateExtendedReachDistance)
+                                this.UpdateExtendedReachDistance = !this.UpdateExtendedReachDistance;
+                            else
+                                this.extendedReach = this._config.ExtendedReach;
+
+                            this.SetInteractDistance(this.extendedReach, ref entries);
+                        }
                     }
 
                     // Lock time of day + set time of day
-                    if (this._config.FreezeTimeOfDay != this.freezeTime)
+                    if (this.FoundTOD_Sky)
                     {
-                        this.freezeTime = this._config.FreezeTimeOfDay;
-                        this.FreezeTime(this.freezeTime, ref entries);
+                        var freezeStateChanged = this._config.FreezeTimeOfDay != this.freezeTime;
+                        var timeOfDayChanged = this._config.TimeOfDay != this.timeOfDay;
 
-                        if (!this.freezeTime && this.timeOfDay != -1)
-                            this.timeOfDay = -1;
-                    }
+                        if (freezeStateChanged || (this._config.FreezeTimeOfDay && timeOfDayChanged))
+                        {
+                            this.freezeTime = this._config.FreezeTimeOfDay;
+                            this.FreezeTime(this.freezeTime, ref entries);
 
-                    if (this._config.FreezeTimeOfDay && this.freezeTime && this._config.TimeOfDay != this.timeOfDay)
-                    {
-                        this.SetTimeOfDay(this._config.TimeOfDay, ref entries);
+                            if (this.freezeTime)
+                            {
+                                if (timeOfDayChanged)
+                                    this.SetTimeOfDay(this._config.TimeOfDay, ref entries);
+                            }
+                            else
+                            {
+                                this.timeOfDay = -1;
+                            }
+                        }
                     }
                 }
 
@@ -350,21 +414,21 @@ namespace eft_dma_radar
                         this._cameraManager.VisorEffect(this._config.NoVisor, ref entries);
 
                         // Smart Thermal Vision
-                        if (this._playerManager is null || !this._playerManager.isADS)
+                        if (this._playerManager is null || !this._playerManager.IsADS)
                         {
-                            if (this._config.ThermalVision != thermalVisionToggled)
+                            if (this._config.ThermalVision != thermalVision)
                             {
-                                this.thermalVisionToggled = this._config.ThermalVision;
-                                this._cameraManager.ThermalVision(this.thermalVisionToggled, ref entries);
+                                this.thermalVision = this._config.ThermalVision;
+                                this._cameraManager.ThermalVision(this.thermalVision, ref entries);
                             }
                         }
                         else
                         {
                             if (this._config.OpticThermalVision)
                             {
-                                if (this.thermalVisionToggled)
+                                if (this.thermalVision)
                                 {
-                                    this.thermalVisionToggled = false;
+                                    this.thermalVision = false;
                                     this._cameraManager.ThermalVision(false, ref entries);
                                 }
 
@@ -377,10 +441,10 @@ namespace eft_dma_radar
                         }
 
                         // Night Vision
-                        if (this._config.NightVision != this.nightVisionToggled)
+                        if (this._config.NightVision != this.nightVision)
                         {
-                            this.nightVisionToggled = this._config.NightVision;
-                            this._cameraManager.NightVision(this.nightVisionToggled, ref entries);
+                            this.nightVision = this._config.NightVision;
+                            this._cameraManager.NightVision(this.nightVision, ref entries);
                         }
 
                         // Chams
@@ -393,6 +457,20 @@ namespace eft_dma_radar
                             this._chams?.ChamsDisable();
                         }
                     }
+                }
+
+                // Time Scale
+                var timeScaleChanged = this._config.TimeScale != this.timeScale;
+                var factorChanged = this._config.TimeScaleFactor != this.timeScaleFactor;
+
+                if (timeScaleChanged || (this._config.TimeScale && factorChanged))
+                {
+                    this.timeScale = this._config.TimeScale;
+
+                    var factor = this.timeScale ? this._config.TimeScaleFactor : 1f;
+
+                    if (factor != this.timeScaleFactor)
+                        this.SetTimeScaleFactor(factor, ref entries);
                 }
 
                 if (entries.Any())
@@ -410,14 +488,16 @@ namespace eft_dma_radar
         /// <param name="enabled"></param>
         private void SetInteractDistance(bool on, ref List<IScatterWriteEntry> entries)
         {
+            var pveMode = Memory.IsOfflinePvE;
+            var maxDistance = (pveMode ? _config.ExtendedReachDistancePvE : _config.ExtendedReachDistance);
             var currentLootRaycastDistance = Memory.ReadValue<float>(this.HardSettings + Offsets.EFTHardSettings.LOOT_RAYCAST_DISTANCE);
 
-            if (on && currentLootRaycastDistance != 1.8f)
+            if (on && currentLootRaycastDistance != maxDistance)
             {
-                entries.Add(new ScatterWriteDataEntry<float>(this.HardSettings + Offsets.EFTHardSettings.LOOT_RAYCAST_DISTANCE, 1.8f));
-                entries.Add(new ScatterWriteDataEntry<float>(this.HardSettings + Offsets.EFTHardSettings.DOOR_RAYCAST_DISTANCE, 1.8f));
+                entries.Add(new ScatterWriteDataEntry<float>(this.HardSettings + Offsets.EFTHardSettings.LOOT_RAYCAST_DISTANCE, maxDistance));
+                entries.Add(new ScatterWriteDataEntry<float>(this.HardSettings + Offsets.EFTHardSettings.DOOR_RAYCAST_DISTANCE, maxDistance));
             }
-            else if (!on && currentLootRaycastDistance == 1.8f)
+            else if (!on && currentLootRaycastDistance == maxDistance)
             {
                 entries.Add(new ScatterWriteDataEntry<float>(this.HardSettings + Offsets.EFTHardSettings.LOOT_RAYCAST_DISTANCE, 1.3f));
                 entries.Add(new ScatterWriteDataEntry<float>(this.HardSettings + Offsets.EFTHardSettings.DOOR_RAYCAST_DISTANCE, 1f));
@@ -445,6 +525,16 @@ namespace eft_dma_radar
         {
             this.timeOfDay = time;
             entries.Add(new ScatterWriteDataEntry<float>(this.Cycle + 0x10, this.timeOfDay));
+        }
+
+        private void InitiateTimeScale(ulong unityBase)
+        {
+            this.TimeScale = Memory.ReadValue<ulong>(unityBase + Offsets.ModuleBase.TimeScale + 7 * 8);
+        }
+
+        private void SetTimeScaleFactor(float factor, ref List<IScatterWriteEntry> entries)
+        {
+            entries.Add(new ScatterWriteDataEntry<float>(this.TimeScale + Offsets.TimeScale.Value, factor));
         }
     }
 }
