@@ -501,7 +501,7 @@
             swHoverArmor.Ripple = true;
             swHoverArmor.Size = new Size(152, 32);
             swHoverArmor.TabIndex = 4;
-            swHoverArmor.Text = "Hover Armor";
+            swHoverArmor.Text = "悬停查看护甲";
             toolTip.SetToolTip(swHoverArmor, "Show current gear pieces when hovering over a player");
             swHoverArmor.UseVisualStyleBackColor = true;
             swHoverArmor.CheckedChanged += swHoverArmor_CheckedChanged;
@@ -573,7 +573,7 @@
             btnRestartRadar.NoAccentTextColor = Color.Empty;
             btnRestartRadar.Size = new Size(143, 41);
             btnRestartRadar.TabIndex = 2;
-            btnRestartRadar.Text = "Restart Radar";
+            btnRestartRadar.Text = "重启雷达";
             toolTip.SetToolTip(btnRestartRadar, "Manually triggers radar restart");
             btnRestartRadar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnRestartRadar.UseAccentColor = true;
@@ -595,7 +595,7 @@
             btnToggleMap.NoAccentTextColor = Color.Empty;
             btnToggleMap.Size = new Size(143, 41);
             btnToggleMap.TabIndex = 1;
-            btnToggleMap.Text = "Toggle Map (F5)";
+            btnToggleMap.Text = "切换地图（F5）";
             toolTip.SetToolTip(btnToggleMap, "Manually toggles active map");
             btnToggleMap.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnToggleMap.UseAccentColor = true;
@@ -643,14 +643,14 @@
             sldrJumpStrength.Location = new Point(15, 357);
             sldrJumpStrength.MouseState = MaterialSkin.MouseState.HOVER;
             sldrJumpStrength.Name = "sldrJumpStrength";
-            sldrJumpStrength.RangeMax = 5;
+            sldrJumpStrength.RangeMax = 20;
             sldrJumpStrength.Size = new Size(230, 40);
             sldrJumpStrength.TabIndex = 35;
             sldrJumpStrength.Text = "跳跃力量";
             toolTip.SetToolTip(sldrJumpStrength, "The 'strength' of jumping");
             sldrJumpStrength.UseAccentColor = true;
             sldrJumpStrength.Value = 0;
-            sldrJumpStrength.ValueMax = 5;
+            sldrJumpStrength.ValueMax = 20;
             sldrJumpStrength.Visible = false;
             sldrJumpStrength.onValueChanged += sldrJumpStrength_onValueChanged;
             // 
@@ -683,7 +683,7 @@
             sldrTimeOfDay.RangeMin = 1;
             sldrTimeOfDay.Size = new Size(238, 40);
             sldrTimeOfDay.TabIndex = 30;
-            sldrTimeOfDay.Text = "当前时间";
+            sldrTimeOfDay.Text = "设定时间";
             toolTip.SetToolTip(sldrTimeOfDay, "The time of the in-game day to set");
             sldrTimeOfDay.UseAccentColor = true;
             sldrTimeOfDay.Value = 12;
@@ -783,7 +783,7 @@
             sldrMagDrillsSpeed.Location = new Point(15, 317);
             sldrMagDrillsSpeed.MouseState = MaterialSkin.MouseState.HOVER;
             sldrMagDrillsSpeed.Name = "sldrMagDrillsSpeed";
-            sldrMagDrillsSpeed.RangeMax = 70;
+            sldrMagDrillsSpeed.RangeMax = 85;
             sldrMagDrillsSpeed.RangeMin = 1;
             sldrMagDrillsSpeed.Size = new Size(230, 40);
             sldrMagDrillsSpeed.TabIndex = 30;
@@ -791,7 +791,7 @@
             toolTip.SetToolTip(sldrMagDrillsSpeed, "Speed of un/packing ammunition from a magazine");
             sldrMagDrillsSpeed.UseAccentColor = true;
             sldrMagDrillsSpeed.Value = 30;
-            sldrMagDrillsSpeed.ValueMax = 70;
+            sldrMagDrillsSpeed.ValueMax = 85;
             sldrMagDrillsSpeed.Visible = false;
             sldrMagDrillsSpeed.onValueChanged += sldrMagDrillsSpeed_onValueChanged;
             // 
@@ -1143,9 +1143,9 @@
             btnAddFaction.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddFaction.Name = "btnAddFaction";
             btnAddFaction.NoAccentTextColor = Color.Empty;
-            btnAddFaction.Size = new Size(81, 36);
+            btnAddFaction.Size = new Size(78, 36);
             btnAddFaction.TabIndex = 39;
-            btnAddFaction.Text = "Add";
+            btnAddFaction.Text = "添加";
             toolTip.SetToolTip(btnAddFaction, "Creates a new loot filter profile");
             btnAddFaction.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnAddFaction.UseAccentColor = true;
@@ -1164,9 +1164,9 @@
             btnRemoveFaction.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemoveFaction.Name = "btnRemoveFaction";
             btnRemoveFaction.NoAccentTextColor = Color.Empty;
-            btnRemoveFaction.Size = new Size(111, 36);
+            btnRemoveFaction.Size = new Size(78, 36);
             btnRemoveFaction.TabIndex = 40;
-            btnRemoveFaction.Text = "Remove";
+            btnRemoveFaction.Text = "删除";
             toolTip.SetToolTip(btnRemoveFaction, "Removes the selected loot filter profile");
             btnRemoveFaction.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             btnRemoveFaction.UseAccentColor = true;
@@ -1180,14 +1180,14 @@
             btnAddFactionEntry.Depth = 0;
             btnAddFactionEntry.HighEmphasis = true;
             btnAddFactionEntry.Icon = (Image)resources.GetObject("btnAddFactionEntry.Icon");
-            btnAddFactionEntry.Location = new Point(374, 152);
+            btnAddFactionEntry.Location = new Point(295, 51);
             btnAddFactionEntry.Margin = new Padding(4, 7, 4, 7);
             btnAddFactionEntry.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddFactionEntry.Name = "btnAddFactionEntry";
             btnAddFactionEntry.NoAccentTextColor = Color.Empty;
-            btnAddFactionEntry.Size = new Size(97, 36);
+            btnAddFactionEntry.Size = new Size(78, 36);
             btnAddFactionEntry.TabIndex = 46;
-            btnAddFactionEntry.Text = "Entry";
+            btnAddFactionEntry.Text = "实体";
             toolTip.SetToolTip(btnAddFactionEntry, "Creates a new loot filter profile");
             btnAddFactionEntry.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnAddFactionEntry.UseAccentColor = true;
@@ -1201,14 +1201,14 @@
             btnRemoveFactionEntry.Depth = 0;
             btnRemoveFactionEntry.HighEmphasis = true;
             btnRemoveFactionEntry.Icon = (Image)resources.GetObject("btnRemoveFactionEntry.Icon");
-            btnRemoveFactionEntry.Location = new Point(361, 51);
+            btnRemoveFactionEntry.Location = new Point(381, 51);
             btnRemoveFactionEntry.Margin = new Padding(4, 7, 4, 7);
             btnRemoveFactionEntry.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemoveFactionEntry.Name = "btnRemoveFactionEntry";
             btnRemoveFactionEntry.NoAccentTextColor = Color.Empty;
-            btnRemoveFactionEntry.Size = new Size(111, 36);
+            btnRemoveFactionEntry.Size = new Size(78, 36);
             btnRemoveFactionEntry.TabIndex = 48;
-            btnRemoveFactionEntry.Text = "Remove";
+            btnRemoveFactionEntry.Text = "删除";
             toolTip.SetToolTip(btnRemoveFactionEntry, "Removes the selected loot filter profile");
             btnRemoveFactionEntry.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             btnRemoveFactionEntry.UseAccentColor = true;
@@ -1225,7 +1225,7 @@
             txtTeammateID.Depth = 0;
             txtTeammateID.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtTeammateID.HideSelection = true;
-            txtTeammateID.Hint = "Teammate ID";
+            txtTeammateID.Hint = "队友 ID";
             txtTeammateID.LeadingIcon = null;
             txtTeammateID.Location = new Point(453, 194);
             txtTeammateID.MaxLength = 32767;
@@ -1292,7 +1292,7 @@
             txtFactionName.Depth = 0;
             txtFactionName.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtFactionName.HideSelection = true;
-            txtFactionName.Hint = "Faction Name";
+            txtFactionName.Hint = "阵营名称";
             txtFactionName.LeadingIcon = null;
             txtFactionName.Location = new Point(254, 51);
             txtFactionName.MaxLength = 32767;
@@ -1328,7 +1328,7 @@
             cboFactionType.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboFactionType.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboFactionType.FormattingEnabled = true;
-            cboFactionType.Hint = "Faction Type";
+            cboFactionType.Hint = "阵营类型";
             cboFactionType.IntegralHeight = false;
             cboFactionType.ItemHeight = 29;
             cboFactionType.Location = new Point(254, 102);
@@ -1358,7 +1358,7 @@
             btnResetTheme.NoAccentTextColor = Color.Empty;
             btnResetTheme.Size = new Size(105, 41);
             btnResetTheme.TabIndex = 59;
-            btnResetTheme.Text = "Reset Theme";
+            btnResetTheme.Text = "重置主题";
             toolTip.SetToolTip(btnResetTheme, "Manually triggers radar restart");
             btnResetTheme.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnResetTheme.UseAccentColor = true;
@@ -1505,7 +1505,7 @@
             btnToggleMapFree.NoAccentTextColor = Color.Empty;
             btnToggleMapFree.Size = new Size(107, 41);
             btnToggleMapFree.TabIndex = 47;
-            btnToggleMapFree.Text = "Follow";
+            btnToggleMapFree.Text = "跟随";
             toolTip.SetToolTip(btnToggleMapFree, "Toggles radar following functionality");
             btnToggleMapFree.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
             btnToggleMapFree.UseAccentColor = true;
@@ -1818,7 +1818,7 @@
             cboLootFilterItemsToAdd.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboLootFilterItemsToAdd.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboLootFilterItemsToAdd.FormattingEnabled = true;
-            cboLootFilterItemsToAdd.Hint = "Item To Add";
+            cboLootFilterItemsToAdd.Hint = "需要添加的物品";
             cboLootFilterItemsToAdd.IntegralHeight = false;
             cboLootFilterItemsToAdd.ItemHeight = 29;
             cboLootFilterItemsToAdd.Location = new Point(15, 105);
@@ -1841,7 +1841,7 @@
             txtLootFilterItemToSearch.Depth = 0;
             txtLootFilterItemToSearch.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtLootFilterItemToSearch.HideSelection = true;
-            txtLootFilterItemToSearch.Hint = "Type to search for an item...";
+            txtLootFilterItemToSearch.Hint = "输入需要搜索的物品...";
             txtLootFilterItemToSearch.LeadingIcon = null;
             txtLootFilterItemToSearch.Location = new Point(15, 51);
             txtLootFilterItemToSearch.MaxLength = 32767;
@@ -1877,9 +1877,9 @@
             btnAddLootFilterItem.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddLootFilterItem.Name = "btnAddLootFilterItem";
             btnAddLootFilterItem.NoAccentTextColor = Color.Empty;
-            btnAddLootFilterItem.Size = new Size(81, 36);
+            btnAddLootFilterItem.Size = new Size(78, 36);
             btnAddLootFilterItem.TabIndex = 46;
-            btnAddLootFilterItem.Text = "Add";
+            btnAddLootFilterItem.Text = "添加";
             toolTip.SetToolTip(btnAddLootFilterItem, "Creates a new loot filter profile");
             btnAddLootFilterItem.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnAddLootFilterItem.UseAccentColor = true;
@@ -1898,9 +1898,9 @@
             btnRemoveLootFilterItem.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemoveLootFilterItem.Name = "btnRemoveLootFilterItem";
             btnRemoveLootFilterItem.NoAccentTextColor = Color.Empty;
-            btnRemoveLootFilterItem.Size = new Size(111, 36);
+            btnRemoveLootFilterItem.Size = new Size(78, 36);
             btnRemoveLootFilterItem.TabIndex = 47;
-            btnRemoveLootFilterItem.Text = "Remove";
+            btnRemoveLootFilterItem.Text = "删除";
             toolTip.SetToolTip(btnRemoveLootFilterItem, "Removes the selected loot filter profile");
             btnRemoveLootFilterItem.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             btnRemoveLootFilterItem.UseAccentColor = true;
@@ -1917,7 +1917,7 @@
             txtLootFilterName.Depth = 0;
             txtLootFilterName.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtLootFilterName.HideSelection = true;
-            txtLootFilterName.Hint = "Filter Name";
+            txtLootFilterName.Hint = "过滤器名称";
             txtLootFilterName.LeadingIcon = null;
             txtLootFilterName.Location = new Point(336, 51);
             txtLootFilterName.MaxLength = 32767;
@@ -1953,7 +1953,7 @@
             swLootFilterActive.Ripple = true;
             swLootFilterActive.Size = new Size(117, 32);
             swLootFilterActive.TabIndex = 45;
-            swLootFilterActive.Text = "Active";
+            swLootFilterActive.Text = "启用";
             toolTip.SetToolTip(swLootFilterActive, "Only shows items considered 'important' or ones in a filter");
             swLootFilterActive.UseVisualStyleBackColor = true;
             swLootFilterActive.Click += swLootFilterActive_CheckedChanged;
@@ -1970,9 +1970,9 @@
             btnAddFilter.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddFilter.Name = "btnAddFilter";
             btnAddFilter.NoAccentTextColor = Color.Empty;
-            btnAddFilter.Size = new Size(81, 36);
+            btnAddFilter.Size = new Size(78, 36);
             btnAddFilter.TabIndex = 39;
-            btnAddFilter.Text = "Add";
+            btnAddFilter.Text = "添加";
             toolTip.SetToolTip(btnAddFilter, "Creates a new loot filter profile");
             btnAddFilter.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnAddFilter.UseAccentColor = true;
@@ -1991,9 +1991,9 @@
             btnRemoveFilter.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemoveFilter.Name = "btnRemoveFilter";
             btnRemoveFilter.NoAccentTextColor = Color.Empty;
-            btnRemoveFilter.Size = new Size(111, 36);
+            btnRemoveFilter.Size = new Size(78, 36);
             btnRemoveFilter.TabIndex = 40;
-            btnRemoveFilter.Text = "Remove";
+            btnRemoveFilter.Text = "删除";
             toolTip.SetToolTip(btnRemoveFilter, "Removes the selected loot filter profile");
             btnRemoveFilter.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             btnRemoveFilter.UseAccentColor = true;
@@ -2352,7 +2352,7 @@
             swRadarEnemyCount.Ripple = true;
             swRadarEnemyCount.Size = new Size(152, 32);
             swRadarEnemyCount.TabIndex = 33;
-            swRadarEnemyCount.Text = "敌人数量";
+            swRadarEnemyCount.Text = "敌人统计";
             toolTip.SetToolTip(swRadarEnemyCount, "Shows radar stats on radar tab");
             swRadarEnemyCount.UseVisualStyleBackColor = true;
             swRadarEnemyCount.CheckedChanged += swRadarEnemyCount_CheckedChanged;
@@ -2449,7 +2449,7 @@
             swChamsPMCs.Ripple = true;
             swChamsPMCs.Size = new Size(102, 32);
             swChamsPMCs.TabIndex = 37;
-            swChamsPMCs.Text = "PMCs";
+            swChamsPMCs.Text = "PMC";
             toolTip.SetToolTip(swChamsPMCs, "Shows BEAR/USEC players through walls");
             swChamsPMCs.UseVisualStyleBackColor = true;
             swChamsPMCs.Visible = false;
@@ -2467,7 +2467,7 @@
             swChamsBosses.Ripple = true;
             swChamsBosses.Size = new Size(110, 32);
             swChamsBosses.TabIndex = 38;
-            swChamsBosses.Text = "Bosses";
+            swChamsBosses.Text = "Boss";
             toolTip.SetToolTip(swChamsBosses, "Shows bosses through walls");
             swChamsBosses.UseVisualStyleBackColor = true;
             swChamsBosses.Visible = false;
@@ -2521,7 +2521,7 @@
             swChamsScavs.Ripple = true;
             swChamsScavs.Size = new Size(102, 32);
             swChamsScavs.TabIndex = 41;
-            swChamsScavs.Text = "Scavs";
+            swChamsScavs.Text = "Scav";
             toolTip.SetToolTip(swChamsScavs, "Shows scavs through walls");
             swChamsScavs.UseVisualStyleBackColor = true;
             swChamsScavs.Visible = false;
@@ -2592,7 +2592,7 @@
             swChamsPlayerScavs.Ripple = true;
             swChamsPlayerScavs.Size = new Size(152, 32);
             swChamsPlayerScavs.TabIndex = 45;
-            swChamsPlayerScavs.Text = "玩家 Scavs";
+            swChamsPlayerScavs.Text = "玩家 Scav";
             toolTip.SetToolTip(swChamsPlayerScavs, "Shows Player Scavs through walls");
             swChamsPlayerScavs.UseVisualStyleBackColor = true;
             swChamsPlayerScavs.Visible = false;
@@ -2631,7 +2631,7 @@
             txtLootItemFilter.Depth = 0;
             txtLootItemFilter.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtLootItemFilter.HideSelection = true;
-            txtLootItemFilter.Hint = "Type to search for an item...";
+            txtLootItemFilter.Hint = "输入需要搜索的物品...";
             txtLootItemFilter.LeadingIcon = null;
             txtLootItemFilter.Location = new Point(2, 194);
             txtLootItemFilter.MaxLength = 32767;
@@ -2790,14 +2790,14 @@
             sldrLootThroughDistance.Location = new Point(272, 137);
             sldrLootThroughDistance.MouseState = MaterialSkin.MouseState.HOVER;
             sldrLootThroughDistance.Name = "sldrLootThroughDistance";
-            sldrLootThroughDistance.RangeMax = 3;
+            sldrLootThroughDistance.RangeMax = 5;
             sldrLootThroughDistance.Size = new Size(238, 40);
             sldrLootThroughDistance.TabIndex = 41;
             sldrLootThroughDistance.Text = "穿墙距离";
             toolTip.SetToolTip(sldrLootThroughDistance, "开镜后向前穿墙的距离远近");
             sldrLootThroughDistance.UseAccentColor = true;
             sldrLootThroughDistance.Value = 3;
-            sldrLootThroughDistance.ValueMax = 3;
+            sldrLootThroughDistance.ValueMax = 5;
             sldrLootThroughDistance.Visible = false;
             sldrLootThroughDistance.onValueChanged += sldrLootThroughDistance_onValueChanged;
             // 
@@ -2884,7 +2884,7 @@
             tabRadar.Padding = new Padding(3);
             tabRadar.Size = new Size(1297, 803);
             tabRadar.TabIndex = 0;
-            tabRadar.Text = "Radar";
+            tabRadar.Text = "雷达";
             // 
             // mcRadarLootItemViewer
             // 
@@ -2927,17 +2927,16 @@
             // colItemQuantity
             // 
             colItemQuantity.Text = "Qty";
-            colItemQuantity.Width = 54;
             // 
             // colItemName
             // 
             colItemName.Text = "Name";
-            colItemName.Width = 327;
+            colItemName.Width = 300;
             // 
             // colItemValue
             // 
             colItemValue.Text = "Value";
-            colItemValue.Width = 76;
+            colItemValue.Width = 80;
             // 
             // mcRadarEnemyStats
             // 
@@ -3325,7 +3324,7 @@
             tabSettings.Name = "tabSettings";
             tabSettings.Size = new Size(1297, 803);
             tabSettings.TabIndex = 1;
-            tabSettings.Text = "Settings";
+            tabSettings.Text = "设置";
             // 
             // tabSelector
             // 
@@ -3373,7 +3372,7 @@
             tabSettingsGeneral.Name = "tabSettingsGeneral";
             tabSettingsGeneral.Size = new Size(1281, 729);
             tabSettingsGeneral.TabIndex = 0;
-            tabSettingsGeneral.Text = "General";
+            tabSettingsGeneral.Text = "通用";
             // 
             // mcSettingsGeneralUI
             // 
@@ -3429,9 +3428,9 @@
             lblSettingsGeneralUI.Location = new Point(17, 14);
             lblSettingsGeneralUI.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsGeneralUI.Name = "lblSettingsGeneralUI";
-            lblSettingsGeneralUI.Size = new Size(133, 26);
+            lblSettingsGeneralUI.Size = new Size(81, 26);
             lblSettingsGeneralUI.TabIndex = 33;
-            lblSettingsGeneralUI.Text = "User Interface";
+            lblSettingsGeneralUI.Text = "用户界面";
             lblSettingsGeneralUI.UseAccent = true;
             // 
             // mcSettingsGeneralRadar
@@ -3464,9 +3463,9 @@
             lblSettingsGeneralRadar.Location = new Point(17, 17);
             lblSettingsGeneralRadar.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsGeneralRadar.Name = "lblSettingsGeneralRadar";
-            lblSettingsGeneralRadar.Size = new Size(56, 26);
+            lblSettingsGeneralRadar.Size = new Size(41, 26);
             lblSettingsGeneralRadar.TabIndex = 30;
-            lblSettingsGeneralRadar.Text = "Radar";
+            lblSettingsGeneralRadar.Text = "雷达";
             lblSettingsGeneralRadar.UseAccent = true;
             // 
             // tabSettingsMemoryWriting
@@ -3483,7 +3482,7 @@
             tabSettingsMemoryWriting.Padding = new Padding(3);
             tabSettingsMemoryWriting.Size = new Size(1281, 729);
             tabSettingsMemoryWriting.TabIndex = 1;
-            tabSettingsMemoryWriting.Text = "Memory Writing";
+            tabSettingsMemoryWriting.Text = "内存写入";
             // 
             // mcSettingsMemoryWritingChams
             // 
@@ -3690,7 +3689,7 @@
             tabSettingsLoot.Name = "tabSettingsLoot";
             tabSettingsLoot.Size = new Size(1281, 729);
             tabSettingsLoot.TabIndex = 2;
-            tabSettingsLoot.Text = "Loot";
+            tabSettingsLoot.Text = "物资";
             // 
             // mcSettingsLootPing
             // 
@@ -3719,9 +3718,9 @@
             lblSettingsLootPing.Location = new Point(17, 14);
             lblSettingsLootPing.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsLootPing.Name = "lblSettingsLootPing";
-            lblSettingsLootPing.Size = new Size(90, 26);
+            lblSettingsLootPing.Size = new Size(87, 26);
             lblSettingsLootPing.TabIndex = 33;
-            lblSettingsLootPing.Text = "Loot Ping";
+            lblSettingsLootPing.Text = "物资 Ping";
             lblSettingsLootPing.UseAccent = true;
             // 
             // mcSettingsLootMinRubleValue
@@ -3752,9 +3751,9 @@
             lblSettingsLootMinRubleValues.Location = new Point(17, 14);
             lblSettingsLootMinRubleValues.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsLootMinRubleValues.Name = "lblSettingsLootMinRubleValues";
-            lblSettingsLootMinRubleValues.Size = new Size(202, 26);
+            lblSettingsLootMinRubleValues.Size = new Size(121, 26);
             lblSettingsLootMinRubleValues.TabIndex = 33;
-            lblSettingsLootMinRubleValues.Text = "Minimum Ruble Value";
+            lblSettingsLootMinRubleValues.Text = "最低卢布价值";
             lblSettingsLootMinRubleValues.UseAccent = true;
             // 
             // mcSettingsLootGeneral
@@ -3790,9 +3789,9 @@
             lblSettingsLootGeneral.Location = new Point(17, 17);
             lblSettingsLootGeneral.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsLootGeneral.Name = "lblSettingsLootGeneral";
-            lblSettingsLootGeneral.Size = new Size(73, 26);
+            lblSettingsLootGeneral.Size = new Size(41, 26);
             lblSettingsLootGeneral.TabIndex = 30;
-            lblSettingsLootGeneral.Text = "General";
+            lblSettingsLootGeneral.Text = "全局";
             lblSettingsLootGeneral.UseAccent = true;
             // 
             // tabSettingsAIFactions
@@ -3806,7 +3805,7 @@
             tabSettingsAIFactions.Name = "tabSettingsAIFactions";
             tabSettingsAIFactions.Size = new Size(1281, 729);
             tabSettingsAIFactions.TabIndex = 3;
-            tabSettingsAIFactions.Text = "AI Factions";
+            tabSettingsAIFactions.Text = "AI 阵营";
             // 
             // lstFactionEntries
             // 
@@ -3842,6 +3841,7 @@
             mcSettingsAIFactionsEntryManagement.BackColor = Color.FromArgb(255, 255, 255);
             mcSettingsAIFactionsEntryManagement.Controls.Add(btnRemoveFactionEntry);
             mcSettingsAIFactionsEntryManagement.Controls.Add(txtFactionEntryName);
+            mcSettingsAIFactionsEntryManagement.Controls.Add(btnAddFactionEntry);
             mcSettingsAIFactionsEntryManagement.Controls.Add(lblSettingsAIFactionsEntryManagement);
             mcSettingsAIFactionsEntryManagement.Depth = 0;
             mcSettingsAIFactionsEntryManagement.ForeColor = Color.FromArgb(222, 0, 0, 0);
@@ -3873,7 +3873,6 @@
             mcSettingsAIFactionsFactions.BackColor = Color.FromArgb(255, 255, 255);
             mcSettingsAIFactionsFactions.Controls.Add(lstFactions);
             mcSettingsAIFactionsFactions.Controls.Add(txtFactionName);
-            mcSettingsAIFactionsFactions.Controls.Add(btnAddFactionEntry);
             mcSettingsAIFactionsFactions.Controls.Add(cboFactionType);
             mcSettingsAIFactionsFactions.Controls.Add(btnAddFaction);
             mcSettingsAIFactionsFactions.Controls.Add(btnRemoveFaction);
@@ -3923,9 +3922,9 @@
             lblSettingsAIFactionsFactions.Location = new Point(17, 14);
             lblSettingsAIFactionsFactions.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsAIFactionsFactions.Name = "lblSettingsAIFactionsFactions";
-            lblSettingsAIFactionsFactions.Size = new Size(79, 26);
+            lblSettingsAIFactionsFactions.Size = new Size(81, 26);
             lblSettingsAIFactionsFactions.TabIndex = 33;
-            lblSettingsAIFactionsFactions.Text = "Factions";
+            lblSettingsAIFactionsFactions.Text = "阵营列表";
             lblSettingsAIFactionsFactions.UseAccent = true;
             // 
             // tabSettingsColors
@@ -3941,7 +3940,7 @@
             tabSettingsColors.Name = "tabSettingsColors";
             tabSettingsColors.Size = new Size(1281, 729);
             tabSettingsColors.TabIndex = 4;
-            tabSettingsColors.Text = "Colors";
+            tabSettingsColors.Text = "颜色";
             // 
             // mcSettingsColorsOther
             // 
@@ -4150,9 +4149,9 @@
             lblSettingsColorsOther.Location = new Point(17, 14);
             lblSettingsColorsOther.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsOther.Name = "lblSettingsColorsOther";
-            lblSettingsColorsOther.Size = new Size(55, 26);
+            lblSettingsColorsOther.Size = new Size(41, 26);
             lblSettingsColorsOther.TabIndex = 33;
-            lblSettingsColorsOther.Text = "Other";
+            lblSettingsColorsOther.Text = "其他";
             lblSettingsColorsOther.UseAccent = true;
             // 
             // mcSettingsColorsLootAndQuests
@@ -4309,9 +4308,9 @@
             lblSettingsColorsLootQuests.Location = new Point(17, 14);
             lblSettingsColorsLootQuests.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsLootQuests.Name = "lblSettingsColorsLootQuests";
-            lblSettingsColorsLootQuests.Size = new Size(116, 26);
+            lblSettingsColorsLootQuests.Size = new Size(89, 26);
             lblSettingsColorsLootQuests.TabIndex = 33;
-            lblSettingsColorsLootQuests.Text = "Loot/Quests";
+            lblSettingsColorsLootQuests.Text = "物资/任务";
             lblSettingsColorsLootQuests.UseAccent = true;
             // 
             // mcSettingsColorsExfiltration
@@ -4494,9 +4493,9 @@
             lblSettingsColorsExfiltration.Location = new Point(17, 14);
             lblSettingsColorsExfiltration.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsExfiltration.Name = "lblSettingsColorsExfiltration";
-            lblSettingsColorsExfiltration.Size = new Size(104, 26);
+            lblSettingsColorsExfiltration.Size = new Size(61, 26);
             lblSettingsColorsExfiltration.TabIndex = 33;
-            lblSettingsColorsExfiltration.Text = "Exfiltration";
+            lblSettingsColorsExfiltration.Text = "撤离点";
             lblSettingsColorsExfiltration.UseAccent = true;
             // 
             // mcSettingsColorsPlayers
@@ -4705,9 +4704,9 @@
             lblSettingsColorsPlayers.Location = new Point(17, 14);
             lblSettingsColorsPlayers.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsColorsPlayers.Name = "lblSettingsColorsPlayers";
-            lblSettingsColorsPlayers.Size = new Size(68, 26);
+            lblSettingsColorsPlayers.Size = new Size(41, 26);
             lblSettingsColorsPlayers.TabIndex = 33;
-            lblSettingsColorsPlayers.Text = "Players";
+            lblSettingsColorsPlayers.Text = "玩家";
             lblSettingsColorsPlayers.UseAccent = true;
             // 
             // mcSettingsColorsAI
@@ -4982,7 +4981,7 @@
             tabPlayerLoadouts.Name = "tabPlayerLoadouts";
             tabPlayerLoadouts.Size = new Size(1297, 803);
             tabPlayerLoadouts.TabIndex = 2;
-            tabPlayerLoadouts.Text = "Player Loadouts";
+            tabPlayerLoadouts.Text = "玩家装备";
             // 
             // mcPlayerLoadoutsAI
             // 
@@ -5012,9 +5011,9 @@
             lblPlayerLoadoutsAI.Location = new Point(14, 16);
             lblPlayerLoadoutsAI.MouseState = MaterialSkin.MouseState.HOVER;
             lblPlayerLoadoutsAI.Name = "lblPlayerLoadoutsAI";
-            lblPlayerLoadoutsAI.Size = new Size(365, 26);
+            lblPlayerLoadoutsAI.Size = new Size(279, 26);
             lblPlayerLoadoutsAI.TabIndex = 31;
-            lblPlayerLoadoutsAI.Text = "Bosses / Rogues / Guards / AI Scavs etc";
+            lblPlayerLoadoutsAI.Text = "Boss / 叛徒 / 守卫 / AI Scavs 等";
             lblPlayerLoadoutsAI.UseAccent = true;
             // 
             // flpPlayerLoadoutsAI
@@ -5056,9 +5055,9 @@
             lblPlayerLoadoutsPlayers.Location = new Point(14, 16);
             lblPlayerLoadoutsPlayers.MouseState = MaterialSkin.MouseState.HOVER;
             lblPlayerLoadoutsPlayers.Name = "lblPlayerLoadoutsPlayers";
-            lblPlayerLoadoutsPlayers.Size = new Size(68, 26);
+            lblPlayerLoadoutsPlayers.Size = new Size(41, 26);
             lblPlayerLoadoutsPlayers.TabIndex = 31;
-            lblPlayerLoadoutsPlayers.Text = "Players";
+            lblPlayerLoadoutsPlayers.Text = "玩家";
             lblPlayerLoadoutsPlayers.UseAccent = true;
             // 
             // flpPlayerLoadoutsPlayers
@@ -5084,7 +5083,7 @@
             tabWatchlist.Name = "tabWatchlist";
             tabWatchlist.Size = new Size(1297, 803);
             tabWatchlist.TabIndex = 3;
-            tabWatchlist.Text = "Watchlist";
+            tabWatchlist.Text = "监视列表";
             // 
             // mcWatchlistPlayerlist
             // 
@@ -5231,9 +5230,9 @@
             lblWatchlistPlayerManagement.Location = new Point(17, 17);
             lblWatchlistPlayerManagement.MouseState = MaterialSkin.MouseState.HOVER;
             lblWatchlistPlayerManagement.Name = "lblWatchlistPlayerManagement";
-            lblWatchlistPlayerManagement.Size = new Size(186, 26);
+            lblWatchlistPlayerManagement.Size = new Size(81, 26);
             lblWatchlistPlayerManagement.TabIndex = 30;
-            lblWatchlistPlayerManagement.Text = "Player Management";
+            lblWatchlistPlayerManagement.Text = "玩家管理";
             lblWatchlistPlayerManagement.UseAccent = true;
             // 
             // lstWatchlistEntries
@@ -5286,7 +5285,7 @@
             tabLootFilter.Name = "tabLootFilter";
             tabLootFilter.Size = new Size(1297, 803);
             tabLootFilter.TabIndex = 4;
-            tabLootFilter.Text = "Loot Filter";
+            tabLootFilter.Text = "物资过滤器";
             // 
             // mcLootFilterFilters
             // 
@@ -5347,9 +5346,9 @@
             lblSettingsLootFilters.Location = new Point(17, 17);
             lblSettingsLootFilters.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsLootFilters.Name = "lblSettingsLootFilters";
-            lblSettingsLootFilters.Size = new Size(106, 26);
+            lblSettingsLootFilters.Size = new Size(141, 26);
             lblSettingsLootFilters.TabIndex = 33;
-            lblSettingsLootFilters.Text = "Loot Filters";
+            lblSettingsLootFilters.Text = "物资过滤器列表";
             lblSettingsLootFilters.UseAccent = true;
             // 
             // picLootFilterColor
@@ -5391,9 +5390,9 @@
             lblSettingsLootFilterColor.Location = new Point(336, 108);
             lblSettingsLootFilterColor.MouseState = MaterialSkin.MouseState.HOVER;
             lblSettingsLootFilterColor.Name = "lblSettingsLootFilterColor";
-            lblSettingsLootFilterColor.Size = new Size(43, 21);
+            lblSettingsLootFilterColor.Size = new Size(37, 21);
             lblSettingsLootFilterColor.TabIndex = 44;
-            lblSettingsLootFilterColor.Text = "Color:";
+            lblSettingsLootFilterColor.Text = "颜色:";
             // 
             // btnFilterPriorityDown
             // 
@@ -5444,9 +5443,9 @@
             lblLootFilterItemManagement.Location = new Point(17, 17);
             lblLootFilterItemManagement.MouseState = MaterialSkin.MouseState.HOVER;
             lblLootFilterItemManagement.Name = "lblLootFilterItemManagement";
-            lblLootFilterItemManagement.Size = new Size(170, 26);
+            lblLootFilterItemManagement.Size = new Size(81, 26);
             lblLootFilterItemManagement.TabIndex = 33;
-            lblLootFilterItemManagement.Text = "Item Management";
+            lblLootFilterItemManagement.Text = "物品管理";
             lblLootFilterItemManagement.UseAccent = true;
             // 
             // lstLootFilterEntries
