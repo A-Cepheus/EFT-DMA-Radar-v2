@@ -76,7 +76,6 @@ namespace eft_dma_radar
             {
                 if (_singleton)
                 {
-                    HideConsole();
                     RuntimeHelpers.RunClassConstructor(typeof(TarkovDevManager).TypeHandle); // invoke static constructor
                     RuntimeHelpers.RunClassConstructor(typeof(Memory).TypeHandle); // invoke static constructor
                     ApplicationConfiguration.Initialize();

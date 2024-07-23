@@ -51,7 +51,7 @@ namespace eft_dma_radar
                 this.UpdateExfils();
                 this._swRefresh.Restart();
             }
-            else if (this.Exfils.Count < 1 && Memory.GameStatus == Game.GameStatus.InGame && this._swRefresh.ElapsedMilliseconds >= 250)
+            else if (this.Exfils.Count < 2 && Memory.GameStatus == Game.GameStatus.InGame && this._swRefresh.ElapsedMilliseconds >= 250)
             {
                 this.GetExfils();
             }

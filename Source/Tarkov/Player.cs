@@ -291,6 +291,7 @@ namespace eft_dma_radar
         /// PlayerInfo Address (GClass1044)
         /// </summary>
         public ulong Info { get; set; }
+        public WildSpawnType Role { get; set; }
         public ulong TransformInternal { get; set; }
         public ulong VerticesAddr { get => this._transform?.VerticesAddr ?? 0x0; }
         public ulong IndicesAddr
@@ -484,7 +485,7 @@ namespace eft_dma_radar
             }
         }
 
-        private PlayerType GetOfflinePlayerType(bool isAI, string name)
+        private PlayerType GetOfflinePlayerType(bool isAI, string name, WildSpawnType role)
         {
             if (!isAI)
             {
@@ -496,10 +497,13 @@ namespace eft_dma_radar
                 {
                     return PlayerType.Boss;
                 }
+                else if (role == WildSpawnType.pmcBEAR)
+                    return PlayerType.BEAR;
+                else if (role == WildSpawnType.pmcUSEC)
+                    return PlayerType.USEC;
                 else
                 {
                     Program.AIFactionManager.IsInFaction(this.Name, out var playerType);
-
                     return playerType;
                 }
             }
@@ -525,16 +529,18 @@ namespace eft_dma_radar
             var inventory = round2.AddEntry<ulong>(0, 7, inventoryController, null, Offsets.InventoryController.Inventory);
             var registrationDate = round2.AddEntry<int>(0, 8, info, null, Offsets.PlayerInfo.RegistrationDate);
             var groupID = round2.AddEntry<ulong>(0, 9, info, null, Offsets.PlayerInfo.GroupId);
+            var setting = round2.AddEntry<ulong>(0, 10, info, null, Offsets.PlayerInfo.Settings);
 
-            var transIntPtr3 = round3.AddEntry<ulong>(0, 10, transIntPtr2, null, Offsets.Player.To_TransformInternal[2]);
-            var equipment = round3.AddEntry<ulong>(0, 11, inventory, null, Offsets.Inventory.Equipment);
+            var transIntPtr3 = round3.AddEntry<ulong>(0, 11, transIntPtr2, null, Offsets.Player.To_TransformInternal[2]);
+            var equipment = round3.AddEntry<ulong>(0, 12, inventory, null, Offsets.Inventory.Equipment);
+            var role = round3.AddEntry<WildSpawnType>(0, 13, setting, null, Offsets.PlayerSettings.Role);
 
-            var transIntPtr4 = round4.AddEntry<ulong>(0, 12, transIntPtr3, null, Offsets.Player.To_TransformInternal[3]);
-            var inventorySlots = round4.AddEntry<ulong>(0, 13, equipment, null, Offsets.Equipment.Slots);
+            var transIntPtr4 = round4.AddEntry<ulong>(0, 14, transIntPtr3, null, Offsets.Player.To_TransformInternal[3]);
+            var inventorySlots = round4.AddEntry<ulong>(0, 15, equipment, null, Offsets.Equipment.Slots);
 
-            var transIntPtr5 = round5.AddEntry<ulong>(0, 14, transIntPtr4, null, Offsets.Player.To_TransformInternal[4]);
+            var transIntPtr5 = round5.AddEntry<ulong>(0, 16, transIntPtr4, null, Offsets.Player.To_TransformInternal[4]);
 
-            var transformInternal = round6.AddEntry<ulong>(0, 15, transIntPtr5, null, Offsets.Player.To_TransformInternal[5]);
+            var transformInternal = round6.AddEntry<ulong>(0, 17, transIntPtr5, null, Offsets.Player.To_TransformInternal[5]);
 
             scatterReadMap.Execute();
         }
@@ -588,11 +594,11 @@ namespace eft_dma_radar
                 return;
             if (!scatterReadMap.Results[0][5].TryGetResult<ulong>(out var transIntPtr2))
                 return;
-            if (!scatterReadMap.Results[0][10].TryGetResult<ulong>(out var transIntPtr3))
+            if (!scatterReadMap.Results[0][11].TryGetResult<ulong>(out var transIntPtr3))
                 return;
-            if (!scatterReadMap.Results[0][12].TryGetResult<ulong>(out var transIntPtr4))
+            if (!scatterReadMap.Results[0][14].TryGetResult<ulong>(out var transIntPtr4))
                 return;
-            if (!scatterReadMap.Results[0][14].TryGetResult<ulong>(out var transIntPtr5))
+            if (!scatterReadMap.Results[0][16].TryGetResult<ulong>(out var transIntPtr5))
                 return;
             if (!scatterReadMap.Results[0][2].TryGetResult<ulong>(out var inventoryController))
                 return;
@@ -600,14 +606,18 @@ namespace eft_dma_radar
                 return;
             if (!scatterReadMap.Results[0][6].TryGetResult<ulong>(out var name))
                 return;
-            if (!scatterReadMap.Results[0][13].TryGetResult<ulong>(out var inventorySlots))
+            if (!scatterReadMap.Results[0][15].TryGetResult<ulong>(out var inventorySlots))
                 return;
-            if (!scatterReadMap.Results[0][15].TryGetResult<ulong>(out var transformInternal))
+            if (!scatterReadMap.Results[0][17].TryGetResult<ulong>(out var transformInternal))
                 return;
             if (!scatterReadMap.Results[0][9].TryGetResult<ulong>(out var groupID))
                 return;
+            if (!scatterReadMap.Results[0][13].TryGetResult<WildSpawnType>(out var role))
+                return;
 
             this.Info = info;
+            this.Role = role;
+
             this.InitializePlayerProperties(movementContext, inventoryController, inventorySlots, transformInternal, playerBody, name, groupID);
 
             if (scatterReadMap.Results[0][8].TryGetResult<int>(out var registrationDate))
@@ -619,7 +629,7 @@ namespace eft_dma_radar
                 if (isAI)
                     this.Name = Helpers.TransliterateCyrillic(this.Name);
 
-                this.Type = this.GetOfflinePlayerType(isAI, this.Name);
+                this.Type = this.GetOfflinePlayerType(isAI, this.Name, role);
 
                 this.IsPMC = (this.Type == PlayerType.BEAR || this.Type == PlayerType.USEC || this.Type == PlayerType.PMC || !isAI);
 
@@ -763,7 +773,7 @@ namespace eft_dma_radar
             else if (isSpecialPlayer && !isOnWatchlist)
             {
                 this.Tag = "";
-                this.Type = this.isOfflinePlayer ? this.GetOfflinePlayerType(false, this.Name) : this.GetOnlinePlayerType(false, this.PlayerSide, this.Name);
+                this.Type = this.isOfflinePlayer ? this.GetOfflinePlayerType(false, this.Name, this.Role) : this.GetOnlinePlayerType(false, this.PlayerSide, this.Name);
             }
         }
 
