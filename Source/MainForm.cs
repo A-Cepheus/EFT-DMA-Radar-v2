@@ -1252,6 +1252,13 @@ namespace eft_dma_radar
                         lines[0] += $"{name} ({player.Health})";
                     else
                         lines[0] += $"{name}";
+                    //if (player.Gear is not null)
+                    //{
+                    //    if (player.Gear.TryGetValue("FirstPrimaryWeapon", out GearItem gearItem))
+                    //    {
+                    //        lines[0] += $", {gearItem.Short}";
+                    //    }
+                    //}
                 }
                 else // just height & hp (for humans)
                 {

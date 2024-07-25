@@ -621,7 +621,7 @@
             swMapHelper.Ripple = true;
             swMapHelper.Size = new Size(146, 32);
             swMapHelper.TabIndex = 0;
-            swMapHelper.Text = "Map Helper";
+            swMapHelper.Text = "地图助手";
             toolTip.SetToolTip(swMapHelper, "Shows the 'Map Setup' panel");
             swMapHelper.UseVisualStyleBackColor = true;
             swMapHelper.CheckedChanged += swMapHelper_CheckedChanged;
@@ -1039,14 +1039,14 @@
             btnRefreshLoot.Font = new Font("Segoe UI", 8F);
             btnRefreshLoot.HighEmphasis = true;
             btnRefreshLoot.Icon = null;
-            btnRefreshLoot.Location = new Point(466, 51);
+            btnRefreshLoot.Location = new Point(425, 51);
             btnRefreshLoot.Margin = new Padding(4, 7, 4, 7);
             btnRefreshLoot.MouseState = MaterialSkin.MouseState.HOVER;
             btnRefreshLoot.Name = "btnRefreshLoot";
             btnRefreshLoot.NoAccentTextColor = Color.Empty;
             btnRefreshLoot.Size = new Size(116, 41);
             btnRefreshLoot.TabIndex = 35;
-            btnRefreshLoot.Text = "Refresh Loot";
+            btnRefreshLoot.Text = "刷新物资";
             toolTip.SetToolTip(btnRefreshLoot, "Manually triggers radar restart");
             btnRefreshLoot.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnRefreshLoot.UseAccentColor = true;
@@ -1265,7 +1265,7 @@
             txtFactionEntryName.Depth = 0;
             txtFactionEntryName.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtFactionEntryName.HideSelection = true;
-            txtFactionEntryName.Hint = "Name";
+            txtFactionEntryName.Hint = "昵称";
             txtFactionEntryName.LeadingIcon = null;
             txtFactionEntryName.Location = new Point(15, 51);
             txtFactionEntryName.MaxLength = 32767;
@@ -2283,13 +2283,13 @@
             // 
             swMaxAttention.Depth = 0;
             swMaxAttention.Font = new Font("Segoe UI", 9F);
-            swMaxAttention.Location = new Point(17, 187);
+            swMaxAttention.Location = new Point(15, 187);
             swMaxAttention.Margin = new Padding(0);
             swMaxAttention.MouseLocation = new Point(-1, -1);
             swMaxAttention.MouseState = MaterialSkin.MouseState.HOVER;
             swMaxAttention.Name = "swMaxAttention";
             swMaxAttention.Ripple = true;
-            swMaxAttention.Size = new Size(128, 32);
+            swMaxAttention.Size = new Size(130, 32);
             swMaxAttention.TabIndex = 51;
             swMaxAttention.Text = "专注";
             toolTip.SetToolTip(swMaxAttention, "Maximises attention buffs\r\n");
@@ -2846,45 +2846,6 @@
             swNoWeaponMalfunctions.UseVisualStyleBackColor = true;
             swNoWeaponMalfunctions.CheckedChanged += swNoWeaponMalfunctions_CheckedChanged;
             // 
-            // lblSettingsMemoryWritingLootThroughWallsDistance
-            // 
-            lblSettingsMemoryWritingLootThroughWallsDistance.AutoSize = true;
-            lblSettingsMemoryWritingLootThroughWallsDistance.Depth = 0;
-            lblSettingsMemoryWritingLootThroughWallsDistance.Font = new Font("HarmonyOS Sans SC", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblSettingsMemoryWritingLootThroughWallsDistance.Location = new Point(392, 176);
-            lblSettingsMemoryWritingLootThroughWallsDistance.MouseState = MaterialSkin.MouseState.HOVER;
-            lblSettingsMemoryWritingLootThroughWallsDistance.Name = "lblSettingsMemoryWritingLootThroughWallsDistance";
-            lblSettingsMemoryWritingLootThroughWallsDistance.Size = new Size(18, 21);
-            lblSettingsMemoryWritingLootThroughWallsDistance.TabIndex = 46;
-            lblSettingsMemoryWritingLootThroughWallsDistance.Text = "x2";
-            lblSettingsMemoryWritingLootThroughWallsDistance.Visible = false;
-            // 
-            // lblSettingsMemoryWritingExtendedReachDistance
-            // 
-            lblSettingsMemoryWritingExtendedReachDistance.AutoSize = true;
-            lblSettingsMemoryWritingExtendedReachDistance.Depth = 0;
-            lblSettingsMemoryWritingExtendedReachDistance.Font = new Font("HarmonyOS Sans SC", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblSettingsMemoryWritingExtendedReachDistance.Location = new Point(487, 56);
-            lblSettingsMemoryWritingExtendedReachDistance.MouseState = MaterialSkin.MouseState.HOVER;
-            lblSettingsMemoryWritingExtendedReachDistance.Name = "lblSettingsMemoryWritingExtendedReachDistance";
-            lblSettingsMemoryWritingExtendedReachDistance.Size = new Size(31, 21);
-            lblSettingsMemoryWritingExtendedReachDistance.TabIndex = 45;
-            lblSettingsMemoryWritingExtendedReachDistance.Text = "x1.8";
-            lblSettingsMemoryWritingExtendedReachDistance.Visible = false;
-            // 
-            // lblSettingsMemoryWritingTimeScaleFactor
-            // 
-            lblSettingsMemoryWritingTimeScaleFactor.AutoSize = true;
-            lblSettingsMemoryWritingTimeScaleFactor.Depth = 0;
-            lblSettingsMemoryWritingTimeScaleFactor.Font = new Font("HarmonyOS Sans SC", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblSettingsMemoryWritingTimeScaleFactor.Location = new Point(392, 136);
-            lblSettingsMemoryWritingTimeScaleFactor.MouseState = MaterialSkin.MouseState.HOVER;
-            lblSettingsMemoryWritingTimeScaleFactor.Name = "lblSettingsMemoryWritingTimeScaleFactor";
-            lblSettingsMemoryWritingTimeScaleFactor.Size = new Size(18, 21);
-            lblSettingsMemoryWritingTimeScaleFactor.TabIndex = 41;
-            lblSettingsMemoryWritingTimeScaleFactor.Text = "x1";
-            lblSettingsMemoryWritingTimeScaleFactor.Visible = false;
-            // 
             // swPvEMode
             // 
             swPvEMode.Depth = 0;
@@ -3047,16 +3008,16 @@
             // 
             // colItemQuantity
             // 
-            colItemQuantity.Text = "Qty";
+            colItemQuantity.Text = "数量";
             // 
             // colItemName
             // 
-            colItemName.Text = "Name";
-            colItemName.Width = 300;
+            colItemName.Text = "名称";
+            colItemName.Width = 315;
             // 
             // colItemValue
             // 
-            colItemValue.Text = "Value";
+            colItemValue.Text = "价值";
             colItemValue.Width = 80;
             // 
             // mcRadarEnemyStats
@@ -3755,6 +3716,45 @@
             mcSettingsMemoryWritingGlobal.Size = new Size(535, 212);
             mcSettingsMemoryWritingGlobal.TabIndex = 38;
             // 
+            // lblSettingsMemoryWritingLootThroughWallsDistance
+            // 
+            lblSettingsMemoryWritingLootThroughWallsDistance.AutoSize = true;
+            lblSettingsMemoryWritingLootThroughWallsDistance.Depth = 0;
+            lblSettingsMemoryWritingLootThroughWallsDistance.Font = new Font("HarmonyOS Sans SC", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsMemoryWritingLootThroughWallsDistance.Location = new Point(392, 176);
+            lblSettingsMemoryWritingLootThroughWallsDistance.MouseState = MaterialSkin.MouseState.HOVER;
+            lblSettingsMemoryWritingLootThroughWallsDistance.Name = "lblSettingsMemoryWritingLootThroughWallsDistance";
+            lblSettingsMemoryWritingLootThroughWallsDistance.Size = new Size(18, 21);
+            lblSettingsMemoryWritingLootThroughWallsDistance.TabIndex = 46;
+            lblSettingsMemoryWritingLootThroughWallsDistance.Text = "x2";
+            lblSettingsMemoryWritingLootThroughWallsDistance.Visible = false;
+            // 
+            // lblSettingsMemoryWritingExtendedReachDistance
+            // 
+            lblSettingsMemoryWritingExtendedReachDistance.AutoSize = true;
+            lblSettingsMemoryWritingExtendedReachDistance.Depth = 0;
+            lblSettingsMemoryWritingExtendedReachDistance.Font = new Font("HarmonyOS Sans SC", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsMemoryWritingExtendedReachDistance.Location = new Point(487, 56);
+            lblSettingsMemoryWritingExtendedReachDistance.MouseState = MaterialSkin.MouseState.HOVER;
+            lblSettingsMemoryWritingExtendedReachDistance.Name = "lblSettingsMemoryWritingExtendedReachDistance";
+            lblSettingsMemoryWritingExtendedReachDistance.Size = new Size(31, 21);
+            lblSettingsMemoryWritingExtendedReachDistance.TabIndex = 45;
+            lblSettingsMemoryWritingExtendedReachDistance.Text = "x1.8";
+            lblSettingsMemoryWritingExtendedReachDistance.Visible = false;
+            // 
+            // lblSettingsMemoryWritingTimeScaleFactor
+            // 
+            lblSettingsMemoryWritingTimeScaleFactor.AutoSize = true;
+            lblSettingsMemoryWritingTimeScaleFactor.Depth = 0;
+            lblSettingsMemoryWritingTimeScaleFactor.Font = new Font("HarmonyOS Sans SC", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsMemoryWritingTimeScaleFactor.Location = new Point(392, 136);
+            lblSettingsMemoryWritingTimeScaleFactor.MouseState = MaterialSkin.MouseState.HOVER;
+            lblSettingsMemoryWritingTimeScaleFactor.Name = "lblSettingsMemoryWritingTimeScaleFactor";
+            lblSettingsMemoryWritingTimeScaleFactor.Size = new Size(18, 21);
+            lblSettingsMemoryWritingTimeScaleFactor.TabIndex = 41;
+            lblSettingsMemoryWritingTimeScaleFactor.Text = "x1";
+            lblSettingsMemoryWritingTimeScaleFactor.Visible = false;
+            // 
             // lblSettingsMemoryWritingGlobal
             // 
             lblSettingsMemoryWritingGlobal.AutoSize = true;
@@ -3961,7 +3961,7 @@
             // 
             // colFactionsAIName
             // 
-            colFactionsAIName.Text = "Name";
+            colFactionsAIName.Text = "昵称";
             colFactionsAIName.Width = 250;
             // 
             // mcSettingsAIFactionsEntryManagement
@@ -4037,7 +4037,7 @@
             // 
             // colFactionName
             // 
-            colFactionName.Text = "Name";
+            colFactionName.Text = "昵称";
             colFactionName.Width = 200;
             // 
             // lblSettingsAIFactionsFactions
