@@ -2,6 +2,7 @@
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.ComponentModel;
+using System.Text;
 
 namespace eft_dma_radar
 {
@@ -170,32 +171,81 @@ namespace eft_dma_radar
         /// <summary>
         /// Draws a loot container on this location.
         /// </summary>
+        //public void DrawLootContainer(SKCanvas canvas, LootContainer container, float heightDiff)
+        //{
+        //    var paint = Extensions.GetEntityPaint(container);
+        //    var text = Extensions.GetTextPaint(container);
+        //    var label = container.Name;
+
+        //    if (heightDiff > 1.45)
+        //    {
+        //        using var path = this.GetUpArrow();
+        //        canvas.DrawPath(path, paint);
+        //    }
+        //    else if (heightDiff < -1.45)
+        //    {
+        //        using var path = this.GetDownArrow();
+        //        canvas.DrawPath(path, paint);
+        //    }
+        //    else
+        //    {
+        //        canvas.DrawCircle(this.GetPoint(), 5 * UIScale, paint);
+        //    }
+
+        //    var coords = this.GetPoint(7 * UIScale, 3 * UIScale);
+        //    var paintTest = Extensions.GetTextOutlinePaint();
+
+        //    canvas.DrawText(label, coords, paintTest);
+        //    canvas.DrawText(label, coords, text);
+        //}
         public void DrawLootContainer(SKCanvas canvas, LootContainer container, float heightDiff)
         {
-            var paint = Extensions.GetEntityPaint(container);
-            var text = Extensions.GetTextPaint(container);
-            var label = container.Name;
-
-            if (heightDiff > 1.45)
+            LootItem item = null;
+            var itemlabel = new StringBuilder();
+            bool first = true;
+            foreach (var subitem in container.Items)
             {
-                using var path = this.GetUpArrow();
-                canvas.DrawPath(path, paint);
-            }
-            else if (heightDiff < -1.45)
-            {
-                using var path = this.GetDownArrow();
-                canvas.DrawPath(path, paint);
-            }
-            else
-            {
-                canvas.DrawCircle(this.GetPoint(), 5 * UIScale, paint);
+                if (subitem.Important)
+                {
+                    if (!first)
+                    {
+                        itemlabel.Append(", ");
+                    }
+                    //First item of interest is the item that will be referenced for color and whatnot
+                    item = subitem;
+                    itemlabel.Append(_config.ShowLootValue ? subitem.GetFormattedValueShortName() : subitem.Item.shortName);
+                    first = false;
+                }
             }
 
-            var coords = this.GetPoint(7 * UIScale, 3 * UIScale);
-            var paintTest = Extensions.GetTextOutlinePaint();
+            if (item is not null)
+            {
+                var label = itemlabel.ToString();
+                label += $" <{container.Name}>";
 
-            canvas.DrawText(label, coords, paintTest);
-            canvas.DrawText(label, coords, text);
+                var paint = Extensions.GetEntityPaint(item);
+                var text = Extensions.GetTextPaint(item);
+
+                if (heightDiff > 1.45)
+                {
+                    using var path = this.GetUpArrow();
+                    canvas.DrawPath(path, paint);
+                }
+                else if (heightDiff < -1.45)
+                {
+                    using var path = this.GetDownArrow();
+                    canvas.DrawPath(path, paint);
+                }
+                else
+                {
+                    canvas.DrawCircle(this.GetPoint(), 5 * UIScale, paint);
+                }
+
+                var coords = this.GetPoint(7 * UIScale, 3 * UIScale);
+
+                canvas.DrawText(label, coords, Extensions.GetTextOutlinePaint());
+                canvas.DrawText(label, coords, text);
+            }
         }
         /// <summary>
         /// Draws a loot corpse on this location.
