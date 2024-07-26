@@ -209,7 +209,7 @@ namespace eft_dma_radar
                 {
                     if (!first)
                     {
-                        itemlabel.Append(", ");
+                        itemlabel.Append("\n");
                     }
                     //First item of interest is the item that will be referenced for color and whatnot
                     item = subitem;
@@ -221,7 +221,7 @@ namespace eft_dma_radar
             if (item is not null)
             {
                 var label = itemlabel.ToString();
-                label += $" <{container.Name}>";
+                label += $"\n<{container.Name}>";
 
                 var paint = Extensions.GetEntityPaint(item);
                 var text = Extensions.GetTextPaint(item);
@@ -243,8 +243,16 @@ namespace eft_dma_radar
 
                 var coords = this.GetPoint(7 * UIScale, 3 * UIScale);
 
-                canvas.DrawText(label, coords, Extensions.GetTextOutlinePaint());
-                canvas.DrawText(label, coords, text);
+                string[] lines = label.Split(new[] { "\n" }, StringSplitOptions.None);
+                SKFontMetrics fontMetrics = text.FontMetrics;
+                float lineHeight = fontMetrics.Descent - fontMetrics.Ascent;
+
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    float yOffset = i * lineHeight;
+                    canvas.DrawText(lines[i], coords.X, coords.Y + yOffset, Extensions.GetTextOutlinePaint());
+                    canvas.DrawText(lines[i], coords.X, coords.Y + yOffset, text);
+                }
             }
         }
         /// <summary>
