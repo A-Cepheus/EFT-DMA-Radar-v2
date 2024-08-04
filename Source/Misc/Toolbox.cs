@@ -18,6 +18,8 @@ namespace eft_dma_radar
         private bool thermalVision = false;
         private bool nightVision = false;
 
+        private bool thirdperson = false;
+
         private bool timeScale = false;
         private float timeScaleFactor = -1f;
 
@@ -239,8 +241,16 @@ namespace eft_dma_radar
                     // Loot Through Walls
                     this._playerManager.SetLootThroughWalls(this._config.LootThroughWalls, ref entries);
 
+                    // No Weapon Malfunctions
                     if (this._config.NoWeaponMalfunctions)
                         this._playerManager.SetNoWeaponMalfunctions(ref entries);
+
+                    // Thirdperson
+                    if (this._config.Thirdperson != this.thirdperson)
+                    {
+                        this.thirdperson = _config.Thirdperson;
+                        this._playerManager.SetThirdPerson(this.thirdperson, ref entries);
+                    }
 
                     #region Skill Buffs
                     if (this._config.MaxSkills["Endurance"] != this.Skills["Endurance"])

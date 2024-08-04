@@ -6,8 +6,8 @@ namespace eft_dma_radar
     public class Config
     {
         #region Json Properties
-        [JsonPropertyName("aimviewEnabled")]
-        public bool AimviewEnabled { get; set; }
+        [JsonPropertyName("aimview")]
+        public bool Aimview { get; set; }
 
         [JsonPropertyName("aimviewFOV")]
         public float AimViewFOV { get; set; }
@@ -36,14 +36,14 @@ namespace eft_dma_radar
         [JsonPropertyName("extendedReachDistancePvE")]
         public float ExtendedReachDistancePvE { get; set; }
 
-        [JsonPropertyName("font")]
-        public int Font { get; set; }
-
-        [JsonPropertyName("fontSize")]
-        public int FontSize { get; set; }
-
         [JsonPropertyName("freezeTimeOfDay")]
         public bool FreezeTimeOfDay { get; set; }
+
+        [JsonPropertyName("globalFont")]
+        public int GlobalFont { get; set; }
+
+        [JsonPropertyName("globalFontSize")]
+        public int GlobalFontSize { get; set; }
 
         [JsonPropertyName("importantLootOnly")]
         public bool ImportantLootOnly { get; set; }
@@ -57,8 +57,8 @@ namespace eft_dma_radar
         [JsonPropertyName("jumpPowerStrength")]
         public int JumpPowerStrength { get; set; }
 
-        [JsonPropertyName("loggingEnabled")]
-        public bool LoggingEnabled { get; set; }
+        [JsonPropertyName("logging")]
+        public bool Logging { get; set; }
 
         [JsonPropertyName("lootItemViewer")]
         public bool LootItemViewer { get; set; }
@@ -123,8 +123,8 @@ namespace eft_dma_radar
         [JsonPropertyName("paintColors")]
         public Dictionary<string, PaintColor.Colors> PaintColors { get; set; }
 
-        [JsonPropertyName("playerAimLine")]
-        public int PlayerAimLineLength { get; set; }
+        [JsonPropertyName("playerInformationSettings")]
+        public Dictionary<string, PlayerInformationSettings> PlayerInformationSettings { get; set; }
 
         [JsonPropertyName("primaryTeammateAcctId")]
         public string PrimaryTeammateId { get; set; }
@@ -153,9 +153,6 @@ namespace eft_dma_radar
         [JsonPropertyName("showLootValue")]
         public bool ShowLootValue { get; set; }
 
-        [JsonPropertyName("showNames")]
-        public bool ShowNames { get; set; }
-
         [JsonPropertyName("showRadarStats")]
         public bool ShowRadarStats { get; set; }
 
@@ -164,6 +161,9 @@ namespace eft_dma_radar
 
         [JsonPropertyName("thermalVision")]
         public bool ThermalVision { get; set; }
+
+        [JsonPropertyName("thirdperson")]
+        public bool Thirdperson { get; set; }
 
         [JsonPropertyName("throwPowerStrength")]
         public int ThrowPowerStrength { get; set; }
@@ -301,6 +301,23 @@ namespace eft_dma_radar
         };
 
         [JsonIgnore]
+        public Dictionary<string, PlayerInformationSettings> DefaultPlayerInformationSettings = new Dictionary<string, PlayerInformationSettings>()
+        {
+            ["PMC"] = new PlayerInformationSettings(true, true, true, true, 15, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["PlayerScav"] = new PlayerInformationSettings(true, true, true, true, 15, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["Boss"] = new PlayerInformationSettings(true, true, true, true, 15, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["BossGuard"] = new PlayerInformationSettings(true, true, true, true, 15, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["BossFollower"] = new PlayerInformationSettings(true, true, true, true, 15, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["Raider"] = new PlayerInformationSettings(true, true, true, true, 15, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["Rogue"] = new PlayerInformationSettings(true, true, true, true, 15, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["Cultist"] = new PlayerInformationSettings(true, true, true, true, 15, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["Scav"] = new PlayerInformationSettings(true, true, true, true, 15, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["Special"] = new PlayerInformationSettings(true, true, true, true, 15, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["Teammate"] = new PlayerInformationSettings(true, true, true, true, 500, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13),
+            ["LocalPlayer"] = new PlayerInformationSettings(true, true, true, true, 500, 255, 0, 13, false, false, false, false, false, false, false, false, false, 0, 13)
+        };
+
+        [JsonIgnore]
         public List<LootFilterManager.Filter> Filters
         {
             get => LootFilterManager.Filters;
@@ -345,7 +362,7 @@ namespace eft_dma_radar
 
         public Config()
         {
-            AimviewEnabled = false;
+            Aimview = false;
             AimViewFOV = 30;
             AutoLootRefresh = false;
             AutoRefreshSettings = DefaultAutoRefreshSettings;
@@ -355,14 +372,14 @@ namespace eft_dma_radar
             ExtendedReach = false;
             ExtendedReachDistance = 2f;
             ExtendedReachDistancePvE = 2f;
-            Font = 0;
-            FontSize = 13;
+            GlobalFont = 0;
+            GlobalFontSize = 13;
             FreezeTimeOfDay = false;
             ImportantLootOnly = false;
             InfiniteStamina = false;
             InstantADS = false;
             JumpPowerStrength = 0;
-            LoggingEnabled = false;
+            Logging = false;
             LootItemViewer = false;
             LootPing = DefaultLootPingSettings;
             LootThroughWalls = false;
@@ -385,7 +402,7 @@ namespace eft_dma_radar
             OpticThermalVision = false;
             PaintColors = DefaultPaintColors;
             ParallelOptions = new ParallelOptions { MaxDegreeOfParallelism = 2 };
-            PlayerAimLineLength = 1000;
+            PlayerInformationSettings = DefaultPlayerInformationSettings;
             PrimaryTeammateId = null;
             ProcessLoot = true;
             PvEMode = false;
@@ -395,10 +412,10 @@ namespace eft_dma_radar
             ShowHoverArmor = false;
             ShowLoot = true;
             ShowLootValue = false;
-            ShowNames = false;
             ShowRadarStats = false;
             ShowSubItems = false;
             ThermalVision = false;
+            Thirdperson = false;
             ThrowPowerStrength = 1;
             TimeOfDay = 12f;
             TimeScale = false;

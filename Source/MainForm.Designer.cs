@@ -33,11 +33,9 @@
             colDialog = new ColorDialog();
             toolTip = new ToolTip(components);
             sldrUIScale = new MaterialSkin.Controls.MaterialSlider();
-            sldrAimlineLength = new MaterialSkin.Controls.MaterialSlider();
             swExfilNames = new MaterialSkin.Controls.MaterialSwitch();
             swQuestHelper = new MaterialSkin.Controls.MaterialSwitch();
             swHoverArmor = new MaterialSkin.Controls.MaterialSwitch();
-            swNames = new MaterialSkin.Controls.MaterialSwitch();
             swAimview = new MaterialSkin.Controls.MaterialSwitch();
             swShowLoot = new MaterialSkin.Controls.MaterialSwitch();
             btnRestartRadar = new MaterialSkin.Controls.MaterialButton();
@@ -126,7 +124,7 @@
             swRadarVsync = new MaterialSkin.Controls.MaterialSwitch();
             swRadarEnemyCount = new MaterialSkin.Controls.MaterialSwitch();
             sldrFontSize = new MaterialSkin.Controls.MaterialSlider();
-            cboFont = new MaterialSkin.Controls.MaterialComboBox();
+            cboGlobalFont = new MaterialSkin.Controls.MaterialComboBox();
             swUnknownQuestItems = new MaterialSkin.Controls.MaterialSwitch();
             swChams = new MaterialSkin.Controls.MaterialSwitch();
             swChamsPMCs = new MaterialSkin.Controls.MaterialSwitch();
@@ -152,6 +150,28 @@
             swNoWeaponMalfunctions = new MaterialSkin.Controls.MaterialSwitch();
             swPvEMode = new MaterialSkin.Controls.MaterialSwitch();
             sldrExtendedReachDistance = new MaterialSkin.Controls.MaterialSlider();
+            cboPlayerInfoType = new MaterialSkin.Controls.MaterialComboBox();
+            swPlayerInfoName = new MaterialSkin.Controls.MaterialSwitch();
+            swPlayerInfoActiveWeapon = new MaterialSkin.Controls.MaterialSwitch();
+            swPlayerInfoGroup = new MaterialSkin.Controls.MaterialSwitch();
+            swPlayerInfoFlags = new MaterialSkin.Controls.MaterialSwitch();
+            swPlayerInfoValue = new MaterialSkin.Controls.MaterialSwitch();
+            swPlayerInfoHeight = new MaterialSkin.Controls.MaterialSwitch();
+            swPlayerInfoDistance = new MaterialSkin.Controls.MaterialSwitch();
+            swPlayerInfoHealth = new MaterialSkin.Controls.MaterialSwitch();
+            sldrPlayerInfoAimlineLength = new MaterialSkin.Controls.MaterialSlider();
+            swPlayerInfoAimline = new MaterialSkin.Controls.MaterialSwitch();
+            sldrPlayerInfoAimlineOpacity = new MaterialSkin.Controls.MaterialSlider();
+            swPlayerInfoTag = new MaterialSkin.Controls.MaterialSwitch();
+            cboPlayerInfoFlagsFont = new MaterialSkin.Controls.MaterialComboBox();
+            sldrPlayerInfoFlagsFontSize = new MaterialSkin.Controls.MaterialSlider();
+            sldrPlayerInfoFontSize = new MaterialSkin.Controls.MaterialSlider();
+            cboPlayerInfoFont = new MaterialSkin.Controls.MaterialComboBox();
+            swPlayerInfoThermal = new MaterialSkin.Controls.MaterialSwitch();
+            swPlayerInfoNightVision = new MaterialSkin.Controls.MaterialSwitch();
+            swPlayerInfoAmmoType = new MaterialSkin.Controls.MaterialSwitch();
+            btnTriggerUnityCrash = new MaterialSkin.Controls.MaterialButton();
+            swThirdperson = new MaterialSkin.Controls.MaterialSwitch();
             sldrThermalColorCoefficient = new MaterialSkin.Controls.MaterialSlider();
             sldrMinTemperature = new MaterialSkin.Controls.MaterialSlider();
             sldrThermalRampShift = new MaterialSkin.Controls.MaterialSlider();
@@ -192,6 +212,8 @@
             tabSelector = new MaterialSkin.Controls.MaterialTabSelector();
             tabControlSettings = new MaterialSkin.Controls.MaterialTabControl();
             tabSettingsGeneral = new TabPage();
+            mcSettingsGeneralPlayerInformation = new MaterialSkin.Controls.MaterialCard();
+            lblSettingsGeneralPlayerInformation = new MaterialSkin.Controls.MaterialLabel();
             mcSettingsGeneralUI = new MaterialSkin.Controls.MaterialCard();
             sldrZoomSensitivity = new MaterialSkin.Controls.MaterialSlider();
             lblSettingsGeneralUI = new MaterialSkin.Controls.MaterialLabel();
@@ -228,6 +250,10 @@
             colFactionName = new ColumnHeader();
             lblSettingsAIFactionsFactions = new MaterialSkin.Controls.MaterialLabel();
             tabSettingsColors = new TabPage();
+            mcSettingsColorsEvent = new MaterialSkin.Controls.MaterialCard();
+            lblSettingsColorsEvent = new MaterialSkin.Controls.MaterialLabel();
+            picAIFollowerOfMorana = new PictureBox();
+            lblSettingsColorsAIMoranaFollower = new MaterialSkin.Controls.MaterialLabel();
             mcSettingsColorsOther = new MaterialSkin.Controls.MaterialCard();
             picOtherAccent = new PictureBox();
             lblSettingsColorOtherAccent = new MaterialSkin.Controls.MaterialLabel();
@@ -291,8 +317,6 @@
             lblSettingsColorsAIOther = new MaterialSkin.Controls.MaterialLabel();
             picAIScav = new PictureBox();
             lblSettingsColorsAIScav = new MaterialSkin.Controls.MaterialLabel();
-            picAIFollowerOfMorana = new PictureBox();
-            lblSettingsColorsAIMoranaFollower = new MaterialSkin.Controls.MaterialLabel();
             picAICultist = new PictureBox();
             lblSettingsColorsAICultists = new MaterialSkin.Controls.MaterialLabel();
             picAIRogue = new PictureBox();
@@ -310,6 +334,9 @@
             mcPlayerLoadoutsAI = new MaterialSkin.Controls.MaterialCard();
             lblPlayerLoadoutsAI = new MaterialSkin.Controls.MaterialLabel();
             flpPlayerLoadoutsAI = new FlowLayoutPanel();
+            mcPlayerLoadoutsBosses = new MaterialSkin.Controls.MaterialCard();
+            lblPlayerLoadoutsBosses = new MaterialSkin.Controls.MaterialLabel();
+            flpPlayerLoadoutsBosses = new FlowLayoutPanel();
             mcPlayerLoadoutsPlayers = new MaterialSkin.Controls.MaterialCard();
             lblPlayerLoadoutsPlayers = new MaterialSkin.Controls.MaterialLabel();
             flpPlayerLoadoutsPlayers = new FlowLayoutPanel();
@@ -353,6 +380,7 @@
             tabSettings.SuspendLayout();
             tabControlSettings.SuspendLayout();
             tabSettingsGeneral.SuspendLayout();
+            mcSettingsGeneralPlayerInformation.SuspendLayout();
             mcSettingsGeneralUI.SuspendLayout();
             mcSettingsGeneralRadar.SuspendLayout();
             tabSettingsMemoryWriting.SuspendLayout();
@@ -369,6 +397,8 @@
             mcSettingsAIFactionsEntryManagement.SuspendLayout();
             mcSettingsAIFactionsFactions.SuspendLayout();
             tabSettingsColors.SuspendLayout();
+            mcSettingsColorsEvent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picAIFollowerOfMorana).BeginInit();
             mcSettingsColorsOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picOtherAccent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picOtherPrimaryLight).BeginInit();
@@ -401,7 +431,6 @@
             mcSettingsColorsAI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAIOther).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picAIScav).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picAIFollowerOfMorana).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picAICultist).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picAIRogue).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picAIRaider).BeginInit();
@@ -410,6 +439,7 @@
             ((System.ComponentModel.ISupportInitialize)picAIBoss).BeginInit();
             tabPlayerLoadouts.SuspendLayout();
             mcPlayerLoadoutsAI.SuspendLayout();
+            mcPlayerLoadoutsBosses.SuspendLayout();
             mcPlayerLoadoutsPlayers.SuspendLayout();
             tabWatchlist.SuspendLayout();
             mcWatchlistPlayerlist.SuspendLayout();
@@ -2383,32 +2413,31 @@
             sldrFontSize.ValueSuffix = "px";
             sldrFontSize.onValueChanged += sldrFontSize_onValueChanged;
             // 
-            // cboFont
+            // cboGlobalFont
             // 
-            cboFont.AutoResize = false;
-            cboFont.BackColor = Color.FromArgb(255, 255, 255);
-            cboFont.Depth = 0;
-            cboFont.DrawMode = DrawMode.OwnerDrawVariable;
-            cboFont.DropDownHeight = 292;
-            cboFont.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboFont.DropDownWidth = 121;
-            cboFont.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboFont.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cboFont.FormattingEnabled = true;
-            cboFont.Hint = "Font";
-            cboFont.IntegralHeight = false;
-            cboFont.ItemHeight = 29;
-            cboFont.Items.AddRange(new object[] { "Arial", "Calibri", "Candara", "Consolas", "Constantia", "Corbel", "Helvetica", "Lato", "Roboto", "Segoe UI", "Tahoma", "Trebuchet MS", "Verdana", "宋体", "仿宋", "黑体", "微软雅黑", "FangSong" });
-            cboFont.Location = new Point(15, 194);
-            cboFont.MaxDropDownItems = 10;
-            cboFont.MouseState = MaterialSkin.MouseState.OUT;
-            cboFont.Name = "cboFont";
-            cboFont.Size = new Size(171, 35);
-            cboFont.StartIndex = 0;
-            cboFont.TabIndex = 39;
-            toolTip.SetToolTip(cboFont, "The item to add to the loot filter");
-            cboFont.UseTallSize = false;
-            cboFont.SelectedIndexChanged += cboFont_SelectedIndexChanged;
+            cboGlobalFont.AutoResize = false;
+            cboGlobalFont.BackColor = Color.FromArgb(255, 255, 255);
+            cboGlobalFont.Depth = 0;
+            cboGlobalFont.DrawMode = DrawMode.OwnerDrawVariable;
+            cboGlobalFont.DropDownHeight = 292;
+            cboGlobalFont.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboGlobalFont.DropDownWidth = 121;
+            cboGlobalFont.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboGlobalFont.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboGlobalFont.FormattingEnabled = true;
+            cboGlobalFont.Hint = "Global Font";
+            cboGlobalFont.IntegralHeight = false;
+            cboGlobalFont.ItemHeight = 29;
+            cboGlobalFont.Location = new Point(17, 116);
+            cboGlobalFont.MaxDropDownItems = 10;
+            cboGlobalFont.MouseState = MaterialSkin.MouseState.OUT;
+            cboGlobalFont.Name = "cboGlobalFont";
+            cboGlobalFont.Size = new Size(171, 35);
+            cboGlobalFont.StartIndex = 0;
+            cboGlobalFont.TabIndex = 39;
+            toolTip.SetToolTip(cboGlobalFont, "The font to use for radar text");
+            cboGlobalFont.UseTallSize = false;
+            cboGlobalFont.SelectedIndexChanged += cboFont_SelectedIndexChanged;
             // 
             // swUnknownQuestItems
             // 
@@ -2870,7 +2899,7 @@
             sldrExtendedReachDistance.Location = new Point(341, 47);
             sldrExtendedReachDistance.MouseState = MaterialSkin.MouseState.HOVER;
             sldrExtendedReachDistance.Name = "sldrExtendedReachDistance";
-            sldrExtendedReachDistance.RangeMax = 18;
+            sldrExtendedReachDistance.RangeMax = 40;
             sldrExtendedReachDistance.RangeMin = 1;
             sldrExtendedReachDistance.ShowValue = false;
             sldrExtendedReachDistance.Size = new Size(128, 40);
@@ -2879,9 +2908,433 @@
             toolTip.SetToolTip(sldrExtendedReachDistance, "The distance for looting through walls ");
             sldrExtendedReachDistance.UseAccentColor = true;
             sldrExtendedReachDistance.Value = 18;
-            sldrExtendedReachDistance.ValueMax = 18;
+            sldrExtendedReachDistance.ValueMax = 40;
             sldrExtendedReachDistance.Visible = false;
             sldrExtendedReachDistance.onValueChanged += sldrExtendedReachDistance_onValueChanged;
+            // 
+            // cboPlayerInfoType
+            // 
+            cboPlayerInfoType.AutoResize = false;
+            cboPlayerInfoType.BackColor = Color.FromArgb(255, 255, 255);
+            cboPlayerInfoType.Depth = 0;
+            cboPlayerInfoType.DrawMode = DrawMode.OwnerDrawVariable;
+            cboPlayerInfoType.DropDownHeight = 292;
+            cboPlayerInfoType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPlayerInfoType.DropDownWidth = 121;
+            cboPlayerInfoType.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboPlayerInfoType.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboPlayerInfoType.FormattingEnabled = true;
+            cboPlayerInfoType.Hint = "Faction";
+            cboPlayerInfoType.IntegralHeight = false;
+            cboPlayerInfoType.ItemHeight = 29;
+            cboPlayerInfoType.Items.AddRange(new object[] { "PMC", "Player Scav", "Boss", "Boss Guard", "Boss Follower", "Raider", "Rogue", "Cultist", "Scav", "Special", "Teammate", "LocalPlayer" });
+            cboPlayerInfoType.Location = new Point(17, 47);
+            cboPlayerInfoType.MaxDropDownItems = 10;
+            cboPlayerInfoType.MouseState = MaterialSkin.MouseState.OUT;
+            cboPlayerInfoType.Name = "cboPlayerInfoType";
+            cboPlayerInfoType.Size = new Size(171, 35);
+            cboPlayerInfoType.StartIndex = 0;
+            cboPlayerInfoType.TabIndex = 39;
+            toolTip.SetToolTip(cboPlayerInfoType, "The faction to edit for displaying on the radar");
+            cboPlayerInfoType.UseTallSize = false;
+            cboPlayerInfoType.SelectedIndexChanged += cboPlayerInfoType_SelectedIndexChanged;
+            // 
+            // swPlayerInfoName
+            // 
+            swPlayerInfoName.Depth = 0;
+            swPlayerInfoName.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoName.Location = new Point(17, 99);
+            swPlayerInfoName.Margin = new Padding(0);
+            swPlayerInfoName.MouseLocation = new Point(-1, -1);
+            swPlayerInfoName.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoName.Name = "swPlayerInfoName";
+            swPlayerInfoName.Ripple = true;
+            swPlayerInfoName.Size = new Size(110, 28);
+            swPlayerInfoName.TabIndex = 40;
+            swPlayerInfoName.Text = "Name";
+            toolTip.SetToolTip(swPlayerInfoName, "Shows player names on the radar");
+            swPlayerInfoName.UseVisualStyleBackColor = true;
+            swPlayerInfoName.CheckedChanged += swPlayerInfoName_CheckedChanged;
+            // 
+            // swPlayerInfoActiveWeapon
+            // 
+            swPlayerInfoActiveWeapon.Depth = 0;
+            swPlayerInfoActiveWeapon.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoActiveWeapon.Location = new Point(137, 247);
+            swPlayerInfoActiveWeapon.Margin = new Padding(0);
+            swPlayerInfoActiveWeapon.MouseLocation = new Point(-1, -1);
+            swPlayerInfoActiveWeapon.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoActiveWeapon.Name = "swPlayerInfoActiveWeapon";
+            swPlayerInfoActiveWeapon.Ripple = true;
+            swPlayerInfoActiveWeapon.Size = new Size(171, 28);
+            swPlayerInfoActiveWeapon.TabIndex = 42;
+            swPlayerInfoActiveWeapon.Text = "Active Weapon";
+            toolTip.SetToolTip(swPlayerInfoActiveWeapon, "Shows the players active weapon in their hand");
+            swPlayerInfoActiveWeapon.UseVisualStyleBackColor = true;
+            swPlayerInfoActiveWeapon.Visible = false;
+            swPlayerInfoActiveWeapon.CheckedChanged += swPlayerInfoActiveWeapon_CheckedChanged;
+            // 
+            // swPlayerInfoGroup
+            // 
+            swPlayerInfoGroup.Depth = 0;
+            swPlayerInfoGroup.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoGroup.Location = new Point(291, 287);
+            swPlayerInfoGroup.Margin = new Padding(0);
+            swPlayerInfoGroup.MouseLocation = new Point(-1, -1);
+            swPlayerInfoGroup.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoGroup.Name = "swPlayerInfoGroup";
+            swPlayerInfoGroup.Ripple = true;
+            swPlayerInfoGroup.Size = new Size(118, 28);
+            swPlayerInfoGroup.TabIndex = 43;
+            swPlayerInfoGroup.Text = "Group";
+            toolTip.SetToolTip(swPlayerInfoGroup, "Shows the players Group ID if they have one");
+            swPlayerInfoGroup.UseVisualStyleBackColor = true;
+            swPlayerInfoGroup.Visible = false;
+            swPlayerInfoGroup.CheckedChanged += swPlayerInfoGroup_CheckedChanged;
+            // 
+            // swPlayerInfoFlags
+            // 
+            swPlayerInfoFlags.Depth = 0;
+            swPlayerInfoFlags.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoFlags.Location = new Point(17, 247);
+            swPlayerInfoFlags.Margin = new Padding(0);
+            swPlayerInfoFlags.MouseLocation = new Point(-1, -1);
+            swPlayerInfoFlags.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoFlags.Name = "swPlayerInfoFlags";
+            swPlayerInfoFlags.Ripple = true;
+            swPlayerInfoFlags.Size = new Size(110, 28);
+            swPlayerInfoFlags.TabIndex = 44;
+            swPlayerInfoFlags.Text = "Flags";
+            toolTip.SetToolTip(swPlayerInfoFlags, "Toggles displaying flags on players");
+            swPlayerInfoFlags.UseVisualStyleBackColor = true;
+            swPlayerInfoFlags.CheckedChanged += swPlayerInfoFlags_CheckedChanged;
+            // 
+            // swPlayerInfoValue
+            // 
+            swPlayerInfoValue.Depth = 0;
+            swPlayerInfoValue.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoValue.Location = new Point(169, 287);
+            swPlayerInfoValue.Margin = new Padding(0);
+            swPlayerInfoValue.MouseLocation = new Point(-1, -1);
+            swPlayerInfoValue.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoValue.Name = "swPlayerInfoValue";
+            swPlayerInfoValue.Ripple = true;
+            swPlayerInfoValue.Size = new Size(119, 28);
+            swPlayerInfoValue.TabIndex = 45;
+            swPlayerInfoValue.Text = "Value";
+            toolTip.SetToolTip(swPlayerInfoValue, "Shows the estimated value of the player");
+            swPlayerInfoValue.UseVisualStyleBackColor = true;
+            swPlayerInfoValue.Visible = false;
+            swPlayerInfoValue.CheckedChanged += swPlayerInfoValue_CheckedChanged;
+            // 
+            // swPlayerInfoHeight
+            // 
+            swPlayerInfoHeight.Depth = 0;
+            swPlayerInfoHeight.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoHeight.Location = new Point(127, 99);
+            swPlayerInfoHeight.Margin = new Padding(0);
+            swPlayerInfoHeight.MouseLocation = new Point(-1, -1);
+            swPlayerInfoHeight.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoHeight.Name = "swPlayerInfoHeight";
+            swPlayerInfoHeight.Ripple = true;
+            swPlayerInfoHeight.Size = new Size(123, 28);
+            swPlayerInfoHeight.TabIndex = 46;
+            swPlayerInfoHeight.Text = "Height";
+            toolTip.SetToolTip(swPlayerInfoHeight, "Shows player height on the radar");
+            swPlayerInfoHeight.UseVisualStyleBackColor = true;
+            swPlayerInfoHeight.CheckedChanged += swPlayerInfoHeight_CheckedChanged;
+            // 
+            // swPlayerInfoDistance
+            // 
+            swPlayerInfoDistance.Depth = 0;
+            swPlayerInfoDistance.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoDistance.Location = new Point(250, 99);
+            swPlayerInfoDistance.Margin = new Padding(0);
+            swPlayerInfoDistance.MouseLocation = new Point(-1, -1);
+            swPlayerInfoDistance.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoDistance.Name = "swPlayerInfoDistance";
+            swPlayerInfoDistance.Ripple = true;
+            swPlayerInfoDistance.Size = new Size(131, 28);
+            swPlayerInfoDistance.TabIndex = 47;
+            swPlayerInfoDistance.Text = "Distance";
+            toolTip.SetToolTip(swPlayerInfoDistance, "Shows player distance on the radar");
+            swPlayerInfoDistance.UseVisualStyleBackColor = true;
+            swPlayerInfoDistance.CheckedChanged += swPlayerInfoDistance_CheckedChanged;
+            // 
+            // swPlayerInfoHealth
+            // 
+            swPlayerInfoHealth.Depth = 0;
+            swPlayerInfoHealth.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoHealth.Location = new Point(412, 287);
+            swPlayerInfoHealth.Margin = new Padding(0);
+            swPlayerInfoHealth.MouseLocation = new Point(-1, -1);
+            swPlayerInfoHealth.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoHealth.Name = "swPlayerInfoHealth";
+            swPlayerInfoHealth.Ripple = true;
+            swPlayerInfoHealth.Size = new Size(119, 28);
+            swPlayerInfoHealth.TabIndex = 48;
+            swPlayerInfoHealth.Text = "Health";
+            toolTip.SetToolTip(swPlayerInfoHealth, "Shows the health status of the player");
+            swPlayerInfoHealth.UseVisualStyleBackColor = true;
+            swPlayerInfoHealth.Visible = false;
+            swPlayerInfoHealth.CheckedChanged += swPlayerInfoHealth_CheckedChanged;
+            // 
+            // sldrPlayerInfoAimlineLength
+            // 
+            sldrPlayerInfoAimlineLength.Depth = 0;
+            sldrPlayerInfoAimlineLength.ForeColor = Color.Black;
+            sldrPlayerInfoAimlineLength.Location = new Point(140, 143);
+            sldrPlayerInfoAimlineLength.MouseState = MaterialSkin.MouseState.HOVER;
+            sldrPlayerInfoAimlineLength.Name = "sldrPlayerInfoAimlineLength";
+            sldrPlayerInfoAimlineLength.RangeMax = 60;
+            sldrPlayerInfoAimlineLength.RangeMin = 5;
+            sldrPlayerInfoAimlineLength.ShowValue = false;
+            sldrPlayerInfoAimlineLength.Size = new Size(195, 40);
+            sldrPlayerInfoAimlineLength.TabIndex = 49;
+            sldrPlayerInfoAimlineLength.Text = "Length";
+            toolTip.SetToolTip(sldrPlayerInfoAimlineLength, "Length of the 'bar' or 'aimline'");
+            sldrPlayerInfoAimlineLength.UseAccentColor = true;
+            sldrPlayerInfoAimlineLength.Value = 15;
+            sldrPlayerInfoAimlineLength.ValueMax = 60;
+            sldrPlayerInfoAimlineLength.Visible = false;
+            sldrPlayerInfoAimlineLength.onValueChanged += sldrPlayerInfoAimlineLength_onValueChanged;
+            // 
+            // swPlayerInfoAimline
+            // 
+            swPlayerInfoAimline.Depth = 0;
+            swPlayerInfoAimline.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoAimline.Location = new Point(17, 149);
+            swPlayerInfoAimline.Margin = new Padding(0);
+            swPlayerInfoAimline.MouseLocation = new Point(-1, -1);
+            swPlayerInfoAimline.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoAimline.Name = "swPlayerInfoAimline";
+            swPlayerInfoAimline.Ripple = true;
+            swPlayerInfoAimline.Size = new Size(120, 28);
+            swPlayerInfoAimline.TabIndex = 50;
+            swPlayerInfoAimline.Text = "Aimline";
+            toolTip.SetToolTip(swPlayerInfoAimline, "Shows player aimline on the radar");
+            swPlayerInfoAimline.UseVisualStyleBackColor = false;
+            swPlayerInfoAimline.CheckedChanged += swPlayerInfoAimline_CheckedChanged;
+            // 
+            // sldrPlayerInfoAimlineOpacity
+            // 
+            sldrPlayerInfoAimlineOpacity.Depth = 0;
+            sldrPlayerInfoAimlineOpacity.ForeColor = Color.Black;
+            sldrPlayerInfoAimlineOpacity.Location = new Point(349, 143);
+            sldrPlayerInfoAimlineOpacity.MouseState = MaterialSkin.MouseState.HOVER;
+            sldrPlayerInfoAimlineOpacity.Name = "sldrPlayerInfoAimlineOpacity";
+            sldrPlayerInfoAimlineOpacity.RangeMax = 256;
+            sldrPlayerInfoAimlineOpacity.RangeMin = 10;
+            sldrPlayerInfoAimlineOpacity.ShowValue = false;
+            sldrPlayerInfoAimlineOpacity.Size = new Size(195, 40);
+            sldrPlayerInfoAimlineOpacity.TabIndex = 51;
+            sldrPlayerInfoAimlineOpacity.Text = "Opacity";
+            toolTip.SetToolTip(sldrPlayerInfoAimlineOpacity, "The transparency of the aimline");
+            sldrPlayerInfoAimlineOpacity.UseAccentColor = true;
+            sldrPlayerInfoAimlineOpacity.Value = 255;
+            sldrPlayerInfoAimlineOpacity.ValueMax = 255;
+            sldrPlayerInfoAimlineOpacity.Visible = false;
+            sldrPlayerInfoAimlineOpacity.onValueChanged += sldrPlayerInfoAimlineOpacity_onValueChanged;
+            // 
+            // swPlayerInfoTag
+            // 
+            swPlayerInfoTag.Depth = 0;
+            swPlayerInfoTag.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoTag.Location = new Point(534, 287);
+            swPlayerInfoTag.Margin = new Padding(0);
+            swPlayerInfoTag.MouseLocation = new Point(-1, -1);
+            swPlayerInfoTag.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoTag.Name = "swPlayerInfoTag";
+            swPlayerInfoTag.Ripple = true;
+            swPlayerInfoTag.Size = new Size(95, 28);
+            swPlayerInfoTag.TabIndex = 53;
+            swPlayerInfoTag.Text = "Tag";
+            toolTip.SetToolTip(swPlayerInfoTag, "Shows a players tag on the radar if they have one");
+            swPlayerInfoTag.UseVisualStyleBackColor = true;
+            swPlayerInfoTag.Visible = false;
+            swPlayerInfoTag.CheckedChanged += swPlayerInfoTag_CheckedChanged;
+            // 
+            // cboPlayerInfoFlagsFont
+            // 
+            cboPlayerInfoFlagsFont.AutoResize = false;
+            cboPlayerInfoFlagsFont.BackColor = Color.FromArgb(255, 255, 255);
+            cboPlayerInfoFlagsFont.Depth = 0;
+            cboPlayerInfoFlagsFont.DrawMode = DrawMode.OwnerDrawVariable;
+            cboPlayerInfoFlagsFont.DropDownHeight = 292;
+            cboPlayerInfoFlagsFont.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPlayerInfoFlagsFont.DropDownWidth = 121;
+            cboPlayerInfoFlagsFont.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboPlayerInfoFlagsFont.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboPlayerInfoFlagsFont.FormattingEnabled = true;
+            cboPlayerInfoFlagsFont.Hint = "Flags Font";
+            cboPlayerInfoFlagsFont.IntegralHeight = false;
+            cboPlayerInfoFlagsFont.ItemHeight = 29;
+            cboPlayerInfoFlagsFont.Location = new Point(17, 323);
+            cboPlayerInfoFlagsFont.MaxDropDownItems = 10;
+            cboPlayerInfoFlagsFont.MouseState = MaterialSkin.MouseState.OUT;
+            cboPlayerInfoFlagsFont.Name = "cboPlayerInfoFlagsFont";
+            cboPlayerInfoFlagsFont.Size = new Size(171, 35);
+            cboPlayerInfoFlagsFont.StartIndex = 0;
+            cboPlayerInfoFlagsFont.TabIndex = 54;
+            toolTip.SetToolTip(cboPlayerInfoFlagsFont, "The font to use for flags for this player type on the radar");
+            cboPlayerInfoFlagsFont.UseTallSize = false;
+            cboPlayerInfoFlagsFont.Visible = false;
+            cboPlayerInfoFlagsFont.SelectedIndexChanged += cboPlayerInfoFlagsFont_SelectedIndexChanged;
+            // 
+            // sldrPlayerInfoFlagsFontSize
+            // 
+            sldrPlayerInfoFlagsFontSize.Depth = 0;
+            sldrPlayerInfoFlagsFontSize.ForeColor = Color.Black;
+            sldrPlayerInfoFlagsFontSize.Location = new Point(203, 318);
+            sldrPlayerInfoFlagsFontSize.MouseState = MaterialSkin.MouseState.HOVER;
+            sldrPlayerInfoFlagsFontSize.Name = "sldrPlayerInfoFlagsFontSize";
+            sldrPlayerInfoFlagsFontSize.RangeMax = 36;
+            sldrPlayerInfoFlagsFontSize.RangeMin = 1;
+            sldrPlayerInfoFlagsFontSize.Size = new Size(241, 40);
+            sldrPlayerInfoFlagsFontSize.TabIndex = 55;
+            sldrPlayerInfoFlagsFontSize.Text = "Font Size";
+            toolTip.SetToolTip(sldrPlayerInfoFlagsFontSize, "The font size to use for the text on the radar");
+            sldrPlayerInfoFlagsFontSize.UseAccentColor = true;
+            sldrPlayerInfoFlagsFontSize.Value = 13;
+            sldrPlayerInfoFlagsFontSize.ValueMax = 36;
+            sldrPlayerInfoFlagsFontSize.ValueSuffix = "px";
+            sldrPlayerInfoFlagsFontSize.Visible = false;
+            sldrPlayerInfoFlagsFontSize.onValueChanged += sldrPlayerInfoFlagsFontSize_onValueChanged;
+            // 
+            // sldrPlayerInfoFontSize
+            // 
+            sldrPlayerInfoFontSize.Depth = 0;
+            sldrPlayerInfoFontSize.ForeColor = Color.Black;
+            sldrPlayerInfoFontSize.Location = new Point(203, 189);
+            sldrPlayerInfoFontSize.MouseState = MaterialSkin.MouseState.HOVER;
+            sldrPlayerInfoFontSize.Name = "sldrPlayerInfoFontSize";
+            sldrPlayerInfoFontSize.RangeMax = 36;
+            sldrPlayerInfoFontSize.RangeMin = 1;
+            sldrPlayerInfoFontSize.Size = new Size(241, 40);
+            sldrPlayerInfoFontSize.TabIndex = 57;
+            sldrPlayerInfoFontSize.Text = "Font Size";
+            toolTip.SetToolTip(sldrPlayerInfoFontSize, "The font size to use for the text on the radar for this player type");
+            sldrPlayerInfoFontSize.UseAccentColor = true;
+            sldrPlayerInfoFontSize.Value = 13;
+            sldrPlayerInfoFontSize.ValueMax = 36;
+            sldrPlayerInfoFontSize.ValueSuffix = "px";
+            sldrPlayerInfoFontSize.onValueChanged += sldrPlayerInfoFontSize_onValueChanged;
+            // 
+            // cboPlayerInfoFont
+            // 
+            cboPlayerInfoFont.AutoResize = false;
+            cboPlayerInfoFont.BackColor = Color.FromArgb(255, 255, 255);
+            cboPlayerInfoFont.Depth = 0;
+            cboPlayerInfoFont.DrawMode = DrawMode.OwnerDrawVariable;
+            cboPlayerInfoFont.DropDownHeight = 292;
+            cboPlayerInfoFont.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPlayerInfoFont.DropDownWidth = 121;
+            cboPlayerInfoFont.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboPlayerInfoFont.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboPlayerInfoFont.FormattingEnabled = true;
+            cboPlayerInfoFont.Hint = "Font";
+            cboPlayerInfoFont.IntegralHeight = false;
+            cboPlayerInfoFont.ItemHeight = 29;
+            cboPlayerInfoFont.Location = new Point(17, 194);
+            cboPlayerInfoFont.MaxDropDownItems = 10;
+            cboPlayerInfoFont.MouseState = MaterialSkin.MouseState.OUT;
+            cboPlayerInfoFont.Name = "cboPlayerInfoFont";
+            cboPlayerInfoFont.Size = new Size(171, 35);
+            cboPlayerInfoFont.StartIndex = 0;
+            cboPlayerInfoFont.TabIndex = 56;
+            toolTip.SetToolTip(cboPlayerInfoFont, "The font to use for this player type on the radar");
+            cboPlayerInfoFont.UseTallSize = false;
+            cboPlayerInfoFont.SelectedIndexChanged += cboPlayerInfoFont_SelectedIndexChanged;
+            // 
+            // swPlayerInfoThermal
+            // 
+            swPlayerInfoThermal.Depth = 0;
+            swPlayerInfoThermal.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoThermal.Location = new Point(318, 247);
+            swPlayerInfoThermal.Margin = new Padding(0);
+            swPlayerInfoThermal.MouseLocation = new Point(-1, -1);
+            swPlayerInfoThermal.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoThermal.Name = "swPlayerInfoThermal";
+            swPlayerInfoThermal.Ripple = true;
+            swPlayerInfoThermal.Size = new Size(120, 28);
+            swPlayerInfoThermal.TabIndex = 58;
+            swPlayerInfoThermal.Text = "Thermal";
+            toolTip.SetToolTip(swPlayerInfoThermal, "Toggles displaying flags on players");
+            swPlayerInfoThermal.UseVisualStyleBackColor = true;
+            swPlayerInfoThermal.CheckedChanged += swPlayerInfoThermal_CheckedChanged;
+            // 
+            // swPlayerInfoNightVision
+            // 
+            swPlayerInfoNightVision.Depth = 0;
+            swPlayerInfoNightVision.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoNightVision.Location = new Point(448, 247);
+            swPlayerInfoNightVision.Margin = new Padding(0);
+            swPlayerInfoNightVision.MouseLocation = new Point(-1, -1);
+            swPlayerInfoNightVision.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoNightVision.Name = "swPlayerInfoNightVision";
+            swPlayerInfoNightVision.Ripple = true;
+            swPlayerInfoNightVision.Size = new Size(149, 28);
+            swPlayerInfoNightVision.TabIndex = 59;
+            swPlayerInfoNightVision.Text = "Night Vision";
+            toolTip.SetToolTip(swPlayerInfoNightVision, "Toggles displaying flags on players");
+            swPlayerInfoNightVision.UseVisualStyleBackColor = true;
+            swPlayerInfoNightVision.CheckedChanged += swPlayerInfoNightVision_CheckedChanged;
+            // 
+            // swPlayerInfoAmmoType
+            // 
+            swPlayerInfoAmmoType.Depth = 0;
+            swPlayerInfoAmmoType.Font = new Font("Segoe UI", 9F);
+            swPlayerInfoAmmoType.Location = new Point(17, 287);
+            swPlayerInfoAmmoType.Margin = new Padding(0);
+            swPlayerInfoAmmoType.MouseLocation = new Point(-1, -1);
+            swPlayerInfoAmmoType.MouseState = MaterialSkin.MouseState.HOVER;
+            swPlayerInfoAmmoType.Name = "swPlayerInfoAmmoType";
+            swPlayerInfoAmmoType.Ripple = true;
+            swPlayerInfoAmmoType.Size = new Size(149, 28);
+            swPlayerInfoAmmoType.TabIndex = 60;
+            swPlayerInfoAmmoType.Text = "Ammo Type";
+            toolTip.SetToolTip(swPlayerInfoAmmoType, "Toggles displaying flags on players");
+            swPlayerInfoAmmoType.UseVisualStyleBackColor = true;
+            swPlayerInfoAmmoType.CheckedChanged += swPlayerInfoAmmoType_CheckedChanged;
+            // 
+            // btnTriggerUnityCrash
+            // 
+            btnTriggerUnityCrash.AutoSize = false;
+            btnTriggerUnityCrash.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnTriggerUnityCrash.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnTriggerUnityCrash.Depth = 0;
+            btnTriggerUnityCrash.HighEmphasis = true;
+            btnTriggerUnityCrash.Icon = null;
+            btnTriggerUnityCrash.Location = new Point(482, 29);
+            btnTriggerUnityCrash.Margin = new Padding(4, 6, 4, 6);
+            btnTriggerUnityCrash.MouseState = MaterialSkin.MouseState.HOVER;
+            btnTriggerUnityCrash.Name = "btnTriggerUnityCrash";
+            btnTriggerUnityCrash.NoAccentTextColor = Color.Empty;
+            btnTriggerUnityCrash.Size = new Size(143, 36);
+            btnTriggerUnityCrash.TabIndex = 35;
+            btnTriggerUnityCrash.Text = "Trigger Unity Crash";
+            toolTip.SetToolTip(btnTriggerUnityCrash, "Triggers a Unity Error crash (useful if PvE match is bad)");
+            btnTriggerUnityCrash.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnTriggerUnityCrash.UseAccentColor = true;
+            btnTriggerUnityCrash.UseVisualStyleBackColor = true;
+            btnTriggerUnityCrash.Click += btnTriggerUnityCrash_Click;
+            // 
+            // swThirdperson
+            // 
+            swThirdperson.Depth = 0;
+            swThirdperson.Font = new Font("Segoe UI", 9F);
+            swThirdperson.Location = new Point(221, 45);
+            swThirdperson.Margin = new Padding(0);
+            swThirdperson.MouseLocation = new Point(-1, -1);
+            swThirdperson.MouseState = MaterialSkin.MouseState.HOVER;
+            swThirdperson.Name = "swThirdperson";
+            swThirdperson.Ripple = true;
+            swThirdperson.Size = new Size(149, 28);
+            swThirdperson.TabIndex = 47;
+            swThirdperson.Text = "Thirdperson";
+            toolTip.SetToolTip(swThirdperson, "Enables thirdperson");
+            swThirdperson.UseVisualStyleBackColor = true;
+            swThirdperson.CheckedChanged += swThirdperson_CheckedChanged;
             // 
             // sldrThermalColorCoefficient
             // 
@@ -3446,6 +3899,7 @@
             // tabSettingsGeneral
             // 
             tabSettingsGeneral.BackColor = Color.White;
+            tabSettingsGeneral.Controls.Add(mcSettingsGeneralPlayerInformation);
             tabSettingsGeneral.Controls.Add(mcSettingsGeneralUI);
             tabSettingsGeneral.Controls.Add(mcSettingsGeneralRadar);
             tabSettingsGeneral.ImageKey = "(none)";
@@ -3456,21 +3910,68 @@
             tabSettingsGeneral.TabIndex = 0;
             tabSettingsGeneral.Text = "通用";
             // 
+            // mcSettingsGeneralPlayerInformation
+            // 
+            mcSettingsGeneralPlayerInformation.BackColor = Color.FromArgb(255, 255, 255);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoAmmoType);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoNightVision);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoThermal);
+            mcSettingsGeneralPlayerInformation.Controls.Add(sldrPlayerInfoFontSize);
+            mcSettingsGeneralPlayerInformation.Controls.Add(cboPlayerInfoFont);
+            mcSettingsGeneralPlayerInformation.Controls.Add(sldrPlayerInfoFlagsFontSize);
+            mcSettingsGeneralPlayerInformation.Controls.Add(cboPlayerInfoFlagsFont);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoTag);
+            mcSettingsGeneralPlayerInformation.Controls.Add(sldrPlayerInfoAimlineOpacity);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoAimline);
+            mcSettingsGeneralPlayerInformation.Controls.Add(sldrPlayerInfoAimlineLength);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoHealth);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoDistance);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoHeight);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoValue);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoFlags);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoGroup);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoActiveWeapon);
+            mcSettingsGeneralPlayerInformation.Controls.Add(swPlayerInfoName);
+            mcSettingsGeneralPlayerInformation.Controls.Add(cboPlayerInfoType);
+            mcSettingsGeneralPlayerInformation.Controls.Add(lblSettingsGeneralPlayerInformation);
+            mcSettingsGeneralPlayerInformation.Depth = 0;
+            mcSettingsGeneralPlayerInformation.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            mcSettingsGeneralPlayerInformation.Location = new Point(663, 14);
+            mcSettingsGeneralPlayerInformation.Margin = new Padding(14);
+            mcSettingsGeneralPlayerInformation.MouseState = MaterialSkin.MouseState.HOVER;
+            mcSettingsGeneralPlayerInformation.Name = "mcSettingsGeneralPlayerInformation";
+            mcSettingsGeneralPlayerInformation.Padding = new Padding(14);
+            mcSettingsGeneralPlayerInformation.Size = new Size(633, 374);
+            mcSettingsGeneralPlayerInformation.TabIndex = 32;
+            // 
+            // lblSettingsGeneralPlayerInformation
+            // 
+            lblSettingsGeneralPlayerInformation.AutoSize = true;
+            lblSettingsGeneralPlayerInformation.Depth = 0;
+            lblSettingsGeneralPlayerInformation.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsGeneralPlayerInformation.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            lblSettingsGeneralPlayerInformation.HighEmphasis = true;
+            lblSettingsGeneralPlayerInformation.Location = new Point(17, 12);
+            lblSettingsGeneralPlayerInformation.MouseState = MaterialSkin.MouseState.HOVER;
+            lblSettingsGeneralPlayerInformation.Name = "lblSettingsGeneralPlayerInformation";
+            lblSettingsGeneralPlayerInformation.Size = new Size(167, 24);
+            lblSettingsGeneralPlayerInformation.TabIndex = 33;
+            lblSettingsGeneralPlayerInformation.Text = "Player Information";
+            lblSettingsGeneralPlayerInformation.UseAccent = true;
+            // 
             // mcSettingsGeneralUI
             // 
             mcSettingsGeneralUI.BackColor = Color.FromArgb(255, 255, 255);
             mcSettingsGeneralUI.Controls.Add(sldrZoomSensitivity);
             mcSettingsGeneralUI.Controls.Add(swUnknownQuestItems);
-            mcSettingsGeneralUI.Controls.Add(cboFont);
+            mcSettingsGeneralUI.Controls.Add(cboGlobalFont);
             mcSettingsGeneralUI.Controls.Add(sldrFontSize);
+            mcSettingsGeneralUI.Controls.Add(swHoverArmor);
             mcSettingsGeneralUI.Controls.Add(txtTeammateID);
             mcSettingsGeneralUI.Controls.Add(lblSettingsGeneralUI);
             mcSettingsGeneralUI.Controls.Add(sldrUIScale);
-            mcSettingsGeneralUI.Controls.Add(sldrAimlineLength);
             mcSettingsGeneralUI.Controls.Add(swExfilNames);
             mcSettingsGeneralUI.Controls.Add(swQuestHelper);
-            mcSettingsGeneralUI.Controls.Add(swHoverArmor);
-            mcSettingsGeneralUI.Controls.Add(swNames);
             mcSettingsGeneralUI.Controls.Add(swAimview);
             mcSettingsGeneralUI.Controls.Add(swShowLoot);
             mcSettingsGeneralUI.Depth = 0;
@@ -3518,6 +4019,7 @@
             // mcSettingsGeneralRadar
             // 
             mcSettingsGeneralRadar.BackColor = Color.FromArgb(255, 255, 255);
+            mcSettingsGeneralRadar.Controls.Add(btnTriggerUnityCrash);
             mcSettingsGeneralRadar.Controls.Add(swPvEMode);
             mcSettingsGeneralRadar.Controls.Add(swRadarEnemyCount);
             mcSettingsGeneralRadar.Controls.Add(swRadarVsync);
@@ -3693,6 +4195,7 @@
             // mcSettingsMemoryWritingGlobal
             // 
             mcSettingsMemoryWritingGlobal.BackColor = Color.FromArgb(255, 255, 255);
+            mcSettingsMemoryWritingGlobal.Controls.Add(swThirdperson);
             mcSettingsMemoryWritingGlobal.Controls.Add(lblSettingsMemoryWritingLootThroughWallsDistance);
             mcSettingsMemoryWritingGlobal.Controls.Add(lblSettingsMemoryWritingExtendedReachDistance);
             mcSettingsMemoryWritingGlobal.Controls.Add(sldrExtendedReachDistance);
@@ -3739,7 +4242,7 @@
             lblSettingsMemoryWritingExtendedReachDistance.Name = "lblSettingsMemoryWritingExtendedReachDistance";
             lblSettingsMemoryWritingExtendedReachDistance.Size = new Size(31, 21);
             lblSettingsMemoryWritingExtendedReachDistance.TabIndex = 45;
-            lblSettingsMemoryWritingExtendedReachDistance.Text = "x1.8";
+            lblSettingsMemoryWritingExtendedReachDistance.Text = "x4";
             lblSettingsMemoryWritingExtendedReachDistance.Visible = false;
             // 
             // lblSettingsMemoryWritingTimeScaleFactor
@@ -4058,6 +4561,7 @@
             // tabSettingsColors
             // 
             tabSettingsColors.BackColor = Color.White;
+            tabSettingsColors.Controls.Add(mcSettingsColorsEvent);
             tabSettingsColors.Controls.Add(mcSettingsColorsOther);
             tabSettingsColors.Controls.Add(mcSettingsColorsLootAndQuests);
             tabSettingsColors.Controls.Add(mcSettingsColorsExfiltration);
@@ -4069,6 +4573,61 @@
             tabSettingsColors.Size = new Size(1281, 729);
             tabSettingsColors.TabIndex = 4;
             tabSettingsColors.Text = "颜色";
+            // 
+            // mcSettingsColorsEvent
+            // 
+            mcSettingsColorsEvent.BackColor = Color.FromArgb(255, 255, 255);
+            mcSettingsColorsEvent.Controls.Add(lblSettingsColorsEvent);
+            mcSettingsColorsEvent.Controls.Add(picAIFollowerOfMorana);
+            mcSettingsColorsEvent.Controls.Add(lblSettingsColorsAIMoranaFollower);
+            mcSettingsColorsEvent.Depth = 0;
+            mcSettingsColorsEvent.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            mcSettingsColorsEvent.Location = new Point(1043, 14);
+            mcSettingsColorsEvent.Margin = new Padding(14);
+            mcSettingsColorsEvent.MouseState = MaterialSkin.MouseState.HOVER;
+            mcSettingsColorsEvent.Name = "mcSettingsColorsEvent";
+            mcSettingsColorsEvent.Padding = new Padding(14);
+            mcSettingsColorsEvent.Size = new Size(207, 322);
+            mcSettingsColorsEvent.TabIndex = 44;
+            // 
+            // lblSettingsColorsEvent
+            // 
+            lblSettingsColorsEvent.AutoSize = true;
+            lblSettingsColorsEvent.Depth = 0;
+            lblSettingsColorsEvent.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblSettingsColorsEvent.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            lblSettingsColorsEvent.HighEmphasis = true;
+            lblSettingsColorsEvent.Location = new Point(17, 12);
+            lblSettingsColorsEvent.MouseState = MaterialSkin.MouseState.HOVER;
+            lblSettingsColorsEvent.Name = "lblSettingsColorsEvent";
+            lblSettingsColorsEvent.Size = new Size(156, 24);
+            lblSettingsColorsEvent.TabIndex = 33;
+            lblSettingsColorsEvent.Text = "Event/Temporary";
+            lblSettingsColorsEvent.UseAccent = true;
+            // 
+            // picAIFollowerOfMorana
+            // 
+            picAIFollowerOfMorana.BackColor = Color.Transparent;
+            picAIFollowerOfMorana.BorderStyle = BorderStyle.FixedSingle;
+            picAIFollowerOfMorana.Location = new Point(130, 45);
+            picAIFollowerOfMorana.Name = "picAIFollowerOfMorana";
+            picAIFollowerOfMorana.Size = new Size(70, 23);
+            picAIFollowerOfMorana.TabIndex = 58;
+            picAIFollowerOfMorana.TabStop = false;
+            picAIFollowerOfMorana.Click += picAIFollowerOfMorana_Click;
+            // 
+            // lblSettingsColorsAIMoranaFollower
+            // 
+            lblSettingsColorsAIMoranaFollower.AutoSize = true;
+            lblSettingsColorsAIMoranaFollower.Depth = 0;
+            lblSettingsColorsAIMoranaFollower.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblSettingsColorsAIMoranaFollower.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            lblSettingsColorsAIMoranaFollower.Location = new Point(15, 45);
+            lblSettingsColorsAIMoranaFollower.MouseState = MaterialSkin.MouseState.HOVER;
+            lblSettingsColorsAIMoranaFollower.Name = "lblSettingsColorsAIMoranaFollower";
+            lblSettingsColorsAIMoranaFollower.Size = new Size(109, 17);
+            lblSettingsColorsAIMoranaFollower.TabIndex = 57;
+            lblSettingsColorsAIMoranaFollower.Text = "Morana Follower:";
             // 
             // mcSettingsColorsOther
             // 
@@ -4844,8 +5403,6 @@
             mcSettingsColorsAI.Controls.Add(lblSettingsColorsAIOther);
             mcSettingsColorsAI.Controls.Add(picAIScav);
             mcSettingsColorsAI.Controls.Add(lblSettingsColorsAIScav);
-            mcSettingsColorsAI.Controls.Add(picAIFollowerOfMorana);
-            mcSettingsColorsAI.Controls.Add(lblSettingsColorsAIMoranaFollower);
             mcSettingsColorsAI.Controls.Add(picAICultist);
             mcSettingsColorsAI.Controls.Add(lblSettingsColorsAICultists);
             mcSettingsColorsAI.Controls.Add(picAIRogue);
@@ -5103,6 +5660,7 @@
             // 
             tabPlayerLoadouts.BackColor = Color.White;
             tabPlayerLoadouts.Controls.Add(mcPlayerLoadoutsAI);
+            tabPlayerLoadouts.Controls.Add(mcPlayerLoadoutsBosses);
             tabPlayerLoadouts.Controls.Add(mcPlayerLoadoutsPlayers);
             tabPlayerLoadouts.ImageKey = "loadouts.png";
             tabPlayerLoadouts.Location = new Point(4, 39);
@@ -5154,6 +5712,50 @@
             flpPlayerLoadoutsAI.Size = new Size(594, 707);
             flpPlayerLoadoutsAI.TabIndex = 0;
             flpPlayerLoadoutsAI.WrapContents = false;
+            // 
+            // mcPlayerLoadoutsBosses
+            // 
+            mcPlayerLoadoutsBosses.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            mcPlayerLoadoutsBosses.BackColor = Color.FromArgb(255, 255, 255);
+            mcPlayerLoadoutsBosses.Controls.Add(lblPlayerLoadoutsBosses);
+            mcPlayerLoadoutsBosses.Controls.Add(flpPlayerLoadoutsBosses);
+            mcPlayerLoadoutsBosses.Depth = 0;
+            mcPlayerLoadoutsBosses.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            mcPlayerLoadoutsBosses.Location = new Point(631, 5);
+            mcPlayerLoadoutsBosses.Margin = new Padding(0);
+            mcPlayerLoadoutsBosses.MaximumSize = new Size(600, 900);
+            mcPlayerLoadoutsBosses.MouseState = MaterialSkin.MouseState.HOVER;
+            mcPlayerLoadoutsBosses.Name = "mcPlayerLoadoutsBosses";
+            mcPlayerLoadoutsBosses.Padding = new Padding(14);
+            mcPlayerLoadoutsBosses.Size = new Size(600, 677);
+            mcPlayerLoadoutsBosses.TabIndex = 3;
+            // 
+            // lblPlayerLoadoutsBosses
+            // 
+            lblPlayerLoadoutsBosses.AutoSize = true;
+            lblPlayerLoadoutsBosses.Depth = 0;
+            lblPlayerLoadoutsBosses.Dock = DockStyle.Top;
+            lblPlayerLoadoutsBosses.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblPlayerLoadoutsBosses.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            lblPlayerLoadoutsBosses.HighEmphasis = true;
+            lblPlayerLoadoutsBosses.Location = new Point(14, 14);
+            lblPlayerLoadoutsBosses.MouseState = MaterialSkin.MouseState.HOVER;
+            lblPlayerLoadoutsBosses.Name = "lblPlayerLoadoutsBosses";
+            lblPlayerLoadoutsBosses.Size = new Size(265, 24);
+            lblPlayerLoadoutsBosses.TabIndex = 31;
+            lblPlayerLoadoutsBosses.Text = "Bosses / Rogues / Guards etc";
+            lblPlayerLoadoutsBosses.UseAccent = true;
+            // 
+            // flpPlayerLoadoutsBosses
+            // 
+            flpPlayerLoadoutsBosses.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flpPlayerLoadoutsBosses.AutoScroll = true;
+            flpPlayerLoadoutsBosses.FlowDirection = FlowDirection.TopDown;
+            flpPlayerLoadoutsBosses.Location = new Point(3, 50);
+            flpPlayerLoadoutsBosses.Name = "flpPlayerLoadoutsBosses";
+            flpPlayerLoadoutsBosses.Size = new Size(594, 624);
+            flpPlayerLoadoutsBosses.TabIndex = 0;
+            flpPlayerLoadoutsBosses.WrapContents = false;
             // 
             // mcPlayerLoadoutsPlayers
             // 
@@ -5648,6 +6250,8 @@
             tabSettings.ResumeLayout(false);
             tabControlSettings.ResumeLayout(false);
             tabSettingsGeneral.ResumeLayout(false);
+            mcSettingsGeneralPlayerInformation.ResumeLayout(false);
+            mcSettingsGeneralPlayerInformation.PerformLayout();
             mcSettingsGeneralUI.ResumeLayout(false);
             mcSettingsGeneralUI.PerformLayout();
             mcSettingsGeneralRadar.ResumeLayout(false);
@@ -5676,6 +6280,9 @@
             mcSettingsAIFactionsFactions.ResumeLayout(false);
             mcSettingsAIFactionsFactions.PerformLayout();
             tabSettingsColors.ResumeLayout(false);
+            mcSettingsColorsEvent.ResumeLayout(false);
+            mcSettingsColorsEvent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picAIFollowerOfMorana).EndInit();
             mcSettingsColorsOther.ResumeLayout(false);
             mcSettingsColorsOther.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picOtherAccent).EndInit();
@@ -5713,7 +6320,6 @@
             mcSettingsColorsAI.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picAIOther).EndInit();
             ((System.ComponentModel.ISupportInitialize)picAIScav).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picAIFollowerOfMorana).EndInit();
             ((System.ComponentModel.ISupportInitialize)picAICultist).EndInit();
             ((System.ComponentModel.ISupportInitialize)picAIRogue).EndInit();
             ((System.ComponentModel.ISupportInitialize)picAIRaider).EndInit();
@@ -5723,6 +6329,8 @@
             tabPlayerLoadouts.ResumeLayout(false);
             mcPlayerLoadoutsAI.ResumeLayout(false);
             mcPlayerLoadoutsAI.PerformLayout();
+            mcPlayerLoadoutsBosses.ResumeLayout(false);
+            mcPlayerLoadoutsBosses.PerformLayout();
             mcPlayerLoadoutsPlayers.ResumeLayout(false);
             mcPlayerLoadoutsPlayers.PerformLayout();
             tabWatchlist.ResumeLayout(false);
@@ -5764,11 +6372,9 @@
         private MaterialSkin.Controls.MaterialButton btnRestartRadar;
         private MaterialSkin.Controls.MaterialButton btnToggleMap;
         private MaterialSkin.Controls.MaterialCard mcSettingsGeneralUI;
-        private MaterialSkin.Controls.MaterialSlider sldrAimlineLength;
         private MaterialSkin.Controls.MaterialSwitch swExfilNames;
         private MaterialSkin.Controls.MaterialSwitch swQuestHelper;
         private MaterialSkin.Controls.MaterialSwitch swHoverArmor;
-        private MaterialSkin.Controls.MaterialSwitch swNames;
         private MaterialSkin.Controls.MaterialSwitch swAimview;
         private MaterialSkin.Controls.MaterialSwitch swShowLoot;
         private MaterialSkin.Controls.MaterialSlider sldrUIScale;
@@ -6008,13 +6614,13 @@
         private MaterialSkin.Controls.MaterialSwitch swRadarVsync;
         private MaterialSkin.Controls.MaterialSwitch swRadarEnemyCount;
         private MaterialSkin.Controls.MaterialSlider sldrFontSize;
-        private MaterialSkin.Controls.MaterialComboBox cboFont;
+        private MaterialSkin.Controls.MaterialComboBox cboGlobalFont;
         private MaterialSkin.Controls.MaterialCard mcPlayerLoadoutsPlayers;
         private FlowLayoutPanel flpPlayerLoadoutsPlayers;
         private MaterialSkin.Controls.MaterialLabel lblPlayerLoadoutsPlayers;
-        private MaterialSkin.Controls.MaterialCard mcPlayerLoadoutsAI;
-        private MaterialSkin.Controls.MaterialLabel lblPlayerLoadoutsAI;
-        private FlowLayoutPanel flpPlayerLoadoutsAI;
+        private MaterialSkin.Controls.MaterialCard mcPlayerLoadoutsBosses;
+        private MaterialSkin.Controls.MaterialLabel lblPlayerLoadoutsBosses;
+        private FlowLayoutPanel flpPlayerLoadoutsBosses;
         private MaterialSkin.Controls.MaterialListView lstFactionEntries;
         private ColumnHeader colFactionsAIName;
         private MaterialSkin.Controls.MaterialSwitch swUnknownQuestItems;
@@ -6046,7 +6652,6 @@
         private MaterialSkin.Controls.MaterialSlider sldrLootPingMaxRadius;
         private MaterialSkin.Controls.MaterialSlider sldrLootPingAnimationSpeed;
         private MaterialSkin.Controls.MaterialSlider sldrLootPingRepetition;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialSlider sldrTimeScaleFactor;
         private MaterialSkin.Controls.MaterialSwitch swTimeScale;
         private MaterialSkin.Controls.MaterialLabel lblSettingsMemoryWritingTimeScaleFactor;
@@ -6057,6 +6662,35 @@
         private MaterialSkin.Controls.MaterialSlider sldrExtendedReachDistance;
         private MaterialSkin.Controls.MaterialLabel lblSettingsMemoryWritingExtendedReachDistance;
         private MaterialSkin.Controls.MaterialLabel lblSettingsMemoryWritingLootThroughWallsDistance;
+        private MaterialSkin.Controls.MaterialCard mcSettingsGeneralPlayerInformation;
+        private MaterialSkin.Controls.MaterialComboBox cboPlayerInfoType;
+        private MaterialSkin.Controls.MaterialLabel lblSettingsGeneralPlayerInformation;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoValue;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoFlags;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoGroup;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoActiveWeapon;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoName;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoHealth;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoDistance;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoHeight;
+        private MaterialSkin.Controls.MaterialSlider sldrPlayerInfoAimlineLength;
+        private MaterialSkin.Controls.MaterialSlider sldrPlayerInfoAimlineOpacity;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoAimline;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoTag;
+        private MaterialSkin.Controls.MaterialSlider sldrPlayerInfoFontSize;
+        private MaterialSkin.Controls.MaterialComboBox cboPlayerInfoFont;
+        private MaterialSkin.Controls.MaterialSlider sldrPlayerInfoFlagsFontSize;
+        private MaterialSkin.Controls.MaterialComboBox cboPlayerInfoFlagsFont;
+        private MaterialSkin.Controls.MaterialCard mcSettingsColorsEvent;
+        private MaterialSkin.Controls.MaterialLabel lblSettingsColorsEvent;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoNightVision;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoThermal;
+        private MaterialSkin.Controls.MaterialSwitch swPlayerInfoAmmoType;
+        private MaterialSkin.Controls.MaterialButton btnTriggerUnityCrash;
+        private MaterialSkin.Controls.MaterialCard mcPlayerLoadoutsAI;
+        private MaterialSkin.Controls.MaterialLabel lblPlayerLoadoutsAI;
+        private FlowLayoutPanel flpPlayerLoadoutsAI;
+        private MaterialSkin.Controls.MaterialSwitch swThirdperson;
     }
 }
 
